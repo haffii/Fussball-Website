@@ -1,0 +1,39 @@
+html{
+      background-color: #6090F0;
+    }
+    h1{
+      display: inline;
+      font-size: 64px;
+      color:white;
+    }
+    #score{
+      width: 100% ;
+      margin-left: 50% ;
+      margin-right: 50% ;
+      margin-top: 10%;
+    }
+    #btnUsers{
+      margin-left: 52% ;
+     
+      margin-top: 2%;
+    }
+  ul{
+    list-style-type:none;
+
+  }
+
+  .users{
+    width: 200px;
+    height: 220px;
+    margin-bottom: 40px;
+  }
+  .users p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin:auto;
+  }
+  #h1users{
+     margin-left: 50% ;
+      margin-right: 50% ;
+  }
