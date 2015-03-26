@@ -12,28 +12,43 @@ html{
       margin-right: 50% ;
       margin-top: 10%;
     }
-    #btnUsers{
-      margin-left: 52% ;
-     
-      margin-top: 2%;
-    }
+    
   ul{
     list-style-type:none;
 
   }
 
-  .users{
-    width: 200px;
-    height: 220px;
-    margin-bottom: 40px;
+  .players{
+    margin-left: 100px;
+    margin-right: 100px;
   }
-  .users p {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin:auto;
+
+  h4{
+    margin-left: 200px;
   }
-  #h1users{
-     margin-left: 50% ;
-      margin-right: 50% ;
+
+  .Users{
+    border: 1px solid black;
+    width: 100px;
+    padding:10px;
   }
+
+
+  #startGame {
+    visibility: none;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #42d934;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-left: 200px;
+}
+
+#startGame {
+  background: #56fc3c;
+  text-decoration: none;
+}
