@@ -35,7 +35,7 @@ html{
 
 
   #startGame {
-    visibility: none;
+  display: none;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -48,7 +48,8 @@ html{
   margin-left: 200px;
 }
 
-#startGame {
+
+#startGame:hover {
   background: #56fc3c;
   text-decoration: none;
 }
