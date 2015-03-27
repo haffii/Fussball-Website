@@ -23,7 +23,6 @@ var headers = {
  }
 
  $scope.thisPlayer=function(player){
-  console.log('This is his user id : '+player.UserId);
    if(PlayersService.getCurrent() == 11){
         PlayersService.setPlayer11(player);
     }

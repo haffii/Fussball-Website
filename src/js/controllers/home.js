@@ -42,36 +42,43 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
     };
 
     $scope.createGame = function() {
-    var data = {
-        "team1user1":PlayersService.getPlayer11().UserId,
-        "team1user2":PlayersService.getPlayer12().UserId,
-        "team2user1":PlayersService.getPlayer21().UserId,
-        "team2user2":PlayersService.getPlayer22().UserId
-    };
+       $('#startGame').hide();
+        var headers = {
+         'Content-Type': 'application/json',
+         'dataType':'json',
+         'Accept':'application/json',
+         'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
+        };
+        var data = {
+            "team1user1":PlayersService.getPlayer11().UserId,
+            "team1user2":PlayersService.getPlayer12().UserId,
+            "team2user1":PlayersService.getPlayer21().UserId,
+            "team2user2":PlayersService.getPlayer22().UserId
+        };
 
-  $.ajax({
+        $.ajax({
           'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/tempGame.xsjs',
-              'type': 'POST',
-              'data': JSON.stringify(data),
-              'dataType': 'json',
-              'headers':headers,
-              'contentType': 'application/json; charset=utf-8',
-              'success': function(response) {
-                  console.log(response);
-                  response = JSON.parse(response);
-                  var body = {
-                        gameOn:response.gameOn,
-                        gameId:response.gameId
-                    };
-                    $.ajax({
-                      'url': 'http://10.42.104.61:3000/start',
-                      'type': 'POST',
-                      'data': body,
-                      'success': function(response2) {
-                         console.log(response2);
-                        } 
-                    });
-                }
-            });
+          'type': 'POST',
+          'data': JSON.stringify(data),
+          'dataType': 'json',
+          'headers':headers,
+          'contentType': 'application/json; charset=utf-8',
+          'success': function(response) {
+              console.log(response);
+              response = JSON.parse(response);
+              var body = {
+                    gameOn:response.gameOn,
+                    gameId:response.gameId
+                };
+                $.ajax({
+                  'url': 'http://10.42.104.61:3000/start',
+                  'type': 'POST',
+                  'data': body,
+                  'success': function(response2) {
+                     console.log(response2);
+                    } 
+                });
+            }
+        });
     };
 }]);
