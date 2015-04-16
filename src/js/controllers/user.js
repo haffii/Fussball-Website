@@ -23,7 +23,25 @@ var headers = {
   $scope.$digest();
  }
 
+ $scope.randomPlayers=function(){
+    var nr = [];
+    while(nr.length < 4){
+    var randomnumber=Math.ceil(Math.random()*$scope.arr.length-1);
+    var found=false;
+    for(var i=0;i<nr.length;i++){
+      if(nr[i]==randomnumber){found=true;break;}
+    }
+    if(!found)nr[nr.length]=randomnumber;
+    }
+    PlayersService.setPlayer11($scope.arr[nr[0]]);
+    PlayersService.setPlayer12($scope.arr[nr[1]]);
+    PlayersService.setPlayer21($scope.arr[nr[2]]);
+    PlayersService.setPlayer22($scope.arr[nr[3]]);
+    $location.path("/");
+ };
+
  $scope.thisPlayer=function(player){
+    console.log("fds");
    if(PlayersService.getCurrent() == 11){
         PlayersService.setPlayer11(player);
     }
