@@ -1,4 +1,4 @@
-app.controller("UserController", ["$scope", "$location", "SocketService","PlayersService","$http", function($scope, $location, SocketService,PlayersService, $http) {
+app.controller("UserController", ["$scope", "$location", "SocketService","PlayersService", function($scope, $location, SocketService,PlayersService) {
 var headers = {
   'Content-Type': 'application/json',
   'dataType':'json',
@@ -13,6 +13,7 @@ var headers = {
     'contentType': 'application/json; charset=utf-8',
     'success': function(response) {
       showPlayers(response);   
+    console.log(response);
     }
 });
 

@@ -6,6 +6,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
     
     $scope.player21 = "Player 1";
     $scope.player22 = "Player 2";
+    PlayersService.setCurrent(null);
 
     if(PlayersService.getPlayer11()){
         $scope.player11 = PlayersService.getPlayer11().Name;
@@ -41,22 +42,35 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
     $location.path("/users");
     };
 
+
+  $scope.gotoStatistics = function() {
+    $location.path("/statistics");
+  };
+
+
     $scope.createGame = function() {
-       $('#startGame').hide();
+      $("#startGame").hide();
         var headers = {
          'Content-Type': 'application/json',
          'dataType':'json',
          'Accept':'application/json',
          'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
         };
-        var data = {
+        var body = {
             "team1user1":PlayersService.getPlayer11().UserId,
             "team1user2":PlayersService.getPlayer12().UserId,
             "team2user1":PlayersService.getPlayer21().UserId,
             "team2user2":PlayersService.getPlayer22().UserId
         };
-
         $.ajax({
+            'url': 'http://10.42.104.61:3000/start',
+            'type': 'POST',
+            'data': body,
+            'success': function(response2) {
+                console.log(response2);
+            } 
+        });
+       /* $.ajax({
           'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/tempGame.xsjs',
           'type': 'POST',
           'data': JSON.stringify(data),
@@ -78,7 +92,12 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
                      console.log(response2);
                     } 
                 });
-            }
-        });
+            },
+          'error' : function(request, status, error)
+          {
+            console.log("Status: "+status+" Error: " +error);
+          }
+        });*/
+     
     };
 }]);

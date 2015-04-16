@@ -53,3 +53,9 @@ html{
   background: #56fc3c;
   text-decoration: none;
 }
+
+.profilePic{
+  
+  width: 100px;
+  height: auto;
+}

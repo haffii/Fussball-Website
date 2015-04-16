@@ -1,8 +1,8 @@
 <div id="userWindow">
 
-<div ng-repeat="x in arr" ng-click="thisPlayer(x)" class = "Users">
+<div ng-repeat="x in arr|orderBy: 'Name'" ng-click="thisPlayer(x)" class = "Users">
 	<p>Name: {{x.Name}}</p>
-	<p>City: {{x.City}}</p>
+	<img class ="profilePic" ng-src="{{x.ImagePath}}"></img>
 
 </div>
 
