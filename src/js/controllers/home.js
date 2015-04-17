@@ -57,10 +57,10 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
          'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
         };
         var body = {
-            "team1user1":PlayersService.getPlayer11().UserId,
-            "team1user2":PlayersService.getPlayer12().UserId,
-            "team2user1":PlayersService.getPlayer21().UserId,
-            "team2user2":PlayersService.getPlayer22().UserId
+            "team1user1":PlayersService.getPlayer11(),
+            "team1user2":PlayersService.getPlayer12(),
+            "team2user1":PlayersService.getPlayer21(),
+            "team2user2":PlayersService.getPlayer22()
         };
         $.ajax({
             'url': 'http://10.42.104.61:3000/start',

@@ -19,7 +19,35 @@ var headers = {
 
 
  function showPlayers(players){
-  $scope.arr = players;
+  var check = false;
+  var players2 = [];
+  for(var i = 0; i<players.length; i++){
+    if(PlayersService.getPlayer11()){ 
+      if(PlayersService.getPlayer11().UserId == players[i].UserId) 
+        check = true;
+      }
+
+    if(PlayersService.getPlayer12()){
+      if(PlayersService.getPlayer12().UserId == players[i].UserId) 
+       check = true;
+      }
+
+   if(PlayersService.getPlayer21()){
+      if(PlayersService.getPlayer21().UserId == players[i].UserId) 
+        check = true;
+      }
+
+    if(PlayersService.getPlayer22()){
+      if(PlayersService.getPlayer22().UserId == players[i].UserId) 
+       check = true;
+      }
+    if(!check){
+      players2.push(players[i]);
+    }
+    check = false;
+  }
+
+  $scope.arr = players2;
   $scope.$digest();
  }
 
@@ -41,7 +69,6 @@ var headers = {
  };
 
  $scope.thisPlayer=function(player){
-    console.log("fds");
    if(PlayersService.getCurrent() == 11){
         PlayersService.setPlayer11(player);
     }
