@@ -1,24 +1,22 @@
-<div id = "homeWindow" >
-	<div id="score">
-      <h1 id="team1"/>
-      <h1> -</h1>
-      <h1 id="team2"/>
+
+<div class="container">
+<div id = "homeWindow">
+
+
+	<div class="Scoreboard">
+		<div id="score">
+	      	<h1 id="team1" style="position:absolute; left:0;"/>
+	      	<h1 id="team2" style="position:absolute; right:0;"/>
+	    </div>
+
+		<img src="{{player11.ImagePath}}" ng-click="clickplayer(11)" style="position: absolute; top: 10px; left: 10px;">
+		<img src="{{player12.ImagePath}}" ng-click="clickplayer(12)" style="position: absolute; bottom: 10px; left: 10px;">
+		<img src="{{player21.ImagePath}}" ng-click="clickplayer(21)" style="position: absolute; top: 10px; right: 10px;">
+		<img src="{{player22.ImagePath}}" ng-click="clickplayer(22)" style="position: absolute; bottom: 10px; right: 10px;">
 	</div>
-	
-	<div>
-		<div>
-		<h4>Team1</h4>
-		<button id="btnPlayer11" class = "players" ng-click="clickplayer(11)" >{{player11}}</button>
-		<button id="btnPlayer12" class = "players" ng-click="clickplayer(12)" >{{player12}}</button>
-		</div>
-		<img src="images/table1.png">
-		<div>
-		<button id="btnPlayer21" class = "players" ng-click="clickplayer(21)" >{{player21}}</button>
-		<button id="btnPlayer22" class = "players" ng-click="clickplayer(22)" >{{player22}}</button>
-		<h4>Team 2</h4>
-		</div>
-	</div>
+
 	<button id="startGame" ng-click="createGame()">Start</button>
 	<button ng-click="gotoStatistics()">Statistics</button>
 
+</div>
 </div>

@@ -1,9 +1,10 @@
 <button ng-click="randomPlayers()">Click Me!</button>
-<div id="userWindow">
-<div ng-repeat="x in arr|orderBy: 'Name'" ng-click="thisPlayer(x)" class = "Users">
-	<p>Name: {{x.Name}}</p>
-	<img class ="profilePic" ng-src="{{x.ImagePath}}"></img>
 
-</div>
-
+<div class="container">
+	<div ng-repeat="x in arr|orderBy: 'Name'" class="col-md-3">
+		<div class="Users" ng-click="thisPlayer(x)">
+			<p>Name: {{x.Name}}</p>
+			<img class ="profilePic" ng-src="{{x.ImagePath}}"></img>
+		</div>
+	</div>
 </div>

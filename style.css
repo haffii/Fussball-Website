@@ -7,10 +7,12 @@ html{
       color:white;
     }
     #score{
-      width: 100% ;
-      margin-left: 50% ;
-      margin-right: 50% ;
-      margin-top: 10%;
+      position: relative;
+      width: 150px;
+      background-color: blue;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 19%;
     }
     
   ul{
@@ -29,8 +31,19 @@ html{
 
   .Users{
     border: 1px solid black;
-    width: 100px;
+    width: 200px;
+    height: 200px;
     padding:10px;
+    margin-top: 20px;
+  }
+
+  .Users img{
+    position: absolute;
+    bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 123px;
+    width: 100px;
   }
 
 
@@ -58,4 +71,18 @@ html{
   
   width: 100px;
   height: auto;
+}
+
+.Scoreboard{
+  position: relative;
+  border: 1px solid black;
+  width: 600px;
+  height: 300px;
+}
+
+.Scoreboard img{
+  position: absolute; 
+  bottom: 0;
+  width: 100px;
+  height: 123px;
 }
