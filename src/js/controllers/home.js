@@ -1,6 +1,6 @@
 app.controller("HomeController", ["$scope", "$location", "SocketService","PlayersService", function($scope, $location, SocketService,PlayersService) {
 	var socket = io.connect('10.42.104.61:3000/');
-         
+  var gameOn = false;    
     $.ajax({
             'url': 'http://10.42.104.61:3000/players',
             'type': 'GET',
@@ -9,10 +9,11 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
                 if(data.Players.length){
                   console.log("Party and bullshit");
                   console.log(data.Players[0]);
-                  $scope.player11 = data.Players[0].Name;
-                  $scope.player12 = data.Players[1].Name;
-                  $scope.player21 = data.Players[2].Name;
-                  $scope.player22 = data.Players[3].Name;
+                  $scope.player11 = data.Players[0];
+                  $scope.player12 = data.Players[1];
+                  $scope.player21 = data.Players[2];
+                  $scope.player22 = data.Players[3];
+                  gameOn = true;
                  $scope.$digest();
                 }
                 else{
@@ -25,19 +26,19 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
                   PlayersService.setCurrent(null);
 
                   if(PlayersService.getPlayer11()){
-                    $scope.player11 = PlayersService.getPlayer11().Name;
+                    $scope.player11 = PlayersService.getPlayer11();
                      PlayersService.setCurrent(null);
                   }
                   if(PlayersService.getPlayer12()){
-                     $scope.player12 = PlayersService.getPlayer12().Name;
+                     $scope.player12 = PlayersService.getPlayer12();
                       PlayersService.setCurrent(null);
                    }
                   if(PlayersService.getPlayer21()){
-                    $scope.player21 = PlayersService.getPlayer21().Name;
+                    $scope.player21 = PlayersService.getPlayer21();
                     PlayersService.setCurrent(null);
                   }
                   if(PlayersService.getPlayer22()){
-                    $scope.player22 = PlayersService.getPlayer22().Name;
+                    $scope.player22 = PlayersService.getPlayer22();
                     PlayersService.setCurrent(null);
                   }
                  if(PlayersService.getPlayer11() && PlayersService.getPlayer12() && PlayersService.getPlayer21() && PlayersService.getPlayer22()){
@@ -91,8 +92,10 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
     });
 
     $scope.clickplayer = function(id) {
+      if(!gameOn){
     PlayersService.setCurrent(id);
     $location.path("/users");
+    }
     };
 
 
