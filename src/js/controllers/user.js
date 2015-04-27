@@ -17,6 +17,21 @@ var headers = {
     }
 });
 
+ $.ajax({
+    'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/userStatistics.xsjs',
+    'type': 'GET',
+    'dataType': 'json',
+    'headers':headers,
+    'contentType': 'application/json; charset=utf-8',
+    'data' : { id: 41},
+    'success': function(response) {  
+    console.log(response);
+    },
+    'error' : function(response) {
+      console.log("error : ");
+      console.log(response);
+    }
+});
 
  function showPlayers(players){
   var check = false;

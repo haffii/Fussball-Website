@@ -35,6 +35,23 @@ app.factory("PlayersService", [function() {
 		},
 		getCurrent: function(){
 			return current;
+		},
+
+		clearPlayers: function(){
+			player11 = null;
+			player12 = null;
+			player21 = null;
+			player22 = null;
+			current = null;
+		},
+
+		rematch: function(){
+			var tmp = player11;
+			player11 = player21;
+			player21 = tmp;
+			tmp = player12;
+			player12 = player22;
+			player22 = tmp;
 		}
 	};
 }]);
