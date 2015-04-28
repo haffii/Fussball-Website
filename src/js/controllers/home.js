@@ -1,8 +1,8 @@
 app.controller("HomeController", ["$scope", "$location", "SocketService","PlayersService", function($scope, $location, SocketService,PlayersService) {
-	var socket = io.connect('10.42.104.61:3000/');
+	var socket = io.connect('10.41.112.43:3000/');
   var gameOn = false;    
     $.ajax({
-            'url': 'http://10.42.104.61:3000/players',
+            'url': 'http://10.41.112.43:3000/players',
             'type': 'GET',
             'success': function(data) {
                 console.log(data);
@@ -47,7 +47,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
         });  
 
    $.ajax({
-        'url': 'http://10.42.104.61:3000/getScore',
+        'url': 'http://10.41.112.43:3000/getScore',
         'type': 'GET',
         'success': function(data) {
         $('#team1').text(data[0]);
@@ -106,7 +106,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
 
   function updateGame(){
      $.ajax({
-            'url': 'http://10.42.104.61:3000/players',
+            'url': 'http://10.41.112.43:3000/players',
             'type': 'GET',
             'success': function(data) {
                 console.log(data);
@@ -133,7 +133,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
             "team2user2ImagePath":PlayersService.getPlayer22().ImagePath
         };
         $.ajax({
-            'url': 'http://10.42.104.61:3000/start',
+            'url': 'http://10.41.112.43:3000/start',
             'type': 'POST',
             'data': body,
             'success': function(response2) {
