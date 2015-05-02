@@ -4,6 +4,7 @@ app.factory("PlayersService", [function() {
 	var player21;
 	var player22;
 	var current;
+
 	return {
 		setPlayer11: function(player) {
 			player11 = player;
@@ -19,6 +20,12 @@ app.factory("PlayersService", [function() {
 		},
 		setCurrent: function(curr){
 			current = curr;
+		},
+		setPlayers: function(players){
+			player11 = players[0];
+			player12 = players[1];
+			player21 = players[2];
+			player22 = players[3];
 		},
 
 		getPlayer11: function() {

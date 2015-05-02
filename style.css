@@ -1,10 +1,16 @@
 html{
-      background-color: #6090F0;
+      /*background-color: #6090F0;*/
     }
-    h1{
+body{
+  background-color:#2ba6cb;
+  background-image: url("http://thumbs.dreamstime.com/z/floodlit-stadium-foosball-players-football-unmarked-green-grass-pitch-row-yellow-night-under-49743234.jpg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+h1{
       display: inline;
       font-size: 64px;
-      color:white;
+      color:black;
     }
     #score{
       position: relative;
@@ -38,7 +44,6 @@ html{
 
   .Users img{
     position: absolute;
-    bottom: 5px;
     margin-right: auto;
     margin-left: auto;
     height: 123px;
@@ -72,10 +77,10 @@ html{
 
 .Scoreboard{
   position: relative;
-  float: left;
+  margin:0 auto;
   border: 1px solid black;
-  width: 600px;
-  height: 300px;
+  width: 800px;
+  height: 500px;
 }
 
 .Scoreboard img{
@@ -103,3 +108,104 @@ html{
     background-color: #6090F0;
     color: white;
 }
+
+.main {
+    background-color: #F0F0F0;
+}
+
+.main div {
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.profile{
+  width: 100%;
+  overflow:hidden;
+}
+
+.profile .profileImg {
+  width: 25%;
+  float: left;
+}
+
+.profile .profileInfo {
+  width: 75%;
+  float: left;
+}
+
+.profile .profileInfo div {
+  margin-top: 20px;
+}
+
+.scoreProgress{
+  overflow:hidden;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  background-color: #E3E3E3;
+  border: 1px solid black;
+}
+
+.scoreProgress .spText {
+  width: 20%;
+  float: left;
+  margin-top: 20px;
+}
+
+.scoreProgress .spBar {
+  width: 60%;
+  float: left;
+  margin-top: 20px;
+}
+
+.usersTop {
+  margin-top: 30px;
+}
+
+.centeredT {
+  text-align: center;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+
+.progress {background: rgba(222, 76, 76, 1); background: -webkit-linear-gradient(top, rgba(171, 46, 46, 1) 0%, rgba(222, 76, 76, 1) 100%); background: linear-gradient(to bottom, rgba(171, 46, 46, 1) 0%, rgba(222, 76, 76, 1) 100%); border: 1px solid rgba(0, 0, 0, 1); border-radius: 3px; height: 50px;}
+.progress-bar-custom {background: rgba(65, 201, 103, 1); background: -webkit-linear-gradient(top, rgba(87, 156, 97, 1) 0%, rgba(65, 201, 103, 1) 100%); background: linear-gradient(to bottom, rgba(87, 156, 97, 1) 0%, rgba(65, 201, 103, 1) 100%);}

@@ -12,8 +12,11 @@ app.config(["$routeProvider","$httpProvider", function($routeProvider,$httpProvi
 	}).when("/statistics", {
 		templateUrl: "templates/statistics.html",
 		controller: "StatisticsController",
-	}).when("/Users/:ID", {
+	}).when("/Users/:UserId", {
 		templateUrl: "templates/user.html",
-		controller: "",
+		controller: "UserIDController",
+	}).when("/table", {
+		templateUrl: "templates/newHome.html",
+		controller: "newHomeController",
 	}).otherwise({ redirectTo: "/" });
 }]);

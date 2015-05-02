@@ -1,16 +1,19 @@
 app.controller("HomeController", ["$scope", "$location", "SocketService","PlayersService", function($scope, $location, SocketService,PlayersService) {
-	var socket = io.connect('10.42.104.61:3000/');
-  var gameOn = false;    
+	var socket = io.connect('127.0.0.1:3000/');
+  var gameOn = false;
+
+  var countdown;
+
     $.ajax({
-            'url': 'http://10.42.104.61:3000/players',
+            'url': 'http://127.0.0.1:3000/players',
             'type': 'GET',
             'success': function(data) {
-                console.log(data);
                 if(data.length){
                   $scope.player11 = data[0];
                   $scope.player12 = data[1];
                   $scope.player21 = data[2];
                   $scope.player22 = data[3];
+                  PlayersService.setPlayers(data);
                   gameOn = true;
                   $scope.$digest();
                 }
@@ -47,7 +50,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
         });  
 
    $.ajax({
-        'url': 'http://10.42.104.61:3000/getScore',
+        'url': 'http://127.0.0.1:3000/getScore',
         'type': 'GET',
         'success': function(data) {
         $('#team1').text(data[0]);
@@ -63,9 +66,9 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
     $('#team2').text(score);
     });
 
-    socket.on('startCountDown', function(){
+ /*   socket.on('startCountDown', function(){
       $('.countdown').countdown(onGameEnd, 10);
-    });
+    });*/
 
     socket.on('gameover', function(data){
       $('#Rematch').show();
@@ -74,8 +77,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
     });
 
     socket.on('updatePlayers', function(data){
-      console.log("this:");
-      console.log(data);
+      PlayersService.setPlayers(data);
       $scope.player11 = data[0];
       $scope.player12 = data[1];
       $scope.player21 = data[2];
@@ -83,6 +85,8 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       $scope.$digest();
       if($scope.player11 && $scope.player12 && $scope.player21 && $scope.player22){
         $('#startGame').hide();
+        $('#Rematch').hide();
+        $('#newGame').hide();
       }
     });
 
@@ -90,6 +94,20 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       if(!gameOn){
     PlayersService.setCurrent(id);
     $location.path("/users");
+    }
+    else{
+      if(id == 11){
+        $location.path("/Users/"+$scope.player11.UserId);
+      }
+      else if(id == 12){
+        $location.path("/Users/"+$scope.player12.UserId);
+      }
+      else if(id == 21){
+        $location.path("/Users/"+$scope.player21.UserId);
+      }
+      else if(id == 22){
+        $location.path("/Users/"+$scope.player22.UserId);
+      }
     }
     };
 
@@ -104,41 +122,45 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       $('#newGame').show();
   }
 
-  function updateGame(){
+/*  function updateGame(){
      $.ajax({
-            'url': 'http://10.42.104.61:3000/players',
+            'url': 'http://127.0.1:3000/players',
             'type': 'GET',
             'success': function(data) {
                 console.log(data);
             }
         });
-  }
+  }*/
     $scope.createGame = function() {
       $("#startGame").hide();
         var body = {
             "team1user1UserId": PlayersService.getPlayer11().UserId,
             "team1user1Name" : PlayersService.getPlayer11().Name,
             "team1user1ImagePath":PlayersService.getPlayer11().ImagePath,
+            "ELO0" : PlayersService.getPlayer11().ELO,
 
             "team1user2UserId": PlayersService.getPlayer12().UserId,
             "team1user2Name" : PlayersService.getPlayer12().Name,
             "team1user2ImagePath":PlayersService.getPlayer12().ImagePath,
+            "ELO1" : PlayersService.getPlayer12().ELO,
             
             "team2user1UserId": PlayersService.getPlayer21().UserId,
             "team2user1Name" : PlayersService.getPlayer21().Name,
             "team2user1ImagePath":PlayersService.getPlayer21().ImagePath,
+            "ELO2" : PlayersService.getPlayer21().ELO,
 
             "team2user2UserId": PlayersService.getPlayer22().UserId,
             "team2user2Name" : PlayersService.getPlayer22().Name,
-            "team2user2ImagePath":PlayersService.getPlayer22().ImagePath
+            "team2user2ImagePath":PlayersService.getPlayer22().ImagePath,
+            "ELO3" : PlayersService.getPlayer22().ELO
         };
         $.ajax({
-            'url': 'http://10.42.104.61:3000/start',
+            'url': 'http://127.0.0.1:3000/start',
             'type': 'POST',
             'data': body,
             'success': function(response2) {
                 gameOn = true;
-                updateGame();
+                //updateGame();
             }
         });
     };
@@ -156,6 +178,8 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
 
     $scope.newGame = function(){
       gameOn = false;
+      $('#team1').text(0);
+      $('#team2').text(0);
       PlayersService.clearPlayers();
       $scope.player11 = null;
       $scope.player12 = null;
@@ -163,20 +187,22 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       $scope.player22 = null;
     };
 
-
+/*
 $.fn.countdown = function (callback, duration) {
   var container = $(this[0]).html(duration);
-  var countdown = setInterval(function () {
-    if (--duration) {
-      container.html(duration);
+  $('.countdown').show();
+  countdown = setInterval(function () {
+    if (duration > 0) {
+      container.html(--duration);
     }
     else
     {
+      container.html(--duration);
       clearInterval(countdown);
       callback.call(container);
     }
     }, 1000);
 
-};
+};*/
 
 }]);

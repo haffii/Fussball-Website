@@ -1,5 +1,5 @@
 
-<div class="container main">
+<div class="container">
 <div id = "homeWindow">
 
 	<div class="countdown"></div>
@@ -13,6 +13,35 @@
 		<img src="{{player21.ImagePath}}" ng-click="clickplayer(21)" style="position: absolute; top: 10px; right: 10px;">
 		<img src="{{player22.ImagePath}}" ng-click="clickplayer(22)" style="position: absolute; bottom: 10px; right: 10px;">
 	</div>
+
+
+	<table class="TopScore">
+	  <tr>
+	    <th>Rank</th>
+	    <th>Name</th>
+	    <th>Rating</th>
+	  </tr>
+	  <tr>
+	    <td>1.</td>
+	    <td>Stefan</td>
+	    <td>1880</td>
+	  </tr>
+	  <tr>
+	    <td>2.</td>
+	    <td>Hafþór</td>
+	    <td>1879</td>
+	  </tr>
+	  <tr>
+	    <td>3.</td>
+	    <td>Bergur</td>
+	    <td>1650</td>
+	  </tr>
+	  <tr>
+	    <td>4.</td>
+	    <td>Högni</td>
+	    <td>1600</td>
+	</tr>
+	</table>
 
 	<button id="startGame" ng-click="createGame()">Start</button>
 	<button id="newGame" ng-click="newGame()">newGame</button>

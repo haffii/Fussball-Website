@@ -1,0 +1,116 @@
+<div class="container main">
+	
+	<div class="profile">
+		<div class="profileInfo col-md-3">
+			<h1 >{{user[0].NAME}}</h1>
+			<div>
+				<p>Rank : {{user[0].ELORANKING}}</p>
+				<p>ELO : {{user[0].ELO}}</p>
+				<p>Games Played : {{user[0].NOGAMES}}</p>
+			</div>
+		</div>
+		<div class="profileImg col-md-3">
+			<img src="{{user[0].IMAGEPATH}}" ></img>
+		</div>
+	</div>
+
+	<div class="scoreProgress">
+		<div class="spText">
+			<p style="text-align: center;">Won</p>
+		</div>
+		<div class="spText" style="width: 60%; text-align:center;">
+			<p>{{winp}} %</p>
+		</div>
+		<div class="spText">
+			<p style="text-align: center;"> Lost</p>
+		</div>
+
+		<div class="spText">
+		<p style="text-align: center;"> {{user[0].TOTWINS}}</p>
+		</div>
+		<div class="spBar">
+			<div class="progress progressbar">
+	    		<div class="progress-bar progress-bar-custom" role="progressbar" style="width: {{user[0].TOTWINS/user[0].NOGAMES*100}}%;">
+	        		<span class="sr-only">54% Complete</span>
+	    		</div>
+			</div>
+		</div>
+		<div class="spText">
+			<p style="text-align: center;"> {{user[0].NOGAMES - user[0].TOTWINS}}</p>
+		</div>
+	</div>
+
+	<div class="scoreProgress">
+		<div class="spText">
+			<p style="text-align: center;">For</p>
+		</div>
+		<div class="spText" style="width: 60%; text-align:center;">
+			<p>{{user[0].GOALSFOR - user[0].GOALSAGAINST}}</p>
+		</div>
+		<div class="spText">
+			<p style="text-align: center;"> Against</p>
+		</div>
+
+		<div class="spText">
+		<p style="text-align: center;"> {{user[0].GOALSFOR}}</p>
+		</div>
+		<div class="spBar">
+			<div class="progress progressbar">
+	    		<div class="progress-bar progress-bar-custom" role="progressbar" style="width: {{user[0].GOALSFOR/user[0].TOTGOALSSCORED*100}}%;">
+	        		<span class="sr-only">54% Complete</span>
+	    		</div>
+			</div>
+		</div>
+		<div class="spText">
+			<p style="text-align: center;"> {{user[0].GOALSAGAINST}}</p>
+		</div>
+	</div>
+
+	<div class="usersTop">
+		<div class="row row-centered">
+		<div class="col-md-3">
+			<p class="centeredT">Best Partner</p>
+			<div class="easiest" ng-repeat="x in user">
+				<div class="Users bull" ng-click="thisPlayer(x)">
+					<p>Name: {{x.BESTPARTNERNAME}}</p>
+					<img class ="profilePic" ng-src="{{x.BESTPARTNERIMAGEPATH}}"></img>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<p class="centeredT">Best Partner</p>
+			<div class="easiest" ng-repeat="x in user">
+				<div class="Users bull" ng-click="thisPlayer(x)">
+					<p>Name: {{x.TOUGHESTOPPONENTNAME}}</p>
+					<img class ="profilePic" ng-src="{{x.TOUGHESTOPPONENTIMAGEPATH}}"></img>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<p class="centeredT">Best Partner</p>
+			<div class="easiest" ng-repeat="x in user">
+				<div class="Users bull" ng-click="thisPlayer(x)">
+					<p>Name: {{x.EASIESTOPPONENTNAME}}</p>
+					<img class ="profilePic" ng-src="{{x.EASIESTOPPONENTIMAGEPATH}}"></img>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<p class="centeredT">Best Partner</p>
+			<div class="easiest" ng-repeat="x in user">
+				<div class="Users bull" ng-click="thisPlayer(x)">
+					<p>Name: {{x.WORSTPARTNERNAME}}</p>
+					<img class ="profilePic" ng-src="{{x.WORSTPARTNERIMAGEPATH}}"></img>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<ul style="margin-top:40px;">
+    	<li ng-repeat="(key,val) in user[0]">{{key}}: {{val}}</li>
+	</ul>
+</div>
