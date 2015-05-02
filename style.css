@@ -1,6 +1,12 @@
+
+/*
+  css for overall look
+*/
+
 html{
-      /*background-color: #6090F0;*/
-    }
+  /*background-color: #6090F0;*/
+}
+
 body{
   background-color:#2ba6cb;
   background-image: url("http://thumbs.dreamstime.com/z/floodlit-stadium-foosball-players-football-unmarked-green-grass-pitch-row-yellow-night-under-49743234.jpg");
@@ -8,50 +14,50 @@ body{
   background-attachment: fixed;
 }
 h1{
-      display: inline;
-      font-size: 64px;
-      color:black;
-    }
-    #score{
-      position: relative;
-      width: 150px;
-      background-color: blue;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 19%;
-    }
-  
-  ul{
-    list-style-type:none;
-  }
+  display: inline;
+  font-size: 64px;
+  color:black;
+}
 
-  .players{
-    margin-left: 100px;
-    margin-right: 100px;
-  }
+ul{
+  list-style-type:none;
+}
 
-  h4{
-    margin-left: 200px;
-  }
+h4{
+  margin-left: 200px;
+}
 
-  .Users{
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
-    padding:10px;
-    margin-top: 20px;
-  }
+.main {
+  background-color: #F0F0F0;
+}
 
-  .Users img{
-    position: absolute;
-    margin-right: auto;
-    margin-left: auto;
-    height: 123px;
-    width: 100px;
-  }
+.main div {
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
+}
 
+.navbar {
+  margin-bottom: 0px;
+}
+/*
+  ---------------------------
+*/
 
-  #startGame, #Rematch, #newGame {
+/*
+  Home (Score page)
+*/
+#score{
+  position: relative;
+  width: 150px;
+  background-color: blue;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 19%;
+}
+
+#startGame, #Rematch, #newGame {
   display: none;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
@@ -68,11 +74,6 @@ h1{
 #startGame:hover, #Rematch:hover, #newGame:hover {
   background: #56fc3c;
   text-decoration: none;
-}
-
-.profilePic{
-  width: 100px;
-  height: auto;
 }
 
 .Scoreboard{
@@ -109,50 +110,40 @@ h1{
     color: white;
 }
 
-.main {
-    background-color: #F0F0F0;
+/*
+  --------------------------
+*/
+
+/*
+  User list (Score page)
+*/
+.Users{
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  padding:10px;
+  margin-top: 20px;
 }
 
-.main div {
-    animation: fadein 1s;
-    -moz-animation: fadein 1s; /* Firefox */
-    -webkit-animation: fadein 1s; /* Safari and Chrome */
-    -o-animation: fadein 1s; /* Opera */
+.Users img{
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  height: 123px;
+  width: 100px;
 }
 
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
+.profilePic{
+  width: 100px;
+  height: auto;
 }
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+/*
+  --------------------------
+*/
 
+/*
+  UserbyId
+*/
 .profile{
   width: 100%;
   overflow:hidden;
@@ -202,10 +193,49 @@ h1{
   text-align: center;
 }
 
-.navbar {
-  margin-bottom: 0px;
-}
-
-
 .progress {background: rgba(222, 76, 76, 1); background: -webkit-linear-gradient(top, rgba(171, 46, 46, 1) 0%, rgba(222, 76, 76, 1) 100%); background: linear-gradient(to bottom, rgba(171, 46, 46, 1) 0%, rgba(222, 76, 76, 1) 100%); border: 1px solid rgba(0, 0, 0, 1); border-radius: 3px; height: 50px;}
 .progress-bar-custom {background: rgba(65, 201, 103, 1); background: -webkit-linear-gradient(top, rgba(87, 156, 97, 1) 0%, rgba(65, 201, 103, 1) 100%); background: linear-gradient(to bottom, rgba(87, 156, 97, 1) 0%, rgba(65, 201, 103, 1) 100%);}
+/*
+  --------------------------
+*/
+
+/*
+  Animations
+*/
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/*
+  --------------------------
+*/
+
+
