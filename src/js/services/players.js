@@ -4,6 +4,7 @@ app.factory("PlayersService", [function() {
 	var player21;
 	var player22;
 	var current;
+	var gameOn = false;
 
 	return {
 		setPlayer11: function(player) {
@@ -52,6 +53,10 @@ app.factory("PlayersService", [function() {
 			current = null;
 		},
 
+		clearCurrent: function(){
+			current = null;
+		},
+
 		rematch: function(){
 			var tmp = player11;
 			player11 = player21;
@@ -59,6 +64,14 @@ app.factory("PlayersService", [function() {
 			tmp = player12;
 			player12 = player22;
 			player22 = tmp;
+		},
+
+		setGameOn: function(game){
+			gameOn = game;
+		},
+
+		getGameOn: function(){
+			return  gameOn;
 		}
 	};
 }]);

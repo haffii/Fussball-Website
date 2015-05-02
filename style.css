@@ -9,7 +9,7 @@ html{
 
 body{
   background-color:#2ba6cb;
-  background-image: url("http://thumbs.dreamstime.com/z/floodlit-stadium-foosball-players-football-unmarked-green-grass-pitch-row-yellow-night-under-49743234.jpg");
+  background-image: url("/images/background.png");
   background-size: 100% 100%;
   background-attachment: fixed;
 }

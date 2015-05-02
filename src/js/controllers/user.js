@@ -21,23 +21,24 @@ var headers = {
  function showPlayers(players){
   var check = false;
   var players2 = [];
+  
   for(var i = 0; i<players.length; i++){
-    if(PlayersService.getPlayer11()){ 
+    if(PlayersService.getPlayer11() && $location.$$path != "/users"){ 
       if(PlayersService.getPlayer11().UserId == players[i].UserId) 
         check = true;
       }
 
-    if(PlayersService.getPlayer12()){
+    if(PlayersService.getPlayer12() && $location.$$path != "/users"){
       if(PlayersService.getPlayer12().UserId == players[i].UserId) 
        check = true;
       }
 
-   if(PlayersService.getPlayer21()){
+   if(PlayersService.getPlayer21() && $location.$$path != "/users"){
       if(PlayersService.getPlayer21().UserId == players[i].UserId) 
         check = true;
       }
 
-    if(PlayersService.getPlayer22()){
+    if(PlayersService.getPlayer22() && $location.$$path != "/users"){
       if(PlayersService.getPlayer22().UserId == players[i].UserId) 
        check = true;
       }
