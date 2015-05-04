@@ -1,15 +1,33 @@
 app.controller("adminController", ["$scope", "$http", "$location", "SocketService","PlayersService", function($scope, $http, $location, SocketService,PlayersService) {
     $scope.newName = "";
     $scope.newImagePath = "";
+    $scope.newPassword = "";
 
-    $scope.addUser = function(newUsername, newImgPath){
+    $scope.addUser = function(newUsername, newImgPath, newPassword){
+      var allowedExtension = ['jpeg', 'jpg', 'png'];
+      var fileExtension = document.getElementById('imgPath').value.split('.').pop().toLowerCase();
+      var isValidFile = false;
+
+      for(var index in allowedExtension) {
+        if(fileExtension === allowedExtension[index]) {
+          isValidFile = true; 
+          break;
+        }
+      }
+
+      if(!isValidFile) {
+        newImgPath = "";
+      }
+
       var newUserInfo = {
           "Name":newUsername,
-          "ImagePath":newImgPath
+          "ImagePath":newImgPath,
+          "Password":newPassword
       };
+
       var userInfoString = JSON.stringify(newUserInfo);
 
-      var req  ={
+      var req = {
         method: 'POST',
         url: 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/tempUser.xsjs',
         headers: {
@@ -24,13 +42,15 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
       $http(req).
         success(function(){
           console.log("successfully added user");
-          $location.path("/");
+          $location.path("/users");
         }).
         error(function(data, status, headers, config){
           console.log(data);
         });
     };
+    
 
+    
     /*$('#imgPath').keyup(function() {
       var allowedExtension = ['jpeg', 'jpg'];
       var fileExtension = document.getElementById('imgPath').value.split('.').pop().toLowerCase();

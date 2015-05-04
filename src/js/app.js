@@ -21,6 +21,9 @@ app.config(["$routeProvider","$httpProvider", function($routeProvider,$httpProvi
 	}).when("/table", {
 		templateUrl: "templates/newHome.html",
 		controller: "newHomeController",
+	}).when("/editUser/:UserId", {
+		templateUrl: "templates/editUser.html",
+		controller: "UserIDController",
 	}).when("/addUser", {
 		templateUrl: "templates/addUser.html",
 		controller: "adminController",

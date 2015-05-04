@@ -4,9 +4,9 @@
 		<input type="text" id="name" ng-model="newName"/><br>
 		<label for="imgPath" id="imgPathLabel">Image path (ex. http://applicon.is/picture.jpg)</label>
 		<input type="text" id="imgPath" ng-model="newImagePath"/><br>
-		<label for="password" id="passwordLabel">Password</label><br>
-		<input type="password" id="password" ng-model="newPassword"/><br>
-		<button class="btn-primary addUserButton" ng-click="addUser(newName, newImagePath, newPassword)">Add user</button>
+		<label for="password" id="passwordLabel">Please enter your password</label><br>
+		<input type="password" id="password" ng-model="password"/><br>
+		<button class="btn-primary addUserButton" ng-click="saveChanges(newName, newImagePath, password)">Save changes</button>
 	</div>
 	<div class="col-md-4" id="profilePicture">
 		<img class="profilePic" id="displayImage" src="{{newImagePath}}" onerror="this.src='images/empty.png'"/>
