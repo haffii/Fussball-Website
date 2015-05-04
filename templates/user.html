@@ -67,50 +67,60 @@
 	</div>
 
 	<div class="usersTop">
-		<div class="row row-centered">
-		<div class="col-md-3">
+		<div class="col-md-3" style="border: solid black 2px;">
 			<p class="centeredT">Best Partner</p>
 			<div class="easiest" ng-repeat="x in user">
-				<div class="Users bull" ng-click="thisPlayer(x)">
-					<p>Name: {{x.BESTPARTNERNAME}}</p>
+				<div class="Users bull" ng-click="goToPlayer(x.BESTPARTNERID);">
 					<img class ="profilePic" ng-src="{{x.BESTPARTNERIMAGEPATH}}"></img>
+					<p>{{x.BESTPARTNERNAME}}</p>
+					<p>{{x.BESTPARTNERGAMES}}</p>
+					<p>{{x.BESTPARTNERWINS}}</p>
+					<p>{{x.BESTPARTNERPERCENTAGE}}</p>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-3">
-			<p class="centeredT">Best Partner</p>
+		<div class="col-md-3" style="border: solid black 2px;">
+			<p class="centeredT">Toughest opponent</p>
 			<div class="easiest" ng-repeat="x in user">
-				<div class="Users bull" ng-click="thisPlayer(x)">
-					<p>Name: {{x.TOUGHESTOPPONENTNAME}}</p>
+				<div class="Users bull" ng-click="goToPlayer(x.TOUGHESTOPPONENTID);">
 					<img class ="profilePic" ng-src="{{x.TOUGHESTOPPONENTIMAGEPATH}}"></img>
+					<p>{{x.TOUGHESTOPPONENTNAME}}</p>
+					<p>{{x.TOUGHESTOPPONENTGAMES}}</p>
+					<p>{{x.TOUGHESTOPPONENTWINS}}</p>
+					<p>{{x.TOUGHESTOPPONENTPERCENTAGE}}</p>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-3">
-			<p class="centeredT">Best Partner</p>
+		<div class="col-md-3" style="border: solid black 2px;">
+			<p class="centeredT">Easiest opponent</p>
 			<div class="easiest" ng-repeat="x in user">
-				<div class="Users bull" ng-click="thisPlayer(x)">
-					<p>Name: {{x.EASIESTOPPONENTNAME}}</p>
+				<div class="Users bull" ng-click="goToPlayer(x.EASIESTOPPONENTID);">
 					<img class ="profilePic" ng-src="{{x.EASIESTOPPONENTIMAGEPATH}}"></img>
+					<p>{{x.EASIESTOPPONENTNAME}}</p>
+					<p>{{x.EASIESTOPPONENTGAMES}}</p>
+					<p>{{x.EASIESTOPPONENTWINS}}</p>
+					<p>{{x.EASIESTOPPONENTPERCENTAGE}}</p>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-3">
-			<p class="centeredT">Best Partner</p>
+		<div class="col-md-3" style="border: solid black 2px;">
+			<p class="centeredT">Worst partner</p>
 			<div class="easiest" ng-repeat="x in user">
-				<div class="Users bull" ng-click="thisPlayer(x)">
-					<p>Name: {{x.WORSTPARTNERNAME}}</p>
+				<div class="Users bull" ng-click="goToPlayer(x.WORSTPARTNERID);">
 					<img class ="profilePic" ng-src="{{x.WORSTPARTNERIMAGEPATH}}"></img>
+					<p>{{x.WORSTPARTNERNAME}}</p>
+					<p>{{x.WORSTPARTNERGAMES}}</p>
+					<p>{{x.WORSTPARTNERWINS}}</p>
+					<p>{{x.WORSTPARTNERPERCENTAGE}}</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-
+<!--
 	<ul style="margin-top:40px;">
     	<li ng-repeat="(key,val) in user[0]">{{key}}: {{val}}</li>
-	</ul>
+	</ul>-->
 </div>

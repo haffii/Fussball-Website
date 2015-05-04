@@ -1,8 +1,9 @@
 <div class="container main">
-	<div ng-repeat="x in arr|orderBy: 'Name'" class="col-md-3">
+	<div ng-repeat="x in arr|orderBy: 'Name'" class="col-xs-6 col-md-3">
 		<div class="Users" ng-click="thisPlayer(x)">
-			<p>Name: {{x.Name}}</p>
 			<img class ="profilePic" ng-src="{{x.ImagePath}}"></img>
+			<p>{{x.Name}}</p>
+			<p>ELO : {{x.ELO}}</p>
 		</div>
 	</div>
 </div>

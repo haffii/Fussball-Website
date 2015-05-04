@@ -30,4 +30,8 @@ app.controller("UserIDController", ["$scope", "$location", '$routeParams', "Sock
 		}
 	});
 
+	$scope.goToPlayer = function(playerid){
+		$location.path("/Users/"+playerid);
+	};
+
 }]);

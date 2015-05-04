@@ -8,10 +8,7 @@ html{
 }
 
 body{
-  background-color:#2ba6cb;
-  background-image: url("/images/background.png");
-  background-size: 100% 100%;
-  background-attachment: fixed;
+  background-color:pink;
 }
 h1{
   display: inline;
@@ -28,7 +25,8 @@ h4{
 }
 
 .main {
-  background-color: #F0F0F0;
+  background-color: white;
+  height: 100%;
 }
 
 .main div {
@@ -76,12 +74,17 @@ h4{
   text-decoration: none;
 }
 
+.scoreBoardContainer{
+
+}
+
 .Scoreboard{
   position: relative;
   margin:0 auto;
   border: 1px solid black;
-  width: 800px;
-  height: 500px;
+  margin-top: 20px;
+  width: 600px;
+  height: 400px;
 }
 
 .Scoreboard img{
@@ -92,22 +95,22 @@ h4{
 }
 
 .TopScore{
-  float: right;
+  margin-top: 20px;
   width: 450px;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid black;
 }
 
 .TopScore td {
     border: 1px solid white;
-    background-color: #6090F0;
-    color: white;
+    color: black;
     width: 30%;
 }
 
 .TopScore th {
     border: 1px solid white;
-    background-color: #6090F0;
-    color: white;
+    color: black;
 }
 
 /*
@@ -120,13 +123,14 @@ h4{
 .Users{
   border: 1px solid black;
   width: 200px;
-  height: 200px;
+  height: 300px;
   padding:10px;
   margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .Users img{
-  position: absolute;
   margin-right: auto;
   margin-left: auto;
   height: 123px;
@@ -237,5 +241,7 @@ h4{
 /*
   --------------------------
 */
+
+
 
 

@@ -19,7 +19,7 @@ app.config(["$routeProvider","$httpProvider", function($routeProvider,$httpProvi
 		templateUrl: "templates/user.html",
 		controller: "UserIDController",
 	}).when("/table", {
-		templateUrl: "templates/newHome.html",
-		controller: "newHomeController",
+		templateUrl: "templates/table.html",
+		controller: "TableController",
 	}).otherwise({ redirectTo: "/" });
 }]);

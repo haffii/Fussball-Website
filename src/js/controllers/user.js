@@ -69,7 +69,7 @@ var headers = {
     else if(PlayersService.getCurrent() == 22){
       PlayersService.setPlayer22(player);
     }
-      $location.path("/");
+      $location.path("/table");
   }
  };
 
