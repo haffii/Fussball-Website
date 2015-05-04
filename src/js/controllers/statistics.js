@@ -144,7 +144,9 @@ return t;
 	user2 : '',
 	diffsec : 0,
 	user1Id : 0,
-	user2Id : 0
+	user2Id : 0,
+	user1Img : '',
+	user2Img : ''
 	};
 	var t ='';
 	if(stats[i].SLOWESTGOALTEAMID == 1){
@@ -153,6 +155,8 @@ return t;
 	t = stats[i].QUICKESTGOALDIFF_SEC;
 	quickList.user1Id = stats[i].QUICKESTGOALT1U1ID;
 	quickList.user2Id = stats[i].QUICKESTGOALT1U1ID;
+	quickList.user1Img = stats[i].QUICKESTGOALT1U1IMAGEPATH;
+	quickList.user2Img = stats[i].QUICKESTGOALT1U2IMAGEPATH;
 
 	}
 	else{
@@ -161,6 +165,8 @@ return t;
 	t = stats[i].QUICKESTGOALDIFF_SEC;
 	quickList.user1Id = stats[i].QUICKESTGOALT2U1ID;
 	quickList.user2Id = stats[i].QUICKESTGOALT2U1ID;
+	quickList.user1Img = stats[i].QUICKESTGOALT2U1IMAGEPATH;
+	quickList.user2Img = stats[i].QUICKESTGOALT2U2IMAGEPATH;
 	}
 	quickList.diffsec=secConvert(t);
 	list.push(quickList);

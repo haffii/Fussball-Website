@@ -46,10 +46,19 @@
 	</div>
 	<h2 id="lis3">Top 10 Quickest Goals:</h2>
 	<div style="display:none" id="l3">
-	<div ng-repeat="x in quickgoalarr">
-		<div class="statsList">
-			<div>{{$index + 1}}. {{x.diffsec}} {{x.user1}} and {{x.user2}}</div> 
-		</div>
-	</div>
+	<table>
+		<tr>
+			<th>Place</th>
+			<th>Players</th>
+			<th></th>
+			<th>Time</th>
+		</tr>
+		<tr ng-repeat="x in quickgoalarr">
+				<td>{{$index + 1}}.</td>
+				<td><img ng-src="{{x.user1Img}}" height="80" width="60">{{x.user1}}</img></td>
+				<td><img ng-src="{{x.user2Img}}" height="80" width="60">{{x.user2}}</img></td>
+				<td>{{x.diffsec}}s</td>
+		</tr>
+	</table>
 	</div>
 </div>
