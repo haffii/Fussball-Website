@@ -199,6 +199,33 @@ h4{
   --------------------------
 */
 
+
+/*
+Add user
+*/
+#imgPathLabel{
+  padding-top: 20px;
+}
+
+#addUserContainer{
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+
+.addUserButton{
+  margin-top: 15px;
+}
+
+#profilePicture{
+  padding-top: 50px;
+}
+/*
+----------------------------
+*/
+
+
+
+
 /*
   Animations
 */

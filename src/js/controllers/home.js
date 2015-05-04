@@ -1,10 +1,11 @@
 app.controller("HomeController", ["$scope", "$location", "SocketService","PlayersService", function($scope, $location, SocketService,PlayersService) {
 
-	var socket = io.connect('127.0.0.1:3000/');
+  var apiUrl = '10.41.112.52:3000/';
+	var socket = io.connect(apiUrl);
   var gameOn = false;
   var countdown;
     $.ajax({
-            'url': 'http://127.0.0.1:3000/players',
+            'url': 'http://' + apiUrl + 'players',
             'type': 'GET',
             'success': function(data) {
                 if(data.length){
@@ -50,7 +51,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
         });  
 
    $.ajax({
-        'url': 'http://127.0.0.1:3000/getScore',
+        'url': 'http://' + apiUrl + 'getScore',
         'type': 'GET',
         'success': function(data) {
         $('#team1').text(data[0]);
@@ -163,7 +164,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
             "ELO3" : PlayersService.getPlayer22().ELO
         };
         $.ajax({
-            'url': 'http://127.0.0.1:3000/start',
+            'url': 'http://' + apiUrl + 'start',
             'type': 'POST',
             'data': body,
             'success': function(response2) {
