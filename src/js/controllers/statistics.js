@@ -1,3 +1,173 @@
 app.controller("StatisticsController", ["$scope", "$location", "SocketService", function($scope, $location, SocketService) {
-  
+var headers = {
+  'Content-Type': 'application/json',
+  'dataType':'json',
+  'Accept':'application/json',
+  'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
+};
+ $.ajax({
+    'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/top10.xsjs',
+    'type': 'GET',
+    'dataType': 'json',
+    'headers':headers,
+    'contentType': 'application/json; charset=utf-8',
+    'success': function(response) {
+    slowGoal(response);
+    slowGame(response);
+    quickGoal(response);
+    console.log(response);
+    }
+});
+$(document).ready(function(){
+    $("#hideAll").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+    });
+    $("#showAll").click(function(){
+        $("#l1").show();
+        $("#l2").show();
+        $("#l3").show();
+    });
+    $("#lis1").click(function(){
+        $("#l1").toggle();
+    });
+    $("#lis2").click(function(){
+        $("#l2").toggle();
+    });
+    $("#lis3").click(function(){
+        $("#l3").toggle();
+    });
+
+});
+ $scope.getPlayer=function(playerId){
+ console.log(playerId);
+ $location.path("users/");
+ };
+ function secConvert(t)
+ {
+if(t>=60)
+{
+min=parseInt(t/60);
+sek = (t%60);
+t= min + "m "+ sek + "s";
+}
+return t;
+ }
+ function slowGoal(stats){
+  var list = [];
+  for(var i = 0; i<stats.length; i++){
+
+	var slowList = {
+	user1 : '',
+	user2 : '',
+	diffsec : 0,
+	user1Id : 0,
+	user2Id : 0,
+	user1Img : '',
+	user2Img : ''
+	};
+	var t = '';
+	if(stats[i].SLOWESTGOALTEAMID == 1){
+	slowList.user1 = stats[i].SLOWESTGOALT1U1NAME;
+	slowList.user2 = stats[i].SLOWESTGOALT1U2NAME;
+	t = stats[i].SLOWESTGOALDIFF_SEC;
+	slowList.user1Id = stats[i].SLOWESTGOALT1U1ID;
+	slowList.user2Id = stats[i].SLOWESTGOALT1U1ID;
+	slowList.user1Img = stats[i].SLOWESTGOALT1U1IMAGEPATH;
+	slowList.user2Img = stats[i].SLOWESTGOALT1U2IMAGEPATH;
+	}
+	else{
+	slowList.user1 = stats[i].SLOWESTGOALT2U1NAME;
+	slowList.user2 = stats[i].SLOWESTGOALT2U2NAME;
+	t = stats[i].SLOWESTGOALDIFF_SEC;
+	slowList.user1Id = stats[i].SLOWESTGOALT2U1ID;
+	slowList.user2Id = stats[i].SLOWESTGOALT2U1ID;
+	slowList.user1Img = stats[i].SLOWESTGOALT2U1IMAGEPATH;
+	slowList.user2Img = stats[i].SLOWESTGOALT2U2IMAGEPATH;
+	}
+	slowList.diffsec=secConvert(t);
+	
+	list.push(slowList);
+  }
+  $scope.slowgoalarr = list;
+  $scope.$digest();
+ }
+ function slowGame(stats){
+  var list = [];
+  for(var i = 0; i<stats.length; i++){
+
+	var slowList = {
+	user1 : '',
+	user2 : '',
+	user3 : '',
+	user4 : '',
+	diffsec : 0,
+	user1Id : 0,
+	user2Id : 0,
+	user3Id : 0,
+	user4Id : 0,
+	user1Img : '',
+	user2Img : '',
+	user3Img : '',
+	user4Img : ''
+	};
+	var t = '';
+	var min =0;
+	var sek =0;
+	
+	slowList.user1 = stats[i].SLOWESTGAMET1U1NAME;
+	slowList.user2 = stats[i].SLOWESTGAMET1U2NAME;
+	slowList.user3 = stats[i].SLOWESTGAMET2U1NAME;
+	slowList.user4 = stats[i].SLOWESTGAMET2U2NAME;
+	t = stats[i].SLOWESTGAMELENGTH;
+	slowList.user1Id = stats[i].SLOWESTGAMET1U1ID;
+	slowList.user2Id = stats[i].SLOWESTGAMET1U2ID;
+	slowList.user3Id = stats[i].SLOWESTGAMET2U1ID;
+	slowList.user4Id = stats[i].SLOWESTGAMET2U2ID;
+	slowList.user1Img = stats[i].SLOWESTGAMET1U1IMAGEPATH;
+	slowList.user2Img = stats[i].SLOWESTGAMET1U2IMAGEPATH;
+	slowList.user3Img = stats[i].SLOWESTGAMET2U1IMAGEPATH;
+	slowList.user4Img = stats[i].SLOWESTGAMET2U2IMAGEPATH;
+	slowList.diffsec=secConvert(t);
+	list.push(slowList);
+  }
+  $scope.slowgamearr = list;
+  $scope.$digest();
+ }
+ function quickGoal(stats){
+  var list = [];
+  for(var i = 0; i<stats.length; i++){
+
+	var quickList = {
+	user1 : '',
+	user2 : '',
+	diffsec : 0,
+	user1Id : 0,
+	user2Id : 0
+	};
+	var t ='';
+	if(stats[i].SLOWESTGOALTEAMID == 1){
+	quickList.user1 = stats[i].QUICKESTGOALT1U1NAME;
+	quickList.user2 = stats[i].QUICKESTGOALT1U2NAME;
+	t = stats[i].QUICKESTGOALDIFF_SEC;
+	quickList.user1Id = stats[i].QUICKESTGOALT1U1ID;
+	quickList.user2Id = stats[i].QUICKESTGOALT1U1ID;
+
+	}
+	else{
+	quickList.user1 = stats[i].QUICKESTGOALT2U1NAME;
+	quickList.user2 = stats[i].QUICKESTGOALT2U2NAME;
+	t = stats[i].QUICKESTGOALDIFF_SEC;
+	quickList.user1Id = stats[i].QUICKESTGOALT2U1ID;
+	quickList.user2Id = stats[i].QUICKESTGOALT2U1ID;
+	}
+	quickList.diffsec=secConvert(t);
+	list.push(quickList);
+  }
+  $scope.quickgoalarr = list;
+  $scope.$digest();
+ }
+
 }]);
+
