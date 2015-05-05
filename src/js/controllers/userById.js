@@ -61,6 +61,11 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
 		}
 	});
 
+
+	$scope.goToPlayer = function(playerid){
+		$location.path("/Users/"+playerid);
+	};
+
 	$scope.editUser = function(){
       $location.path("/editUser/" + $scope.user[0].USERID);
     };

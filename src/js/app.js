@@ -19,8 +19,8 @@ app.config(["$routeProvider","$httpProvider", function($routeProvider,$httpProvi
 		templateUrl: "templates/user.html",
 		controller: "UserIDController",
 	}).when("/table", {
-		templateUrl: "templates/newHome.html",
-		controller: "newHomeController",
+		templateUrl: "templates/table.html",
+		controller: "TableController",
 	}).when("/editUser/:UserId", {
 		templateUrl: "templates/editUser.html",
 		controller: "UserIDController",
@@ -29,6 +29,5 @@ app.config(["$routeProvider","$httpProvider", function($routeProvider,$httpProvi
 		controller: "UserIDController",
 	}).when("/addUser", {
 		templateUrl: "templates/addUser.html",
-		controller: "adminController",
 	}).otherwise({ redirectTo: "/" });
 }]);
