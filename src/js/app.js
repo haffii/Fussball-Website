@@ -21,5 +21,13 @@ app.config(["$routeProvider","$httpProvider", function($routeProvider,$httpProvi
 	}).when("/table", {
 		templateUrl: "templates/table.html",
 		controller: "TableController",
+	}).when("/editUser/:UserId", {
+		templateUrl: "templates/editUser.html",
+		controller: "UserIDController",
+	}).when("/changePassword/:UserId", {
+		templateUrl: "templates/changePassword.html",
+		controller: "UserIDController",
+	}).when("/addUser", {
+		templateUrl: "templates/addUser.html",
 	}).otherwise({ redirectTo: "/" });
 }]);

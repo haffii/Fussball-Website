@@ -1,0 +1,23 @@
+<div class="container main">
+
+	<div class="col-md-4"id="addUserContainer">
+		<div class="alert alert-danger" ng-cloak ng-show="errorMessageName != ''"> 
+			{{errorMessageName}}
+		</div>
+		
+		
+		<label for="name">Name</label><br>
+		<input type="text" id="name" ng-model="newName"/><br>
+		<label for="imgPath" id="imgPathLabel">Image path (ex. http://applicon.is/picture.jpg)</label>
+		<input type="text" id="imgPath" ng-model="newImagePath"/><br>
+		<div class="alert alert-danger" id="passwordError" ng-cloak ng-show="errorMessagePassword != ''"> 
+				{{errorMessagePassword}}
+		</div>
+		<label for="password" id="passwordLabel">Password</label><br>
+		<input type="password" id="password" ng-model="newPassword"/><br>
+		<button class="btn-primary addUserButton" ng-click="addUser(newName, newImagePath, newPassword)">Add user</button>
+	</div>
+	<div class="col-md-4" id="profilePicture">
+		<img class="profilePic" id="displayImage" src="{{newImagePath}}" onerror="this.src='images/empty.png'"/>
+	</div>
+</div>
