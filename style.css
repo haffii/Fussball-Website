@@ -45,6 +45,12 @@ h4{
 #shameTable{
   border: none;
 }
+#shameTable td{
+  border:none;
+}
+#shameTable tr td:hover{
+  border: 1px solid gray;
+}
 #wallOfShame{
   margin-left: 20%;
   margin-right: 20%;
@@ -55,6 +61,12 @@ h4{
 }
 .navbar {
   margin-bottom: 0px;
+}
+#newestShame1{
+  border-top:10px solid gold;
+  border-bottom:4px solid gold;
+  border-left: 2px solid gold;
+  border-right: 2px solid gold;
 }
 /*
   ---------------------------

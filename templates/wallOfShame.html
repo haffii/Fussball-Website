@@ -2,7 +2,7 @@
 	<div id = "wallOfShame">
 		<h1>Wall of shame</h1>
 		<table id='shameTable'>
-		<tr ng-repeat="game in ShameGame">
+		<tr ng-repeat="game in ShameGame" id = "newestShame{{game.ROWN}}">
 				<td ng-click="seePlayer(game.LOSER1ID)"> <img ng-src="{{game.LOSER1IMAGEPATH}}" height="120" width="90"/>
 					<p>{{game.LOSER1NAME}}</p></td>
 				<td ng-click="seePlayer(game.LOSER2ID)"><img ng-src="{{game.LOSER2IMAGEPATH}}" height="120" width="90"/><p>{{game.LOSER2NAME}}</p></td>
