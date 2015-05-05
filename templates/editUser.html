@@ -12,7 +12,7 @@
 		</div>
 		<label for="password" id="passwordLabel">Please enter your password</label><br>
 		<input type="password" id="password" ng-model="password"/><br>
-		<button class="btn-primary addUserButton" ng-click="saveChanges(newName, newImagePath, password)">Save changes</button>
+		<button class="addUserButton" ng-click="saveChanges(newName, newImagePath, password)">Save changes</button>
 	</div>
 	<div class="col-md-4" id="profilePicture">
 		<img class="profilePic" id="displayImage" src="{{newImagePath}}" onerror="this.src='images/empty.png'"/>

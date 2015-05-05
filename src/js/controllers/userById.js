@@ -38,7 +38,7 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
 					'success': function(resp) {
 						$scope.user = resp;
 						$scope.user[0].NOGAMES = 0;
-						$scope.noGamesPlayedError = "You have to play at least 5 game to get a ranking";
+						$scope.noGamesPlayedError = "You have to play at least 5 games to get a ranking";
 						$scope.newName = $scope.user[0].NAME;
 						$scope.newImagePath = $scope.user[0].IMAGEPATH;
 						$scope.$digest();
