@@ -226,6 +226,11 @@ table tr:hover td {
 /*
   UserbyId
 */
+
+#passwordError{
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
 .profile{
   width: 100%;
   overflow:hidden;

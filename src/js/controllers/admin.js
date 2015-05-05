@@ -2,11 +2,28 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
     $scope.newName = "";
     $scope.newImagePath = "";
     $scope.newPassword = "";
+    $scope.errorMessageName = "";
+    $scope.errorMessagePassword = "";
+
 
     $scope.addUser = function(newUsername, newImgPath, newPassword){
       var allowedExtension = ['jpeg', 'jpg', 'png'];
       var fileExtension = document.getElementById('imgPath').value.split('.').pop().toLowerCase();
       var isValidFile = false;
+
+      if($scope.newName === ''){
+        $scope.errorMessageName = "You must enter a valid name";
+        return;
+      }else{
+        $scope.errorMessageName = "";
+      }
+
+      if($scope.newPassword === ''){
+        $scope.errorMessagePassword = "Your account must have a password";
+        return;
+      }else{
+        $scope.errorMessagePassword = "";
+      }
 
       for(var index in allowedExtension) {
         if(fileExtension === allowedExtension[index]) {
@@ -45,6 +62,7 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
           $location.path("/users");
         }).
         error(function(data, status, headers, config){
+          $scope.errorMessage = data;
           console.log(data);
         });
     };

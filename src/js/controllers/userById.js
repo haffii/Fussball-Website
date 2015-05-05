@@ -5,6 +5,10 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
 	$scope.newName = "";
     $scope.newImagePath = "";
     $scope.password = "";
+    $scope.newPassword = "";
+    $scope.newPassword2 = "";
+    $scope.errorMessagePassword = "";
+    $scope.errorMessageName = "";
 
 	var headers = {
 		'Content-Type': 'application/json',
@@ -36,15 +40,69 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
 	});
 
 	$scope.editUser = function(){
-      console.log($scope.user[0].USERID);
       $location.path("/editUser/" + $scope.user[0].USERID);
     };
 
-   
+    $scope.changePassword = function(){
+      $location.path("changePassword/" + $scope.user[0].USERID);
+    };
+
+
+    $scope.saveNewPassword = function(oldPassword, newPassword){
+      if($scope.newPassword !== $scope.newPassword2){
+        $scope.errorMessagePassword = "New password fields do not match";
+        return;
+      }
+
+      var newUserInfo = {
+		"UserId":$scope.user[0].USERID,
+		"Password":oldPassword,
+		"NewPassword":newPassword
+      };
+
+      var userInfoString = JSON.stringify(newUserInfo);
+
+      var req = {
+        method: 'POST',
+        url: 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/changePassword.xsjs',
+        headers: {
+            'Content-Type': 'application/json',
+            'dataType':'json',
+            'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
+            //'Content-Length': userInfoString.length
+        },
+        data: userInfoString
+      };
+      console.log(newUserInfo);
+      $http(req).
+        success(function(){
+          console.log("successfully changed password");
+          $location.path("/users");
+        }).
+        error(function(data, status, headers, config){
+          $scope.errorMessagePassword = "Wrong password";
+        });
+    };
+
     $scope.saveChanges = function(newUsername, newImgPath, password){
       var allowedExtension = ['jpeg', 'jpg', 'png'];
       var fileExtension = document.getElementById('imgPath').value.split('.').pop().toLowerCase();
       var isValidFile = false;
+
+      if($scope.newName === ''){
+        $scope.errorMessageName = "You must have a valid name";
+        return;
+      }else{
+        $scope.errorMessageName = "";
+      }
+
+      if($scope.password === ''){
+        $scope.errorMessagePassword = "Please enter your password";
+        return;
+      }else{
+        $scope.errorMessagePassword = "";
+      }
+
 
       for(var index in allowedExtension) {
         if(fileExtension === allowedExtension[index]) {
@@ -88,7 +146,7 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
           $location.path("/users");
         }).
         error(function(data, status, headers, config){
-          console.log(data);
+          $scope.errorMessagePassword = "Wrong password";
         });
     };
 
