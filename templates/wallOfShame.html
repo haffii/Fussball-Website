@@ -1,0 +1,16 @@
+<div class="container main">
+	<div id = "wallOfShame">
+		<h1>Wall of shame</h1>
+		<table id='shameTable'>
+		<tr ng-repeat="game in ShameGame">
+				<td ng-click="seePlayer(game.LOSER1ID)"> <img ng-src="{{game.LOSER1IMAGEPATH}}" height="120" width="90"/>
+					<p>{{game.LOSER1NAME}}</p></td>
+				<td ng-click="seePlayer(game.LOSER2ID)"><img ng-src="{{game.LOSER2IMAGEPATH}}" height="120" width="90"/><p>{{game.LOSER2NAME}}</p></td>
+				<td><h2>0 - 10</h2><h5>{{game.STARTTIME}}</h5></td>
+				<td ng-click="seePlayer(game.WINNER1ID)"><img ng-src="{{game.WINNER1IMAGEPATH}}" height="120" width="90"/><p>{{game.WINNER1NAME}}</p></td> 
+		    	<td ng-click="seePlayer(game.WINNER2ID)"><img ng-src="{{game.WINNER2IMAGEPATH}}" height="120" width="90"/><p>{{game.WINNER2NAME}}</p></td> 
+			
+		</tr>
+	</table>
+	</div>
+</div>

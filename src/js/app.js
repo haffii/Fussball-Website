@@ -30,5 +30,8 @@ app.config(["$routeProvider","$httpProvider", function($routeProvider,$httpProvi
 	}).when("/addUser", {
 		templateUrl: "templates/addUser.html",
 		controller: "adminController",
+	}).when("/wallOfShame", {
+		templateUrl: "templates/wallOfShame.html",
+		controller: "WallOfShameController",
 	}).otherwise({ redirectTo: "/" });
 }]);

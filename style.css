@@ -38,7 +38,21 @@ h4{
   -webkit-animation: fadein 1s; /* Safari and Chrome */
   -o-animation: fadein 1s; /* Opera */
 }
+#shameScore{
+  display: inline;
+}
 
+#shameTable{
+  border: none;
+}
+#wallOfShame{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+#wallOfShame h1{
+  margin-left: 20%;
+  margin-right: 20%;
+}
 .navbar {
   margin-bottom: 0px;
 }
