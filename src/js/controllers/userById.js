@@ -9,6 +9,7 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
     $scope.newPassword2 = "";
     $scope.errorMessagePassword = "";
     $scope.errorMessageName = "";
+    $scope.noGamesPlayerError = "";
 
 	var headers = {
 		'Content-Type': 'application/json',
@@ -26,12 +27,33 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
 		'data' : { id: $routeParams.UserId},
 		'success': function(response) {
 			console.log(response);
-			$scope.user = response;
-			$scope.winp = ($scope.user[0].TOTWINS/$scope.user[0].NOGAMES*100).toFixed(2);
-			$scope.newName = $scope.user[0].NAME;
-			$scope.newImagePath = $scope.user[0].IMAGEPATH;
-			$scope.newPassword = "";
-			$scope.$digest();
+			if(response.length <= 0){
+				$.ajax({
+					'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/userById.xsjs',
+					'type': 'GET',
+					'dataType': 'json',
+					'headers':headers,
+					'contentType': 'application/json; charset=utf-8',
+					'data' : { id: $routeParams.UserId},
+					'success': function(resp) {
+						$scope.user = resp;
+						$scope.user[0].NOGAMES = 0;
+						$scope.noGamesPlayerError = "You have to play at least 5 game to get a ranking";
+						$scope.$digest();
+						console.log(resp);
+					},
+					'error': function(err){
+						console.log("error: " + err);
+					}
+				});
+			}else{
+				console.log("haffis response: " + response);
+				$scope.user = response;
+				$scope.winp = ($scope.user[0].TOTWINS/$scope.user[0].NOGAMES*100).toFixed(2);
+				$scope.newName = $scope.user[0].NAME;
+				$scope.newImagePath = $scope.user[0].IMAGEPATH;
+				$scope.newPassword = "";
+				$scope.$digest();}
 		},
 		'error' : function(response) {
 			console.log("error : ");
@@ -46,7 +68,6 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
     $scope.changePassword = function(){
       $location.path("changePassword/" + $scope.user[0].USERID);
     };
-
 
     $scope.saveNewPassword = function(oldPassword, newPassword){
       if($scope.newPassword !== $scope.newPassword2){

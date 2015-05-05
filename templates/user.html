@@ -18,8 +18,11 @@
 			<img src="{{user[0].IMAGEPATH}}" ></img>
 		</div>
 	</div>
-
+	<p class="alert alert-danger" ng-cloak ng-show="noGamesPlayerError != ''"> 
+			{{noGamesPlayerError}}
+		</p>
 	<div class="scoreProgress">
+		
 		<div class="spText">
 			<p style="text-align: center;">Won</p>
 		</div>
