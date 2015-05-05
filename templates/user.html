@@ -9,7 +9,10 @@
 		<div class="profileInfo col-md-3">
 			<h1 >{{user[0].NAME}}</h1>
 			<div>
-				<p>Rank : {{user[0].ELORANKING}}</p>
+				<p ng-cloak ng-show="noGamesPlayedError != ''"> 
+					Rank: {{noGamesPlayedError}}
+				</p>
+				<p ng-cloak ng-show="noGamesPlayedError == ''">Rank: {{user[0].ELORANKING}}</p>
 				<p>ELO : {{user[0].ELO}}</p>
 				<p>Games Played : {{user[0].NOGAMES}}</p>
 			</div>
@@ -18,9 +21,6 @@
 			<img src="{{user[0].IMAGEPATH}}" ></img>
 		</div>
 	</div>
-	<p class="alert alert-danger" ng-cloak ng-show="noGamesPlayerError != ''"> 
-			{{noGamesPlayerError}}
-		</p>
 	<div class="scoreProgress">
 		
 		<div class="spText">
