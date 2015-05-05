@@ -2,11 +2,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
 
 
   $scope.topList = {};
-<<<<<<< HEAD
   //$filter('number')(number, fractionSize);
-=======
-  // $filter('number')(number, fractionSize);
->>>>>>> 176de85e42167a9abd3c9420ab278c4e50a860e5
   var apiUrl = '10.41.112.52:3000/';
 	var socket = io.connect(apiUrl);
   var gameOn = false;

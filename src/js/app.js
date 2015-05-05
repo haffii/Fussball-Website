@@ -29,5 +29,6 @@ app.config(["$routeProvider","$httpProvider", function($routeProvider,$httpProvi
 		controller: "UserIDController",
 	}).when("/addUser", {
 		templateUrl: "templates/addUser.html",
+		controller: "adminController",
 	}).otherwise({ redirectTo: "/" });
 }]);

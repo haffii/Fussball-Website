@@ -1,10 +1,4 @@
 <div class="container main">
-	
-
-	<div ng-click="editUser()"><p>Edit user</p></div>
-	<div ng-click="changePassword()"><p>Change password</p></div>
-	
-
 	<div class="profile">
 		<div class="profileInfo col-md-3">
 			<h1 >{{user[0].NAME}}</h1>
@@ -19,6 +13,10 @@
 		</div>
 		<div class="profileImg col-md-3">
 			<img src="{{user[0].IMAGEPATH}}" ></img>
+			<div class="userButtons">
+				<button class="userButts" ng-click="editUser()">Edit user</button><br>
+				<button class="userButts" ng-click="changePassword()">Change password</button>
+			</div>
 		</div>
 	</div>
 	<div class="scoreProgress">
