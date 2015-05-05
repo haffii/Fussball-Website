@@ -15,28 +15,34 @@ var headers = {
     slowGoal(response);
     slowGame(response);
     quickGoal(response);
+    quickGame(response);
     console.log(response);
     }
 });
 $(document).ready(function(){
-    $("#hideAll").click(function(){
+    $("#lis1").click(function(){
+        $("#l1").show();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+    });
+    $("#lis2").click(function(){
+        $("#l1").hide();
+        $("#l2").show();
+        $("#l3").hide();
+        $("#l4").hide();
+    });
+    $("#lis3").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").show();
+        $("#l4").hide();
+    });
+    $("#lis4").click(function(){
         $("#l1").hide();
         $("#l2").hide();
         $("#l3").hide();
-    });
-    $("#showAll").click(function(){
-        $("#l1").show();
-        $("#l2").show();
-        $("#l3").show();
-    });
-    $("#lis1").click(function(){
-        $("#l1").toggle();
-    });
-    $("#lis2").click(function(){
-        $("#l2").toggle();
-    });
-    $("#lis3").click(function(){
-        $("#l3").toggle();
+        $("#l4").show();
     });
 
 });
@@ -174,6 +180,53 @@ return t;
   $scope.quickgoalarr = list;
   $scope.$digest();
  }
+ function quickGame(stats){
+  var list = [];
+  for(var i = 0; i<stats.length; i++){
 
+	var lis = {
+	user1 : '',
+	user2 : '',
+	user3 : '',
+	user4 : '',
+	diffsec : 0,
+	user1Id : 0,
+	user2Id : 0,
+	user3Id : 0,
+	user4Id : 0,
+	user1Img : '',
+	user2Img : '',
+	user3Img : '',
+	user4Img : ''
+	};
+	var t = '';
+	var min =0;
+	var sek =0;
+	
+	lis.user1 = stats[i].QUICKESTGAMET1U1NAME;
+	lis.user2 = stats[i].QUICKESTGAMET1U2NAME;
+	lis.user3 = stats[i].QUICKESTGAMET2U1NAME;
+	lis.user4 = stats[i].QUICKESTGAMET2U2NAME;
+	t = stats[i].SLOWESTGAMELENGTH;
+	lis.user1Id = stats[i].QUICKESTGAMET1U1ID;
+	lis.user2Id = stats[i].QUICKESTGAMET1U2ID;
+	lis.user3Id = stats[i].QUICKESTGAMET2U1ID;
+	lis.user4Id = stats[i].QUICKESTGAMET2U2ID;
+	lis.user1Img = stats[i].QUICKESTGAMET1U1IMAGEPATH;
+	lis.user2Img = stats[i].QUICKESTGAMET1U2IMAGEPATH;
+	lis.user3Img = stats[i].QUICKESTGAMET2U1IMAGEPATH;
+	lis.user4Img = stats[i].QUICKESTGAMET2U2IMAGEPATH;
+	lis.diffsec=secConvert(t);
+	list.push(lis);
+  }
+  $scope.quickgamearr = list;
+  $scope.$digest();
+ }
+var classHighlight = 'highlight';
+var $thumbs = $('.thumbnail').click(function(e) {
+    e.preventDefault();
+    $thumbs.removeClass(classHighlight);
+    $(this).addClass(classHighlight);
+});
 }]);
 

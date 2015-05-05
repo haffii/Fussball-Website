@@ -8,8 +8,8 @@ html{
 }
 
 body{
-  background-color:#2ba6cb;
-  background-image: url("/images/background.png");
+  background-color:#C5C6C9;
+  /*background-image: url("/images/background.png");*/
   background-size: 100% 100%;
   background-attachment: fixed;
 }
@@ -109,6 +109,9 @@ h4{
     background-color: #6090F0;
     color: white;
 }
+/*
+All tables
+*/
 table {
   font-family:Arial, Helvetica, sans-serif;
   color:#666;
@@ -347,4 +350,23 @@ Add user
   --------------------------
 */
 
-
+/*
+  Statlist in Statistics
+*/
+.highlight {
+    background-color: #979BA1;
+    font-weight: bold;
+    color: white;
+}
+.thumbnail
+{
+  width: 200px;
+  margin-bottom: 0;
+}
+#statMenu
+{
+/*  width: 45px;
+  left: 10px;
+  position: relative;
+  z-index: 1;*/
+}
