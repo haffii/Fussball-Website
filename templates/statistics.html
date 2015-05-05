@@ -2,12 +2,15 @@
 
 <div id="StatsTable" class="container">
 	<div id="statMenu" class="statClass">
-	<div id="lis1" class="thumbnail">Top 10 Slowest Goals:</div>
-	<div id="lis2" class="thumbnail">Top 10 Slowest Games:</div>
-	<div id="lis3" class="thumbnail">Top 10 Quickest Goals:</div>
-	<div id="lis4" class="thumbnail">Top 10 Quickest Games:</div>
+	<div id="lis1" class="thumbnail">Top 10 Slowest Goals</div>
+	<div id="lis2" class="thumbnail">Top 10 Slowest Games</div>
+	<div id="lis3" class="thumbnail">Top 10 Quickest Goals</div>
+	<div id="lis4" class="thumbnail">Top 10 Quickest Games</div>
+	<div id="lis5" class="thumbnail">Top 10 Highest ELO</div>
+	<div id="lis6" class="thumbnail">Top 10 Greatest Comebacks</div>
 	</div>
 	<div style="display:none" id = "l1">
+	<h2>Top 10 Slowest Goals</h2>
 	<table>
 		<tr>
 			<th>Place</th>
@@ -17,15 +20,17 @@
 		</tr>
 		<tr ng-repeat="x in slowgoalarr">
 				<td>{{$index + 1}}.</td>
-				<td><img ng-src="{{x.user1Img}}" height="80" width="60">{{x.user1}}</img></td>
-				<td><img ng-src="{{x.user2Img}}" height="80" width="60">{{x.user2}}</img></td>
-				<td>{{x.diffsec}}</td>
+				<td><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
+				<td><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
+				<td>{{x.diffsec}}s</td>
 			
 		</tr>
 	</table>
 	</div>
 	
 	<div style="display:none" id="l2">
+		<h2>Top 10 Slowest Games</h2>
+	
 		<table>
 		<tr>
 			<th>Place</th>
@@ -36,19 +41,21 @@
 		<tr ng-repeat="x in slowgamearr">
 				<td>{{$index + 1}}.</td>
 				<td>
-					<div><img ng-src="{{x.user1Img}}" height="80" width="60">{{x.user1}}</img></div>
-					<div><img ng-src="{{x.user2Img}}" height="80" width="60">{{x.user2}}</img></div>
+					<div><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
+					<div><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
 				</td>
 				<td>
-					<div><img ng-src="{{x.user3Img}}" height="80" width="60">{{x.user3}}</img></div>
-					<div><img ng-src="{{x.user4Img}}" height="80" width="60">{{x.user4}}</img></div>
+					<div><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
+					<div><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
-				<td>{{x.diffsec}}</td>
+				<td>{{x.diffsec}}s</td>
 		</tr>
 		</table>
 	</div>
 	
 	<div style="display:none" id="l3">
+		<h2>Top 10 Quickest Goals</h2>
+	
 	<table>
 		<tr>
 			<th>Place</th>
@@ -58,13 +65,15 @@
 		</tr>
 		<tr ng-repeat="x in quickgoalarr">
 				<td>{{$index + 1}}.</td>
-				<td><img ng-src="{{x.user1Img}}" height="80" width="60">{{x.user1}}</img></td>
-				<td><img ng-src="{{x.user2Img}}" height="80" width="60">{{x.user2}}</img></td>
+				<td><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
+				<td><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
 				<td>{{x.diffsec}}s</td>
 		</tr>
 	</table>
 	</div>
 	<div style="display:none" id="l4">
+		<h2>Top 10 Quickest Games</h2>
+	
 		<table>
 		<tr>
 			<th>Place</th>
@@ -75,15 +84,53 @@
 		<tr ng-repeat="x in quickgamearr">
 				<td>{{$index + 1}}.</td>
 				<td>
-					<div><img ng-src="{{x.user1Img}}" height="80" width="60">{{x.user1}}</img></div>
-					<div><img ng-src="{{x.user2Img}}" height="80" width="60">{{x.user2}}</img></div>
+					<div><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
+					<div><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
 				</td>
 				<td>
-					<div><img ng-src="{{x.user3Img}}" height="80" width="60">{{x.user3}}</img></div>
-					<div><img ng-src="{{x.user4Img}}" height="80" width="60">{{x.user4}}</img></div>
+					<div><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
+					<div><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
-				<td>{{x.diffsec}}</td>
+				<td>{{x.diffsec}}s</td>
 		</tr>
 		</table>
+	</div>
+	<div style="display:none" id="l5">
+		<h2>Top 10 Highest ELO</h2>
+	<table>
+		<tr>
+			<th>Place</th>
+			<th>Player</th>
+			<th>ELO Pts</th>
+		</tr>
+		<tr ng-repeat="x in eloarr">
+				<td>{{$index + 1}}.</td>
+				<td><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
+				<td>{{x.elo}}</td>
+		</tr>
+	</table>
+	</div>
+	<div style="display:none" id="l6">
+		<h2>Top 10 Greatest Comebacks</h2>
+	<table>
+		<tr>
+			<th>Place</th>
+			<th>Team1</th>
+			<th>Team2</th>
+			<th>Deficit</th>
+		</tr>
+		<tr ng-repeat="x in comebackarr">
+				<td>{{$index + 1}}.</td>
+				<td>
+					<div><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
+					<div><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
+				</td>
+				<td>
+					<div><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
+					<div><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
+				</td>
+				<td>{{x.deficit}}</td>
+		</tr>
+	</table>
 	</div>
 </div>

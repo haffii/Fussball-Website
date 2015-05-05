@@ -385,11 +385,7 @@ Add user
   --------------------------
 */
 
-<<<<<<< HEAD
 
-
-
-=======
 /*
   Statlist in Statistics
 */
@@ -403,11 +399,8 @@ Add user
   width: 200px;
   margin-bottom: 0;
 }
-#statMenu
+#StatsTable h2
 {
-/*  width: 45px;
-  left: 10px;
-  position: relative;
-  z-index: 1;*/
+  /*text-align: center;*/
 }
->>>>>>> origin/master
+
