@@ -233,7 +233,7 @@ return t;
 	lis.user2 = stats[i].QUICKESTGAMET1U2NAME;
 	lis.user3 = stats[i].QUICKESTGAMET2U1NAME;
 	lis.user4 = stats[i].QUICKESTGAMET2U2NAME;
-	t = stats[i].SLOWESTGAMELENGTH;
+	t = stats[i].QUICKESTGAMELENGTH;
 	lis.user1Id = stats[i].QUICKESTGAMET1U1ID;
 	lis.user2Id = stats[i].QUICKESTGAMET1U2ID;
 	lis.user3Id = stats[i].QUICKESTGAMET2U1ID;
