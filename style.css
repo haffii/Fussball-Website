@@ -163,6 +163,12 @@ h4{
     border: 1px solid white;
     color: black;
 }
+
+.homeProfile{
+  width: 99px;
+  height: auto;
+}
+
 /*
 All tables
 */
@@ -325,6 +331,8 @@ table tr:hover td {
 .actualImg{
   float:left;
   padding-left: 8%;
+  width: 150px;
+  height: auto;
 }
 
 .scoreProgress{

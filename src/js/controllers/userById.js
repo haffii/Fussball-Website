@@ -48,14 +48,28 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
 						console.log("error: " + err);
 					}
 				});
-			}else{
+			}
+      else{
 				console.log("haffis response: " + response);
 				$scope.user = response;
 				$scope.winp = ($scope.user[0].TOTWINS/$scope.user[0].NOGAMES*100).toFixed(2);
 				$scope.newName = $scope.user[0].NAME;
 				$scope.newImagePath = $scope.user[0].IMAGEPATH;
 				$scope.newPassword = "";
-				$scope.$digest();}
+				$scope.$digest();
+        console.log("OH EMM GJE");
+        $.ajax({
+          'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/gameHistory.xsjs',
+          'type': 'GET',
+          'dataType': 'json',
+          'headers':headers,
+          'contentType': 'application/json; charset=utf-8',
+          'data' : { id: $routeParams.UserId },
+          'success': function(response) {
+            console.log(response);
+          }
+        });
+      }
 		},
 		'error' : function(response) {
 			console.log("error : ");
