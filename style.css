@@ -8,7 +8,8 @@ html{
 }
 
 body{
-  background-color:#C5C6C9;
+
+  background-color:white;
   /*background-image: url("/images/background.png");*/
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -209,25 +210,32 @@ table tr:hover td {
   User list (Score page)
 */
 .Users{
-  border: 1px solid black;
+  margin: 0 auto;
+  border: 1px solid #a1a1a1;
   width: 200px;
-  height: 300px;
+  height: 200px;
   padding:10px;
-  margin-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px #8f8f8f;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .Users img{
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   height: 123px;
   width: 100px;
 }
 
 .profilePic{
-  width: 100px;
+  margin: 0 auto;
+  width: 99px;
   height: auto;
+}
+
+.eloText{
+  margin-top: -5px;
 }
 /*
   --------------------------
@@ -253,7 +261,7 @@ table tr:hover td {
 }
 
 .profile .profileImg {
-  width: 25%;
+  width: 206px;
   float: left;
 }
 
@@ -264,6 +272,11 @@ table tr:hover td {
 
 .profile .profileInfo div {
   margin-top: 20px;
+}
+
+.actualImg{
+  float:left;
+  padding-left: 8%;
 }
 
 .scoreProgress{
