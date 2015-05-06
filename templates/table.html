@@ -8,6 +8,12 @@
 		<div id="score">
 	      	<h1 id="team1" style="position:absolute; left:0;"/>
 	      	<h1 id="team2" style="position:absolute; right:0;"/>
+	      	
+	    </div>
+	    <div class="gameRelatedButtons">
+	    	<button class="btn btn-lg" id="startGame" ng-click="createGame()">Start game</button>
+			<button class="btn btn-lg" id="newGame" ng-click="newGame()">Select new players</button>
+			<button class="btn btn-lg" id="Rematch" ng-click="rematch()">Rematch</button>
 	    </div>
 		<img src="{{player11.ImagePath}}" ng-click="clickplayer(11)" style="position: absolute; top: 2%; left: 2%;">
 		<img src="{{player12.ImagePath}}" ng-click="clickplayer(12)" style="position: absolute; bottom: 2%; left: 2%;">
@@ -15,9 +21,7 @@
 		<img src="{{player22.ImagePath}}" ng-click="clickplayer(22)" style="position: absolute; bottom: 2%; right: 2%;">
 	</div>
 
-	<button id="startGame" ng-click="createGame()">Start</button>
-	<button id="newGame" ng-click="newGame()">newGame</button>
-	<button id="Rematch" ng-click="rematch()">Rematch</button>
+	
 
 </div>
 </div>

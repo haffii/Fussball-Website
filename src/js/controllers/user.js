@@ -89,7 +89,7 @@ var headers = {
     PlayersService.setPlayer12($scope.arr[nr[1]]);
     PlayersService.setPlayer21($scope.arr[nr[2]]);
     PlayersService.setPlayer22($scope.arr[nr[3]]);
-    $location.path("/");
+    $location.path("/table");
  };
 
 }]);

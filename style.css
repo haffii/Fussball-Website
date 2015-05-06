@@ -85,9 +85,21 @@ h4{
   margin-top: 35vh;
 }
 
+.gameRelatedButtons{
+  margin-top: 400px;
+  text-align: center;
+}
+
+
 #startGame, #Rematch, #newGame {
   display: none;
-  -webkit-border-radius: 28;
+  color: white;
+  margin: 20px;
+  background: -webkit-linear-gradient(180deg, #48d448, #18941a); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(180deg, #48d448, #18941a); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(180deg, #48d448, #18941a); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(180deg, #48d448, #18941a); /* Standard syntax */
+  /*-webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   font-family: Arial;
@@ -96,12 +108,12 @@ h4{
   background: #42d934;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  margin-left: 200px;
+  margin-left: 200px;*/
 }
 
 #startGame:hover, #Rematch:hover, #newGame:hover {
-  background: #56fc3c;
-  text-decoration: none;
+  /*background: #56fc3c;
+  text-decoration: none;*/
 }
 
 .scoreBoardContainer{
@@ -235,6 +247,7 @@ table tr:hover td {
 /*
   User list (Score page)
 */
+
 .Users{
   margin: 0 auto;
   border: 1px solid #a1a1a1;
