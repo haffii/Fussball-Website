@@ -42,12 +42,12 @@
 		<tr ng-repeat="x in slowgamearr">
 				<td>{{$index + 1}}.</td>
 				<td>
-					<div><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
-					<div><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
+					<div ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
+					<div ng-click="seePlayer(x.user2Id)"><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
 				</td>
 				<td>
-					<div><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
-					<div><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
+					<div ng-click="seePlayer(x.user3Id)"><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
+					<div ng-click="seePlayer(x.user4Id)"><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
 				<td>{{x.diffsec}}s</td>
 		</tr>
@@ -67,8 +67,8 @@
 		</tr>
 		<tr ng-repeat="x in quickgoalarr">
 				<td>{{$index + 1}}.</td>
-				<td><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
-				<td><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
+				<td ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
+				<td ng-click="seePlayer(x.user2Id)"><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
 				<td>{{x.date}}</td>
 				<td>{{x.diffsec}}s</td>
 		</tr>
@@ -87,12 +87,12 @@
 		<tr ng-repeat="x in quickgamearr">
 				<td>{{$index + 1}}.</td>
 				<td>
-					<div><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
-					<div><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
+					<div ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
+					<div ng-click="seePlayer(x.user2Id)"><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
 				</td>
 				<td>
-					<div><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
-					<div><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
+					<div ng-click="seePlayer(x.user3Id)"><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
+					<div ng-click="seePlayer(x.user4Id)"><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
 				<td>{{x.diffsec}}s</td>
 		</tr>
@@ -108,7 +108,7 @@
 		</tr>
 		<tr ng-repeat="x in eloarr">
 				<td>{{$index + 1}}.</td>
-				<td><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
+				<td ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
 				<td>{{x.elo}}</td>
 		</tr>
 	</table>
@@ -125,12 +125,12 @@
 		<tr ng-repeat="x in comebackarr">
 				<td>{{$index + 1}}.</td>
 				<td>
-					<div><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
-					<div><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
+					<div ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></div>
+					<div ng-click="seePlayer(x.user2Id)"><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></div>
 				</td>
 				<td>
-					<div><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
-					<div><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
+					<div ng-click="seePlayer(x.user3Id)"><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
+					<div ng-click="seePlayer(x.user4Id)"><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
 				<td>{{x.deficit}}</td>
 		</tr>
