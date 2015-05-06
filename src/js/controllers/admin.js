@@ -2,6 +2,7 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
     $scope.newName = "";
     $scope.newImagePath = "";
     $scope.newPassword = "";
+    $scope.newPassword2 = "";
     $scope.errorMessageName = "";
     $scope.errorMessagePassword = "";
 
@@ -20,6 +21,20 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
 
       if($scope.newPassword === ''){
         $scope.errorMessagePassword = "Your account must have a password";
+        return;
+      }else{
+        $scope.errorMessagePassword = "";
+      }
+
+      if($scope.newPassword2 === ''){
+        $scope.errorMessagePassword = "You must confirm your password";
+        return;
+      }else{
+        $scope.errorMessagePassword = "";
+      }
+
+      if($scope.newPassword !== $scope.newPassword2){
+        $scope.errorMessagePassword = "Your passwords do not match";
         return;
       }else{
         $scope.errorMessagePassword = "";
