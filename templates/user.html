@@ -7,7 +7,7 @@
 					Rank: {{noGamesPlayedError}}
 				</p>
 				<p ng-cloak ng-show="noGamesPlayedError == ''">Rank: {{user[0].ELORANKING}}</p>
-				<p>ELO : {{user[0].ELO}}</p>
+				<p>ELO : {{user[0].ELO | number:0}}</p>
 				<p>Games Played : {{user[0].NOGAMES}}</p>
 			</div>
 		</div>
