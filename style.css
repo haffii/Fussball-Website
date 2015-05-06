@@ -39,9 +39,35 @@ h4{
   -webkit-animation: fadein 1s; /* Safari and Chrome */
   -o-animation: fadein 1s; /* Opera */
 }
+#shameScore{
+  display: inline;
+}
 
+#shameTable{
+  border: none;
+}
+#shameTable td{
+  border:none;
+}
+#shameTable tr td:hover{
+  border: 1px solid gray;
+}
+#wallOfShame{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+#wallOfShame h1{
+  margin-left: 20%;
+  margin-right: 20%;
+}
 .navbar {
   margin-bottom: 0px;
+}
+#newestShame1{
+  border-top:10px solid gold;
+  border-bottom:4px solid gold;
+  border-left: 2px solid gold;
+  border-right: 2px solid gold;
 }
 /*
   ---------------------------
@@ -56,7 +82,7 @@ h4{
   background-color: blue;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 19%;
+  margin-top: 35vh;
 }
 
 #startGame, #Rematch, #newGame {
@@ -85,17 +111,17 @@ h4{
 .Scoreboard{
   position: relative;
   margin:0 auto;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   margin-top: 20px;
-  width: 600px;
-  height: 400px;
+  height: 90vh;
 }
 
 .Scoreboard img{
   position: absolute;
-  bottom: 0;
-  width: 100px;
-  height: 123px;
+  bottom: 10%;
+  width: 15%;
+  height: 22%;
+  border: 3px solid black;
 }
 
 .TopScore{
@@ -384,11 +410,7 @@ Add user
   --------------------------
 */
 
-<<<<<<< HEAD
 
-
-
-=======
 /*
   Statlist in Statistics
 */
@@ -402,11 +424,8 @@ Add user
   width: 200px;
   margin-bottom: 0;
 }
-#statMenu
+#StatsTable h2
 {
-/*  width: 45px;
-  left: 10px;
-  position: relative;
-  z-index: 1;*/
+  /*text-align: center;*/
 }
->>>>>>> origin/master
+

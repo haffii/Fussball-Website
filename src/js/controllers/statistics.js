@@ -16,6 +16,8 @@ var headers = {
     slowGame(response);
     quickGoal(response);
     quickGame(response);
+    eloStat(response);
+    comeback(response);
     console.log(response);
     }
 });
@@ -25,38 +27,61 @@ $(document).ready(function(){
         $("#l2").hide();
         $("#l3").hide();
         $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
     });
     $("#lis2").click(function(){
         $("#l1").hide();
         $("#l2").show();
         $("#l3").hide();
         $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
     });
     $("#lis3").click(function(){
         $("#l1").hide();
         $("#l2").hide();
         $("#l3").show();
         $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
     });
     $("#lis4").click(function(){
         $("#l1").hide();
         $("#l2").hide();
         $("#l3").hide();
         $("#l4").show();
+        $("#l5").hide();
+        $("#l6").hide();
+    });
+    $("#lis5").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").show();
+        $("#l6").hide();
+    });
+    $("#lis6").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").show();
     });
 
 });
- $scope.getPlayer=function(playerId){
- console.log(playerId);
- $location.path("users/");
- };
+$scope.seePlayer = function(playerid){
+	$location.path("/Users/"+playerid);
+};
  function secConvert(t)
  {
 if(t>=60)
 {
 min=parseInt(t/60);
 sek = (t%60);
-t= min + "m "+ sek + "s";
+t= min + "m "+ sek ;
 }
 return t;
  }
@@ -71,7 +96,8 @@ return t;
 	user1Id : 0,
 	user2Id : 0,
 	user1Img : '',
-	user2Img : ''
+	user2Img : '',
+	date: ''
 	};
 	var t = '';
 	if(stats[i].SLOWESTGOALTEAMID == 1){
@@ -93,7 +119,7 @@ return t;
 	slowList.user2Img = stats[i].SLOWESTGOALT2U2IMAGEPATH;
 	}
 	slowList.diffsec=secConvert(t);
-	
+	slowList.date = stats[i].SLOWESTGOALTIMEOFGOAL;
 	list.push(slowList);
   }
   $scope.slowgoalarr = list;
@@ -152,7 +178,8 @@ return t;
 	user1Id : 0,
 	user2Id : 0,
 	user1Img : '',
-	user2Img : ''
+	user2Img : '',
+	date: '', 
 	};
 	var t ='';
 	if(stats[i].SLOWESTGOALTEAMID == 1){
@@ -163,6 +190,7 @@ return t;
 	quickList.user2Id = stats[i].QUICKESTGOALT1U1ID;
 	quickList.user1Img = stats[i].QUICKESTGOALT1U1IMAGEPATH;
 	quickList.user2Img = stats[i].QUICKESTGOALT1U2IMAGEPATH;
+	quickList.date = stats[i].QUICKESTGOALTIMEOFGOAL;
 
 	}
 	else{
@@ -207,7 +235,7 @@ return t;
 	lis.user2 = stats[i].QUICKESTGAMET1U2NAME;
 	lis.user3 = stats[i].QUICKESTGAMET2U1NAME;
 	lis.user4 = stats[i].QUICKESTGAMET2U2NAME;
-	t = stats[i].SLOWESTGAMELENGTH;
+	t = stats[i].QUICKESTGAMELENGTH;
 	lis.user1Id = stats[i].QUICKESTGAMET1U1ID;
 	lis.user2Id = stats[i].QUICKESTGAMET1U2ID;
 	lis.user3Id = stats[i].QUICKESTGAMET2U1ID;
@@ -222,11 +250,71 @@ return t;
   $scope.quickgamearr = list;
   $scope.$digest();
  }
+ function eloStat(stats){
+  var list = [];
+  for(var i = 0; i<stats.length; i++){
+
+	var lis = {
+	user1 : '',
+	elo : 0,
+	user1Id : 0,
+	user1Img : ''
+	};
+	
+	lis.user1 = stats[i].TOPELONAME;
+	lis.elo = stats[i].TOPELOSCORE;
+	lis.user1Id = stats[i].TOPELOID;
+	lis.user1Img = stats[i].TOPELOIMAGEPATH;
+
+	list.push(lis);
+  }
+  $scope.eloarr = list;
+  $scope.$digest();
+ }
 var classHighlight = 'highlight';
 var $thumbs = $('.thumbnail').click(function(e) {
     e.preventDefault();
     $thumbs.removeClass(classHighlight);
     $(this).addClass(classHighlight);
 });
+function comeback(stats){
+  var list = [];
+  for(var i = 0; i<stats.length; i++){
+
+	var lis = {
+	user1 : '',
+	user2 : '',
+	user3 : '',
+	user4 : '',
+	deficit : 0,
+	user1Id : 0,
+	user2Id : 0,
+	user3Id : 0,
+	user4Id : 0,
+	user1Img : '',
+	user2Img : '',
+	user3Img : '',
+	user4Img : ''
+	};
+		
+	lis.user1 = stats[i].COMEBACKT1U1NAME;
+	lis.user2 = stats[i].COMEBACKT1U2NAME;
+	lis.user3 = stats[i].COMEBACKT2U1NAME;
+	lis.user4 = stats[i].COMEBACKT2U2NAME;
+	lis.deficit = stats[i].COMEBACK_DEFICIT;
+	lis.user1Id = stats[i].COMEBACKT1U1;
+	lis.user2Id = stats[i].COMEBACKT1U2;
+	lis.user3Id = stats[i].COMEBACKT2U1;
+	lis.user4Id = stats[i].COMEBACKT2U2;
+	lis.user1Img = stats[i].COMEBACKT1U1IMAGEPATH;
+	lis.user2Img = stats[i].COMEBACKT1U2IMAGEPATH;
+	lis.user3Img = stats[i].COMEBACKT2U1IMAGEPATH;
+	lis.user4Img = stats[i].COMEBACKT2U2IMAGEPATH;
+	
+	list.push(lis);
+  }
+  $scope.comebackarr = list;
+  $scope.$digest();
+ }
 }]);
 
