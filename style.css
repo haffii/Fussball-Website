@@ -129,13 +129,22 @@ h4{
 }
 
 .Scoreboard img{
+  
+}
+#tablePlayer
+{
   position: absolute;
   bottom: 10%;
   width: 15%;
-  height: 22%;
+  height: 24%;
   border: 3px solid black;
 }
-
+#teamImg
+{
+  /*-ms-transform: rotate(90deg); /* IE 9 */
+  /*-webkit-transform: rotate(90deg);  Chrome, Safari, Opera 
+  transform: rotate(90deg);*/
+*/}
 .TopScore{
   margin-top: 20px;
   width: 450px;
@@ -437,8 +446,18 @@ Add user
   width: 200px;
   margin-bottom: 0;
 }
-#StatsTable h2
+#statMenu
 {
-  /*text-align: center;*/
+  position: absolute;
+  left: auto;
+  right: auto;
 }
+#StatsTable
+{
+  position: absolute;
+  left: 25%;
+}
+
+
+
 
