@@ -8,11 +8,11 @@ html{
 }
 
 body{
-
   background-color:white;
   /*background-image: url("/images/background.png");*/
   background-size: 100% 100%;
   background-attachment: fixed;
+  font: white;
 }
 h1{
   display: inline;
@@ -270,7 +270,7 @@ table tr:hover td {
 
 .Users{
   margin: 0 auto;
-  border: 1px solid #a1a1a1;
+  border: 1px solid gray;
   width: 200px;
   height: 200px;
   padding:10px;
