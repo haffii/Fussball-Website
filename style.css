@@ -129,6 +129,7 @@ h4{
 }
 
 .Scoreboard img{
+
   
 }
 #tablePlayer
@@ -141,10 +142,9 @@ h4{
 }
 #teamImg
 {
-  /*-ms-transform: rotate(90deg); /* IE 9 */
-  /*-webkit-transform: rotate(90deg);  Chrome, Safari, Opera 
-  transform: rotate(90deg);*/
-*/}
+  width: 15%;
+  height: 15%;
+}
 .TopScore{
   margin-top: 20px;
   width: 450px;
@@ -453,12 +453,15 @@ Add user
 {
   width: 200px;
   margin-bottom: 0;
+  color: white;
+  background-color: #333;
 }
 #statMenu
 {
   position: absolute;
-  left: auto;
+  left: 0%;
   right: auto;
+
 }
 #StatsTable
 {
