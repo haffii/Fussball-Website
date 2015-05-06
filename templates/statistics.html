@@ -16,14 +16,15 @@
 			<th>Place</th>
 			<th>Team</th>
 			<th></th>
+			<th>Date</th>
 			<th>Time</th>
 		</tr>
 		<tr ng-repeat="x in slowgoalarr">
 				<td>{{$index + 1}}.</td>
-				<td><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
-				<td><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
+				<td ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
+				<td ng-click="seePlayer(x.user2Id)"><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
+				<td>{{x.date}}</td>
 				<td>{{x.diffsec}}s</td>
-			
 		</tr>
 	</table>
 	</div>
@@ -61,12 +62,14 @@
 			<th>Place</th>
 			<th>Team</th>
 			<th></th>
+			<th>Date</th>
 			<th>Time</th>
 		</tr>
 		<tr ng-repeat="x in quickgoalarr">
 				<td>{{$index + 1}}.</td>
 				<td><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
 				<td><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
+				<td>{{x.date}}</td>
 				<td>{{x.diffsec}}s</td>
 		</tr>
 	</table>

@@ -72,10 +72,9 @@ $(document).ready(function(){
     });
 
 });
- $scope.getPlayer=function(playerId){
- console.log(playerId);
- $location.path("users/");
- };
+$scope.seePlayer = function(playerid){
+	$location.path("/Users/"+playerid);
+};
  function secConvert(t)
  {
 if(t>=60)
@@ -97,7 +96,8 @@ return t;
 	user1Id : 0,
 	user2Id : 0,
 	user1Img : '',
-	user2Img : ''
+	user2Img : '',
+	date: ''
 	};
 	var t = '';
 	if(stats[i].SLOWESTGOALTEAMID == 1){
@@ -119,7 +119,7 @@ return t;
 	slowList.user2Img = stats[i].SLOWESTGOALT2U2IMAGEPATH;
 	}
 	slowList.diffsec=secConvert(t);
-	
+	slowList.date = stats[i].SLOWESTGOALTIMEOFGOAL;
 	list.push(slowList);
   }
   $scope.slowgoalarr = list;
@@ -178,7 +178,8 @@ return t;
 	user1Id : 0,
 	user2Id : 0,
 	user1Img : '',
-	user2Img : ''
+	user2Img : '',
+	date: '', 
 	};
 	var t ='';
 	if(stats[i].SLOWESTGOALTEAMID == 1){
@@ -189,6 +190,7 @@ return t;
 	quickList.user2Id = stats[i].QUICKESTGOALT1U1ID;
 	quickList.user1Img = stats[i].QUICKESTGOALT1U1IMAGEPATH;
 	quickList.user2Img = stats[i].QUICKESTGOALT1U2IMAGEPATH;
+	quickList.date = stats[i].QUICKESTGOALTIMEOFGOAL;
 
 	}
 	else{
