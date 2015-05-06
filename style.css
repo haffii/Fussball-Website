@@ -28,6 +28,11 @@ h4{
   margin-left: 200px;
 }
 
+h3{
+  font-size: 14pt;
+  margin-left: 0;
+}
+
 .main {
   background-color: white;
   height: 100%;
@@ -299,6 +304,10 @@ table tr:hover td {
   UserbyId
 */
 
+.headerForScore{
+  text-align: center;
+}
+
 #passwordError{
   margin-top: 20px;
   margin-bottom: -10px;
@@ -330,7 +339,7 @@ table tr:hover td {
 
 .actualImg{
   float:left;
-  padding-left: 8%;
+  padding-left: 12%;
   width: 150px;
   height: auto;
 }

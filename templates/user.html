@@ -3,12 +3,12 @@
 		<div class="profileInfo col-md-3">
 			<h1 >{{user[0].NAME}}</h1>
 			<div>
-				<p ng-cloak ng-show="noGamesPlayedError != ''"> 
+				<h3 class="userH4" ng-cloak ng-show="noGamesPlayedError != ''"> 
 					Rank: {{noGamesPlayedError}}
-				</p>
-				<p ng-cloak ng-show="noGamesPlayedError == ''">Rank: {{user[0].ELORANKING}}</p>
-				<p>ELO : {{user[0].ELO | number:0}}</p>
-				<p>Games Played : {{user[0].NOGAMES}}</p>
+				</h3>
+				<h3 class="userH4" ng-cloak ng-show="noGamesPlayedError == ''">Rank: {{user[0].ELORANKING}}</h3>
+				<h3>ELO : {{user[0].ELO | number:0}}</h3>
+				<h3>Games Played : {{user[0].NOGAMES}}</h3>
 			</div>
 		</div>
 		<div class="profileImg col-md-3">
@@ -19,6 +19,7 @@
 			</div>
 		</div>
 	</div>
+	<h3 class="headerForScore">Game played</h3>
 	<div class="scoreProgress">
 		
 		<div class="spText">
@@ -45,7 +46,7 @@
 			<p style="text-align: center;"> {{user[0].NOGAMES - user[0].TOTWINS}}</p>
 		</div>
 	</div>
-
+	<h3 class="headerForScore">Goals scored</h3>
 	<div class="scoreProgress">
 		<div class="spText">
 			<p style="text-align: center;">For</p>
