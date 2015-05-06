@@ -149,4 +149,5 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
       req.write(userInfoString);
       req.end();
     };*/
+
 }]);

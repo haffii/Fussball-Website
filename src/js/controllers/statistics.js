@@ -316,5 +316,7 @@ function comeback(stats){
   $scope.comebackarr = list;
   $scope.$digest();
  }
+
+
 }]);
 
