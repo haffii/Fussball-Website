@@ -7,6 +7,7 @@
 	<div id="lis4" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Quickest Games</div></div>
 	<div id="lis5" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Highest ELO</div></div>
 	<div id="lis6" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Greatest Comebacks</div></div>
+	<div id="lis7" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Fastest Players</div></div>
 	</div>
 <div id="StatsTable" class="container">
 	
@@ -134,6 +135,21 @@
 					<div ng-click="seePlayer(x.user4Id)"><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
 				<td>{{x.deficit}}</td>
+		</tr>
+	</table>
+	</div>
+	<div style="display:none" id="l7">
+		<h2>Top 10 Fastest Players</h2>
+	<table align="center">
+		<tr>
+			<th>Place</th>
+			<th>Player</th>
+			<th>Average Time</th>
+		</tr>
+		<tr ng-repeat="x in fastestarr">
+				<td>{{$index + 1}}.</td>
+				<td ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
+				<td>{{x.avgtime}}s</td>
 		</tr>
 	</table>
 	</div>

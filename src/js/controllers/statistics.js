@@ -18,6 +18,7 @@ var headers = {
     quickGame(response);
     eloStat(response);
     comeback(response);
+    fastest(response);
     console.log(response);
     }
 });
@@ -29,6 +30,7 @@ $(document).ready(function(){
         $("#l4").hide();
         $("#l5").hide();
         $("#l6").hide();
+        $("#l7").hide();
     });
     $("#lis2").click(function(){
         $("#l1").hide();
@@ -37,6 +39,7 @@ $(document).ready(function(){
         $("#l4").hide();
         $("#l5").hide();
         $("#l6").hide();
+        $("#l7").hide();
     });
     $("#lis3").click(function(){
         $("#l1").hide();
@@ -45,6 +48,7 @@ $(document).ready(function(){
         $("#l4").hide();
         $("#l5").hide();
         $("#l6").hide();
+        $("#l7").hide();
     });
     $("#lis4").click(function(){
         $("#l1").hide();
@@ -53,6 +57,7 @@ $(document).ready(function(){
         $("#l4").show();
         $("#l5").hide();
         $("#l6").hide();
+        $("#l7").hide();
     });
     $("#lis5").click(function(){
         $("#l1").hide();
@@ -61,6 +66,7 @@ $(document).ready(function(){
         $("#l4").hide();
         $("#l5").show();
         $("#l6").hide();
+        $("#l7").hide();
     });
     $("#lis6").click(function(){
         $("#l1").hide();
@@ -69,6 +75,16 @@ $(document).ready(function(){
         $("#l4").hide();
         $("#l5").hide();
         $("#l6").show();
+        $("#l7").hide();
+    });
+    $("#lis7").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
+        $("#l7").show();
     });
 
 });
@@ -77,13 +93,28 @@ $scope.seePlayer = function(playerid){
 };
  function secConvert(t)
  {
-if(t>=60)
-{
-min=parseInt(t/60);
-sek = (t%60);
-t= min + "m "+ sek ;
-}
-return t;
+	if(t>=60)
+	{
+	min=parseInt(t/60);
+	sek = (t%60);
+	t= min + "m "+ sek ;
+	}
+	return t;
+ }
+ function secConvert1(t)
+ {
+	if(t>=60)
+	{
+	min=parseInt(t/60);
+	sek = (t%60);
+	sek= Math.ceil(sek);
+	t= min + "m "+ sek ;
+	}
+	else
+	{
+		t= Math.ceil(t);
+	}
+	return t;
  }
  function slowGoal(stats){
   var list = [];
@@ -316,7 +347,28 @@ function comeback(stats){
   $scope.comebackarr = list;
   $scope.$digest();
  }
+ function fastest(stats){
+  var list = [];
+  for(var i = 0; i<stats.length; i++){
 
-
+	var lis = {
+	user1 : '',
+	avgtime : 0,
+	user1Id : 0,
+	user1Img : ''
+	};
+	
+	lis.user1 = stats[i].FASTESTPLAYERNAME;
+	var t = stats[i].FASTESTPLAYERAVGTIME;
+	lis.user1Id = stats[i].FASTESTPLAYERID;
+	lis.user1Img = stats[i].FASTESTPLAYERIMAGEPATH;
+	secConvert1(t);
+	lis.avgtime = t;
+	list.push(lis);
+  }
+  $scope.fastestarr = list;
+  $scope.$digest();
+ }
+ 
 }]);
 
