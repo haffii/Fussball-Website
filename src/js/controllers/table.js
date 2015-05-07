@@ -13,6 +13,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
                   $scope.player12 = data[1];
                   $scope.player21 = data[2];
                   $scope.player22 = data[3];
+                  console.log($scope.player11);
                   PlayersService.setPlayers(data);
                   gameOn = true;
                   PlayersService.setGameOn(true);

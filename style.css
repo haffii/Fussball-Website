@@ -173,6 +173,11 @@ h3{
   width: 15%;
   height: 15%;
 }
+#playerName
+{
+  width: 15%;
+  height: 15%;
+}
 .TopScore{
   margin-top: 20px;
   width: 450px;

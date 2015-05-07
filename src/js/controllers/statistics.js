@@ -230,26 +230,24 @@ $scope.seePlayer = function(playerid){
 	date: '', 
 	};
 	var t ='';
-	if(stats[i].SLOWESTGOALTEAMID == 1){
+	if(stats[i].QUICKESTGOALTEAMID == 1){
 	quickList.user1 = stats[i].QUICKESTGOALT1U1NAME;
 	quickList.user2 = stats[i].QUICKESTGOALT1U2NAME;
-	t = stats[i].QUICKESTGOALDIFF_SEC;
 	quickList.user1Id = stats[i].QUICKESTGOALT1U1ID;
 	quickList.user2Id = stats[i].QUICKESTGOALT1U1ID;
 	quickList.user1Img = stats[i].QUICKESTGOALT1U1IMAGEPATH;
 	quickList.user2Img = stats[i].QUICKESTGOALT1U2IMAGEPATH;
-	quickList.date = stats[i].QUICKESTGOALTIMEOFGOAL;
-
 	}
 	else{
 	quickList.user1 = stats[i].QUICKESTGOALT2U1NAME;
 	quickList.user2 = stats[i].QUICKESTGOALT2U2NAME;
-	t = stats[i].QUICKESTGOALDIFF_SEC;
 	quickList.user1Id = stats[i].QUICKESTGOALT2U1ID;
 	quickList.user2Id = stats[i].QUICKESTGOALT2U1ID;
 	quickList.user1Img = stats[i].QUICKESTGOALT2U1IMAGEPATH;
 	quickList.user2Img = stats[i].QUICKESTGOALT2U2IMAGEPATH;
 	}
+	quickList.date = stats[i].QUICKESTGOALTIMEOFGOAL;
+	t = stats[i].QUICKESTGOALDIFF_SEC;
 	quickList.diffsec=secConvert(t);
 	list.push(quickList);
   }
@@ -413,7 +411,7 @@ function comeback(stats){
 	var t = stats[i].FASTESTPLAYERAVGTIME;
 	lis.user1Id = stats[i].FASTESTPLAYERID;
 	lis.user1Img = stats[i].FASTESTPLAYERIMAGEPATH;
-	secConvert1(t);
+	t= secConvert1(t);
 	lis.avgtime = t;
 	list.push(lis);
   }
