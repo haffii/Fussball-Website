@@ -203,7 +203,8 @@ table {
   background:#eaebec;
   margin:20px;
   border:#ccc 1px solid;
-
+  margin-right: auto;
+  margin-left: auto;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   border-radius:3px;
@@ -478,24 +479,32 @@ Add user
 }
 .thumbnail
 {
-  width: 200px;
+  width: 100%;
   margin-bottom: 0;
   color: white;
   background-color: #333;
 }
 #statMenu
 {
-  position: absolute;
-  left: 0%;
-  right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 1;
 
 }
-#StatsTable
+#StatsTable h2
 {
-  position: absolute;
-  left: 25%;
+  padding-top: 5%;
+  text-align: center;
 }
-
+#statMenuTitle
+{
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 40px;
+  width: 200px;
+  margin-bottom: 15px;
+  padding-top: 5px;
+}
 
 
 
