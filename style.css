@@ -82,14 +82,14 @@ h3{
   color: white;
   font-weight: bold;
 }
-
+/*
 .appLogo{
   background-image: url('images/AppliconLogo2.png');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 220px 43px;
 }
-
+*/
 
 
 /*
@@ -100,12 +100,17 @@ h3{
   Home (Score page)
 */
 #score{
-  position: relative;
+  /*position: relative;*/
   width: 150px;
   background-color: blue;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 35vh;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px;
 }
 
 .gameRelatedButtons{
@@ -151,6 +156,10 @@ h3{
   height: 90vh;
 }
 
+.ScoreboardHome {
+  height: 400px;
+}
+
 .Scoreboard img{
 
   
@@ -188,8 +197,8 @@ h3{
 }
 
 .homeProfile{
-  width: 99px;
-  height: auto;
+  width:100px; 
+  height:123px;
 }
 
 /*
@@ -505,6 +514,4 @@ Add user
   margin-bottom: 15px;
   padding-top: 5px;
 }
-
-
 
