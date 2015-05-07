@@ -20,7 +20,6 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
       }
 
       if($scope.newPassword === ''){
-
         $scope.errorMessagePassword = "Your account must have a password";
         return;
       }else{
@@ -64,7 +63,7 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
         method: 'POST',
         url: 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/tempUser.xsjs',
         headers: {
-            'Content-Type': 'application/json; charset=utf-8',
+            'Content-Type': 'application/json',
             'dataType':'json',
             'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
             //'Content-Length': userInfoString.length
