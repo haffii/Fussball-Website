@@ -19,7 +19,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="noGamesPlayed" style="display:none;">
 	<h3 class="headerForScore">Game played</h3>
 	<div class="scoreProgress">
 		
@@ -96,7 +95,7 @@
 					<p>{{x.WORSTPARTNERNAME}}</p>
 					<p>Games with : {{x.WORSTPARTNERGAMES}}</p>
 					<p>Lost : {{x.WORSTPARTNERGAMES-x.WORSTPARTNERWINS}}</p>
-					<p>{{(1-x.WORSTPARTNERPERCENTAGE)*100}}%</p>
+					<p>{{(x.WORSTPARTNERGAMES-x.WORSTPARTNERWINS)*100}}%</p>
 				</div>
 			</div>
 		</div>
@@ -108,8 +107,8 @@
 					<img class ="profilePic" ng-src="{{x.TOUGHESTOPPONENTIMAGEPATH}}"></img>
 					<p>{{x.TOUGHESTOPPONENTNAME}}</p>
 					<p>Games against : {{x.TOUGHESTOPPONENTGAMES}}</p>
-					<p>Lost :  {{x.TOUGHESTOPPONENTGAMES-x.TOUGHESTOPPONENTWINS}}</p>
-					<p>{{(1-x.TOUGHESTOPPONENTPERCENTAGE)*100}}%</p>
+					<p>Lost : {{x.TOUGHESTOPPONENTGAMES-x.TOUGHESTOPPONENTWINS}}</p>
+					<p>{{(x.TOUGHESTOPPONENTGAMES-x.TOUGHESTOPPONENTWINS)*100}}%</p>
 				</div>
 			</div>
 		</div>
@@ -120,19 +119,26 @@
 				<div class="UsersById bull" ng-click="goToPlayer(x.EASIESTOPPONENTID);">
 					<img class ="profilePic" ng-src="{{x.EASIESTOPPONENTIMAGEPATH}}"></img>
 					<p>{{x.EASIESTOPPONENTNAME}}</p>
-					<p>Games against : {{x.EASIESTOPPONENTGAMES}}</p>
+					<p>Games with : {{x.EASIESTOPPONENTGAMES}}</p>
 					<p>Won : {{x.EASIESTOPPONENTWINS}}</p>
 					<p>{{x.EASIESTOPPONENTPERCENTAGE*100}}%</p>
 				</div>
 			</div>
 		</div>
+		<div>
+		
+		<table id='gameHistory'>
+			<tr ng-repeat="game in gameHistory" >
+				<td> <img ng-src="{{game.t1u1image}}" height="60" width="40"/>
+				<td><img ng-src="{{game.t1u2image}}" height="60" width="40"/></td>
+				<td><h2>{{game.scoreteam1}} - {{game.scoreteam2}}</h2><h5>{{game.starttime}}</h5></td>
+				<td><img ng-src="{{game.t2u1image}}" height="60" width="40"/><p></p></td> 
+		    	<td ><img ng-src="{{game.t2u2image}}" height="60" width="40"/><p></p></td> 
+			</tr>
+		</table>
+		</div>
 	</div>
-<<<<<<< HEAD
+
+	<div>
 </div>
-=======
-<!--
-	<ul style="margin-top:40px;">
-    	<li ng-repeat="(key,val) in user[0]">{{key}}: {{val}}</li>
-	</ul>-->
->>>>>>> a6dddf9b95b9eed5a0252ecddc0965772524e9f7
 </div>
