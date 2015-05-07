@@ -497,5 +497,9 @@ Add user
 }
 
 
+#gameHistory{
+  visibility: none;
+}
+
 
 
