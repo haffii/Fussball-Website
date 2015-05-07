@@ -26,7 +26,7 @@
 				<td ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
 				<td ng-click="seePlayer(x.user2Id)"><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
 				<td>{{x.date}}</td>
-				<td>{{x.diffsec}}s</td>
+				<td id="lastColumn">{{x.diffsec}}s</td>
 		</tr>
 	</table>
 	</div>
@@ -37,8 +37,8 @@
 		<table align="center">
 		<tr>
 			<th>Place</th>
-			<th>Team 1</th>
-			<th>Team 2</th>
+			<th>Winning Team</th>
+			<th>Losing Team</th>
 			<th>Time</th>
 		</tr>
 		<tr ng-repeat="x in slowgamearr">
@@ -51,7 +51,7 @@
 					<div ng-click="seePlayer(x.user3Id)"><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
 					<div ng-click="seePlayer(x.user4Id)"><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
-				<td>{{x.diffsec}}s</td>
+				<td id="lastColumn">{{x.diffsec}}s</td>
 		</tr>
 		</table>
 	</div>
@@ -72,7 +72,7 @@
 				<td ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
 				<td ng-click="seePlayer(x.user2Id)"><img ng-src="{{x.user2Img}}" height="80" width="60">  {{x.user2}}</img></td>
 				<td>{{x.date}}</td>
-				<td>{{x.diffsec}}s</td>
+				<td id="lastColumn">{{x.diffsec}}s</td>
 		</tr>
 	</table>
 	</div>
@@ -82,8 +82,8 @@
 		<table align="center">
 		<tr>
 			<th>Place</th>
-			<th>Team 1</th>
-			<th>Team 2</th>
+			<th>Winning Team</th>
+			<th>Losing Team</th>
 			<th>Time</th>
 		</tr>
 		<tr ng-repeat="x in quickgamearr">
@@ -96,7 +96,7 @@
 					<div ng-click="seePlayer(x.user3Id)"><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
 					<div ng-click="seePlayer(x.user4Id)"><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
-				<td>{{x.diffsec}}s</td>
+				<td id="lastColumn">{{x.diffsec}}s</td>
 		</tr>
 		</table>
 	</div>
@@ -111,7 +111,7 @@
 		<tr ng-repeat="x in eloarr">
 				<td>{{$index + 1}}.</td>
 				<td ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
-				<td>{{x.elo}}</td>
+				<td id="lastColumn">{{x.elo}}</td>
 		</tr>
 	</table>
 	</div>
@@ -120,9 +120,9 @@
 	<table align="center">
 		<tr>
 			<th>Place</th>
-			<th>Team1</th>
-			<th>Team2</th>
-			<th>Deficit</th>
+			<th>Winning Team</th>
+			<th>Losing Team</th>
+			<th>Goal Deficit</th>
 		</tr>
 		<tr ng-repeat="x in comebackarr">
 				<td>{{$index + 1}}.</td>
@@ -134,7 +134,7 @@
 					<div ng-click="seePlayer(x.user3Id)"><img ng-src="{{x.user3Img}}" height="80" width="60">  {{x.user3}}</img></div>
 					<div ng-click="seePlayer(x.user4Id)"><img ng-src="{{x.user4Img}}" height="80" width="60">  {{x.user4}}</img></div>
 				</td>
-				<td>{{x.deficit}}</td>
+				<td id="lastColumn">{{x.deficit}}</td>
 		</tr>
 	</table>
 	</div>
@@ -149,7 +149,7 @@
 		<tr ng-repeat="x in fastestarr">
 				<td>{{$index + 1}}.</td>
 				<td ng-click="seePlayer(x.user1Id)"><img ng-src="{{x.user1Img}}" height="80" width="60">  {{x.user1}}</img></td>
-				<td>{{x.avgtime}}s</td>
+				<td id="lastColumn">{{x.avgtime}}s</td>
 		</tr>
 	</table>
 	</div>

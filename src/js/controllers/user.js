@@ -3,7 +3,7 @@ app.controller("UserController", ["$scope", "$location", "SocketService","Player
 var headers = {
   'Content-Type': 'application/json',
   'dataType':'json',
-  'Accept':'application/json',
+  'Accept': 'application/json; charset=utf-8',
   'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
 };
  $.ajax({

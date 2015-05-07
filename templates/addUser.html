@@ -1,6 +1,7 @@
 <div class="container main">
 
 	<div class="col-md-4"id="addUserContainer">
+	<form accept-charset="UTF-8">
 		<div class="alert alert-danger" ng-cloak ng-show="errorMessageName != ''"> 
 			{{errorMessageName}}
 		</div>
@@ -17,8 +18,9 @@
 		<input type="password" id="password" ng-model="newPassword"/><br>
 		<label for="password2" id="passwordLabel">Retype Password</label><br>
 		<input type="password" id="password" ng-model="newPassword2"/><br>
-		<button class="addUserButton" ng-click="addUser(newName, newImagePath, newPassword)">Add user</button>
+		<input type="submit" class="addUserButton" value = "Add user" ng-click="addUser(newName, newImagePath, newPassword)"/>
 	</div>
+	</form>
 	<div class="col-md-4" id="profilePicture">
 		<img class="profilePic" id="displayImage" src="{{newImagePath}}" onerror="this.src='images/empty.png'"/>
 	</div>

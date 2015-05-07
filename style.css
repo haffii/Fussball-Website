@@ -82,14 +82,14 @@ h3{
   color: white;
   font-weight: bold;
 }
-/*
+
 .appLogo{
   background-image: url('images/AppliconLogo2.png');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 220px 43px;
 }
-*/
+
 
 
 /*
@@ -106,7 +106,6 @@ h3{
   margin-left: auto;
   margin-right: auto;
   margin-top: 35vh;
-
 }
 
 .gameRelatedButtons{
@@ -152,10 +151,6 @@ h3{
   height: 90vh;
 }
 
-.ScoreboardHome {
-  height: 400px;
-}
-
 .Scoreboard img{
 
   
@@ -180,8 +175,8 @@ h3{
 
 
 .homeProfile{
-  width:100px; 
-  height:123px;
+  width: 99px;
+  height: auto;
 }
 
 /*
@@ -195,8 +190,7 @@ table {
   background:#eaebec;
   margin:20px;
   border:#ccc 1px solid;
-  margin-right: auto;
-  margin-left: auto;
+
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   border-radius:3px;
@@ -484,30 +478,28 @@ Add user
 }
 .thumbnail
 {
-  width: 100%;
+  width: 200px;
   margin-bottom: 0;
   color: white;
   background-color: #333;
 }
 #statMenu
 {
-  padding-left: 0;
-  padding-right: 0;
-  z-index: 1;
+  position: absolute;
+  left: 0%;
+  right: auto;
 
 }
-#StatsTable h2
+#StatsTable
 {
-  padding-top: 5%;
-  text-align: center;
+  position: absolute;
+  left: 25%;
 }
-#statMenuTitle
-{
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 40px;
-  width: 200px;
-  margin-bottom: 15px;
-  padding-top: 5px;
+
+
+#gameHistory{
+  visibility: none;
 }
+
+
 
