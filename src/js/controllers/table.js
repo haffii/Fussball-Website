@@ -13,7 +13,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
                   $scope.player12 = data[1];
                   $scope.player21 = data[2];
                   $scope.player22 = data[3];
-                  //console.log($player21);
+                  
                   PlayersService.setPlayers(data);
                   gameOn = true;
                   PlayersService.setGameOn(true);
@@ -24,8 +24,9 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
                   $scope.player12 = "Player 2";
                   $scope.player21 = "Player 1";
                   $scope.player22 = "Player 2";
-                  PlayersService.setCurrent(null);
                   
+                  PlayersService.setCurrent(null);
+
                   if(PlayersService.getPlayer11()){
                     $scope.player11 = PlayersService.getPlayer11();
                      PlayersService.setCurrent(null);
@@ -44,13 +45,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
                   }
                  if(PlayersService.getPlayer11() && PlayersService.getPlayer12() && PlayersService.getPlayer21() && PlayersService.getPlayer22()){
                    $('#startGame').show();
-
                   }
-                  // $scope.player11 = name($scope.player11);
-                  // $scope.player12 = name($scope.player12);
-                  // $scope.player21 = name($scope.player21);
-                  // $scope.player22 = name($scope.player22);
-                  // console.log($scope.player21.Name);
                   $scope.$digest();
               } 
             }
@@ -203,18 +198,45 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
       $scope.player21 = null;
       $scope.player22 = null;
     };
-// function name(obj){
+function name(obj){
+  for(var i = 0; i<obj.length; i++){
+    var lo1 = obj[i].LOSER1NAME.split(" ");
+    var lo2 = obj[i].LOSER2NAME.split(" ");
+    var wi1 = obj[i].WINNER1NAME.split(" ");
+    var wi2 = obj[i].WINNER2NAME.split(" ");
+    obj[i].STARTTIME = obj[i].STARTTIME.split(" ")[0];
+    
+    if(lo1.length > 2){
+      obj[i].LOSER1NAME = lo1[0]+" "+lo1[1];
+    }
+    else{
+      obj[i].LOSER1NAME = lo1[0];
+    }
+    if(lo2.length > 2){
+      obj[i].LOSER2NAME = lo2[0]+" "+lo2[1];
+    }
+    else{
+      obj[i].LOSER2NAME = lo2[0];
+    }
+    if(wi1.length > 2){
+      obj[i].WINNER1NAME = wi1[0]+" "+wi1[1];
+    }
+    else{
+      obj[i].WINNER1NAME = wi1[0];
+    }
+    if(wi2.length > 2){
+      obj[i].WINNER2NAME = wi2[0]+" "+wi2[1];
+    }
+    else{
+      obj[i].WINNER2NAME = wi2[0];
+    }
 
-//     var nam = obj.Name.split(" ");
-//     if(nam.length > 2){
-//       obj.Name = nam[0]+" "+nam[1];
-//     }
-//     else{
-//       obj.Name = nam[0];
-//     }
-//     var ob = obj.Name;
-//   return ob;
-// }
+    
+  }
+  $scope.names = obj;
+  $scope.$digest();
+  console.log(obj);
+}
 /*
 $.fn.countdown = function (callback, duration) {
   var container = $(this[0]).html(duration);
