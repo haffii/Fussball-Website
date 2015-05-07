@@ -151,10 +151,13 @@ h3{
   height: 90vh;
 }
 
-.Scoreboard img{
-
-  
+.ScoreboardHome {
+  height: 400px;
 }
+
+.Scoreboard img{
+}
+
 #tablePlayer
 {
   position: absolute;
@@ -175,8 +178,8 @@ h3{
 
 
 .homeProfile{
-  width: 99px;
-  height: auto;
+  width:100px; 
+  height:123px;
 }
 
 /*
@@ -190,7 +193,8 @@ table {
   background:#eaebec;
   margin:20px;
   border:#ccc 1px solid;
-
+  margin-right: auto;
+  margin-left: auto;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   border-radius:3px;
@@ -485,15 +489,25 @@ Add user
 }
 #statMenu
 {
-  position: absolute;
-  left: 0%;
-  right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 1;
 
+}
+
+#statMenuTitle
+{
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 40px;
+  width: 200px;
+  margin-bottom: 15px;
+  padding-top: 5px;
 }
 #StatsTable
 {
-  position: absolute;
-  left: 25%;
+  padding-top: 5%;
+  text-align: center;
 }
 
 
