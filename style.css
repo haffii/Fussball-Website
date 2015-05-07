@@ -510,4 +510,7 @@ Add user
   margin-bottom: 15px;
   padding-top: 5px;
 }
-
+#lastColumn
+{
+  text-align: center;
+}
