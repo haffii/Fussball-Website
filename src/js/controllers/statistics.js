@@ -160,7 +160,7 @@ $scope.seePlayer = function(playerid){
   var list = [];
   for(var i = 0; i<stats.length; i++){
 
-	var slowList = {
+	var lis = {
 	user1 : '',
 	user2 : '',
 	user3 : '',
@@ -178,22 +178,39 @@ $scope.seePlayer = function(playerid){
 	var t = '';
 	var min =0;
 	var sek =0;
-	
-	slowList.user1 = stats[i].SLOWESTGAMET1U1NAME;
-	slowList.user2 = stats[i].SLOWESTGAMET1U2NAME;
-	slowList.user3 = stats[i].SLOWESTGAMET2U1NAME;
-	slowList.user4 = stats[i].SLOWESTGAMET2U2NAME;
+	if ((stats[i].SLOWESTGAMEWINNINGTEAM) ==1) 
+	{
+		lis.user1 = stats[i].SLOWESTGAMET1U1NAME;
+		lis.user2 = stats[i].SLOWESTGAMET1U2NAME;
+		lis.user3 = stats[i].SLOWESTGAMET2U1NAME;
+		lis.user4 = stats[i].SLOWESTGAMET2U2NAME;
+		lis.user1Id = stats[i].SLOWESTGAMET1U1;
+		lis.user2Id = stats[i].SLOWESTGAMET1U2;
+		lis.user3Id = stats[i].SLOWESTGAMET2U1;
+		lis.user4Id = stats[i].SLOWESTGAMET2U2;
+		lis.user1Img = stats[i].SLOWESTGAMET1U1IMAGEPATH;
+		lis.user2Img = stats[i].SLOWESTGAMET1U2IMAGEPATH;
+		lis.user3Img = stats[i].SLOWESTGAMET2U1IMAGEPATH;
+		lis.user4Img = stats[i].SLOWESTGAMET2U2IMAGEPATH;
+	}
+	else
+	{
+		lis.user1 = stats[i].SLOWESTGAMET2U1NAME;
+		lis.user2 = stats[i].SLOWESTGAMET2U2NAME;
+		lis.user3 = stats[i].SLOWESTGAMET1U1NAME;
+		lis.user4 = stats[i].SLOWESTGAMET1U2NAME;
+		lis.user1Id = stats[i].SLOWESTGAMET2U1;
+		lis.user2Id = stats[i].SLOWESTGAMET2U2;
+		lis.user3Id = stats[i].SLOWESTGAMET1U1;
+		lis.user4Id = stats[i].SLOWESTGAMET1U2;
+		lis.user1Img = stats[i].SLOWESTGAMET2U1IMAGEPATH;
+		lis.user2Img = stats[i].SLOWESTGAMET2U2IMAGEPATH;
+		lis.user3Img = stats[i].SLOWESTGAMET1U1IMAGEPATH;
+		lis.user4Img = stats[i].SLOWESTGAMET1U2IMAGEPATH;
+	}
 	t = stats[i].SLOWESTGAMELENGTH;
-	slowList.user1Id = stats[i].SLOWESTGAMET1U1ID;
-	slowList.user2Id = stats[i].SLOWESTGAMET1U2ID;
-	slowList.user3Id = stats[i].SLOWESTGAMET2U1ID;
-	slowList.user4Id = stats[i].SLOWESTGAMET2U2ID;
-	slowList.user1Img = stats[i].SLOWESTGAMET1U1IMAGEPATH;
-	slowList.user2Img = stats[i].SLOWESTGAMET1U2IMAGEPATH;
-	slowList.user3Img = stats[i].SLOWESTGAMET2U1IMAGEPATH;
-	slowList.user4Img = stats[i].SLOWESTGAMET2U2IMAGEPATH;
-	slowList.diffsec=secConvert(t);
-	list.push(slowList);
+	lis.diffsec=secConvert(t);
+	list.push(lis);
   }
   $scope.slowgamearr = list;
   $scope.$digest();
@@ -261,20 +278,37 @@ $scope.seePlayer = function(playerid){
 	var t = '';
 	var min =0;
 	var sek =0;
-	
-	lis.user1 = stats[i].QUICKESTGAMET1U1NAME;
-	lis.user2 = stats[i].QUICKESTGAMET1U2NAME;
-	lis.user3 = stats[i].QUICKESTGAMET2U1NAME;
-	lis.user4 = stats[i].QUICKESTGAMET2U2NAME;
+	if ((stats[i].QUICKESTGAMEWINNINGTEAM) ==1) 
+	{
+		lis.user1 = stats[i].QUICKESTGAMET1U1NAME;
+		lis.user2 = stats[i].QUICKESTGAMET1U2NAME;
+		lis.user3 = stats[i].QUICKESTGAMET2U1NAME;
+		lis.user4 = stats[i].QUICKESTGAMET2U2NAME;
+		lis.user1Id = stats[i].QUICKESTGAMET1U1;
+		lis.user2Id = stats[i].QUICKESTGAMET1U2;
+		lis.user3Id = stats[i].QUICKESTGAMET2U1;
+		lis.user4Id = stats[i].QUICKESTGAMET2U2;
+		lis.user1Img = stats[i].QUICKESTGAMET1U1IMAGEPATH;
+		lis.user2Img = stats[i].QUICKESTGAMET1U2IMAGEPATH;
+		lis.user3Img = stats[i].QUICKESTGAMET2U1IMAGEPATH;
+		lis.user4Img = stats[i].QUICKESTGAMET2U2IMAGEPATH;
+	}
+	else
+	{
+		lis.user1 = stats[i].QUICKESTGAMET2U1NAME;
+		lis.user2 = stats[i].QUICKESTGAMET2U2NAME;
+		lis.user3 = stats[i].QUICKESTGAMET1U1NAME;
+		lis.user4 = stats[i].QUICKESTGAMET1U2NAME;
+		lis.user1Id = stats[i].QUICKESTGAMET2U1;
+		lis.user2Id = stats[i].QUICKESTGAMET2U2;
+		lis.user3Id = stats[i].QUICKESTGAMET1U1;
+		lis.user4Id = stats[i].QUICKESTGAMET1U2;
+		lis.user1Img = stats[i].QUICKESTGAMET2U1IMAGEPATH;
+		lis.user2Img = stats[i].QUICKESTGAMET2U2IMAGEPATH;
+		lis.user3Img = stats[i].QUICKESTGAMET1U1IMAGEPATH;
+		lis.user4Img = stats[i].QUICKESTGAMET1U2IMAGEPATH;
+	}
 	t = stats[i].QUICKESTGAMELENGTH;
-	lis.user1Id = stats[i].QUICKESTGAMET1U1ID;
-	lis.user2Id = stats[i].QUICKESTGAMET1U2ID;
-	lis.user3Id = stats[i].QUICKESTGAMET2U1ID;
-	lis.user4Id = stats[i].QUICKESTGAMET2U2ID;
-	lis.user1Img = stats[i].QUICKESTGAMET1U1IMAGEPATH;
-	lis.user2Img = stats[i].QUICKESTGAMET1U2IMAGEPATH;
-	lis.user3Img = stats[i].QUICKESTGAMET2U1IMAGEPATH;
-	lis.user4Img = stats[i].QUICKESTGAMET2U2IMAGEPATH;
 	lis.diffsec=secConvert(t);
 	list.push(lis);
   }
