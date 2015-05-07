@@ -57,6 +57,7 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
 				$scope.newImagePath = $scope.user[0].IMAGEPATH;
 				$scope.newPassword = "";
 				$scope.$digest();
+        $(".noGamesPlayed").show();
         console.log("OH EMM GJE");
         $.ajax({
           'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/gameHistory.xsjs',

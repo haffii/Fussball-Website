@@ -173,24 +173,11 @@ h3{
   width: 15%;
   height: 15%;
 }
+
 .TopScore{
-  margin-top: 20px;
-  width: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid black;
+  border: 2px solid gray;
 }
 
-.TopScore td {
-    border: 1px solid white;
-    color: black;
-    width: 30%;
-}
-
-.TopScore th {
-    border: 1px solid white;
-    color: black;
-}
 
 .homeProfile{
   width:100px; 
@@ -296,7 +283,20 @@ table tr:hover td {
   margin: 0 auto;
   border: 1px solid gray;
   width: 200px;
-  height: 200px;
+  height: 220px;
+  padding:10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px #8f8f8f;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.UsersById {
+  margin: 0 auto;
+  border: 1px solid gray;
+  width: 200px;
+  height: 300px;
   padding:10px;
   margin-top: 10px;
   margin-bottom: 10px;
