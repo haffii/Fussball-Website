@@ -1,4 +1,21 @@
 <div id="container main">
+<div>
+	<h2 >Table Statistics</h2>
+	<h3>Total games played : {{systemStats[0].TOTGAMESPLAYED}}</h3>
+	<h3>Total time played: {{systemStats[0].TOTGAMETIME}}min</h3>
+
+	
+	<progress max="{{systemStats[0].TOTGAMESPLAYED}}" value="{{systemStats[0].BLACKWINS}}" ></progress>
+
+	<div>
+		<h3>Black goals</h3>
+		<h3>{{systemStats[0].BLACKGOALS}}</h3>
+	    	<progress max="{{systemStats[0].TOTGOALS}}" value="{{systemStats[0].BLACKGOALS}}" ></progress>
+	</div>	
+		
+	
+
+</div>
 <div id="statMenu" >
 	<h2 id="statMenuTitle">Top 10</h2>
 	<div id="lis1" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Slowest Goals</div></div>

@@ -1,10 +1,30 @@
 app.controller("StatisticsController", ["$scope", "$location", "SocketService", function($scope, $location, SocketService) {
+
+
+$scope.systemStats = [];
+
 var headers = {
   'Content-Type': 'application/json',
   'dataType':'json',
   'Accept':'application/json',
   'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
 };
+
+$.ajax({
+    'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/systemStats.xsjs',
+    'type': 'GET',
+    'dataType': 'json',
+    'headers':headers,
+    'contentType': 'application/json; charset=utf-8',
+    'success': function(response) {
+    console.log(response);
+    response[0].TOTGAMETIME = parseInt(response[0].TOTGAMETIME/60);
+    response[0].TOTGOALS = parseInt(response[0].BLUEGOALS) + parseInt(response[0].BLACKGOALS);
+    $scope.systemStats = response;
+
+    }
+});
+
  $.ajax({
     'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/top10.xsjs',
     'type': 'GET',
