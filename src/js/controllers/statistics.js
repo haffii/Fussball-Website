@@ -39,6 +39,7 @@ $.ajax({
     eloStat(response);
     comeback(response);
     fastest(response);
+    slowest(response);
     console.log(response);
     }
 });
@@ -51,6 +52,7 @@ $(document).ready(function(){
         $("#l5").hide();
         $("#l6").hide();
         $("#l7").hide();
+        $("#l8").hide();
     });
     $("#lis2").click(function(){
         $("#l1").hide();
@@ -60,6 +62,7 @@ $(document).ready(function(){
         $("#l5").hide();
         $("#l6").hide();
         $("#l7").hide();
+        $("#l8").hide();
     });
     $("#lis3").click(function(){
         $("#l1").hide();
@@ -69,6 +72,7 @@ $(document).ready(function(){
         $("#l5").hide();
         $("#l6").hide();
         $("#l7").hide();
+        $("#l8").hide();
     });
     $("#lis4").click(function(){
         $("#l1").hide();
@@ -78,6 +82,7 @@ $(document).ready(function(){
         $("#l5").hide();
         $("#l6").hide();
         $("#l7").hide();
+        $("#l8").hide();
     });
     $("#lis5").click(function(){
         $("#l1").hide();
@@ -87,6 +92,7 @@ $(document).ready(function(){
         $("#l5").show();
         $("#l6").hide();
         $("#l7").hide();
+        $("#l8").hide();
     });
     $("#lis6").click(function(){
         $("#l1").hide();
@@ -96,6 +102,7 @@ $(document).ready(function(){
         $("#l5").hide();
         $("#l6").show();
         $("#l7").hide();
+        $("#l8").hide();
     });
     $("#lis7").click(function(){
         $("#l1").hide();
@@ -105,6 +112,17 @@ $(document).ready(function(){
         $("#l5").hide();
         $("#l6").hide();
         $("#l7").show();
+        $("#l8").hide();
+    });
+     $("#lis8").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
+        $("#l7").hide();
+        $("#l8").show();
     });
 
 });
@@ -438,6 +456,27 @@ function comeback(stats){
   $scope.fastestarr = list;
   $scope.$digest();
  }
- 
+ function slowest(stats){
+  var list = [];
+  for(var i = 0; i<stats.length; i++){
+
+	var lis = {
+	user1 : '',
+	avgtime : 0,
+	user1Id : 0,
+	user1Img : ''
+	};
+	
+	lis.user1 = stats[i].SLOWESTPLAYERNAME;
+	var t = stats[i].SLOWESTPLAYERAVGTIME;
+	lis.user1Id = stats[i].SLOWESTPLAYERID;
+	lis.user1Img = stats[i].SLOWESTPLAYERIMAGEPATH;
+	t= secConvert1(t);
+	lis.avgtime = t;
+	list.push(lis);
+  }
+  $scope.slowestarr = list;
+  $scope.$digest();
+ }
 }]);
 
