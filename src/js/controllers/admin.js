@@ -63,7 +63,7 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
         method: 'POST',
         url: 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/tempUser.xsjs',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json;charset=utf-8',
             'dataType':'json',
             'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
             //'Content-Length': userInfoString.length
