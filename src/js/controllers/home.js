@@ -3,7 +3,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
 
   $scope.topList = {};
   //$filter('number')(number, fractionSize);
-  var apiUrl = '127.0.0.1:3000/';
+  var apiUrl = '10.41.112.52:3000/';
 	var socket = io.connect(apiUrl);
   var gameOn = false;
   var countdown;
