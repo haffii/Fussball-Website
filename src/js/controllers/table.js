@@ -1,6 +1,6 @@
 app.controller("TableController", ["$scope", "$location", "SocketService","PlayersService", function($scope, $location, SocketService,PlayersService) {
 
-  var apiUrl = '10.41.112.52:3000/';
+  var apiUrl = '10.42.104.61:3000/';
 	var socket = io.connect(apiUrl);
   var gameOn = false;
   var countdown;
