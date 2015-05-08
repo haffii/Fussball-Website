@@ -99,15 +99,6 @@ h3{
 /*
   Home (Score page)
 */
-#score{
-  position: relative;
-  width: 150px;
-  background-color: blue;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 35vh;
-
-}
 
 .gameRelatedButtons{
   margin-top: 60%;
@@ -152,14 +143,16 @@ h3{
   height: 90vh;
 }
 
-.ScoreboardHome {
-  height: 400px;
+#score{
+  position: relative;
+  width: 150px;
+  background-color: blue;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35vh;
+
 }
 
-.Scoreboard img{
-
-  
-}
 #tablePlayer
 {
   position: absolute;
@@ -179,22 +172,19 @@ h3{
   height: 15%;
 }
 .TopScore{
-  margin-top: 20px;
-  width: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid black;
+  border: 2px solid gray;
 }
 
-.TopScore td {
-    border: 1px solid white;
-    color: black;
-    width: 30%;
+.ScoreboardHome {
+  margin-top: 100px;
+  position: relative;
+  height: 400px;
+  /*border: 2px solid black;*/
 }
 
-.TopScore th {
-    border: 1px solid white;
-    color: black;
+#scoreHome{
+  width: 150px;
+
 }
 
 .homeProfile{
@@ -301,7 +291,7 @@ table tr:hover td {
   margin: 0 auto;
   border: 1px solid gray;
   width: 200px;
-  height: 200px;
+  height: 220px;
   padding:10px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -314,7 +304,7 @@ table tr:hover td {
   margin: 0 auto;
   border: 1px solid gray;
   width: 200px;
-  height: 280px;
+  height: 300px;
   padding:10px;
   margin-top: 10px;
   margin-bottom: 10px;

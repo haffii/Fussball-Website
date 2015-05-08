@@ -1,4 +1,4 @@
-app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParams', "SocketService","PlayersService", function($scope, $http, $location, $routeParams, SocketService,PlayersService) {
+app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParams', "SocketService","PlayersService",  function($scope, $http, $location, $routeParams, SocketService,PlayersService) {
 
   $scope.user = {};
   $scope.winp = 0;
