@@ -26,6 +26,12 @@
 	<div id="lis6" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Greatest Comebacks</div></div>
 	<div id="lis7" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Fastest Players</div></div>
 	<div id="lis8" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Slowest Players</div></div>
+	<div id="lis9" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Most Wins</div></div>
+	<div id="lis10" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Highest Win Percentage</div></div>
+	<div id="lis11" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Lowest Win Percentage</div></div>
+	<div id="lis12" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Most Scored Goals</div></div>
+	<div id="lis13" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Most Goals Conceded</div></div>
+	<div id="lis14" class="col-xs-6 col-md-3 ng-scope"><div class="thumbnail">Most Played Games</div></div>
 	</div>
 <div id="StatsTable" class="container">
 	
@@ -186,5 +192,96 @@
 		</tr>
 	</table>
 	</div>
+<div style="display:none" id="l9">
+	<h2>Top 10 players with most wins</h2>
+	<table align="center">
+		<tr>
+			<th>Place</th>
+			<th>Player</th>
+			<th>Wins</th>
+		</tr>
+		<tr ng-repeat="x in moreTop10">
+				<td>{{$index + 1}}.</td>
+				<td ng-click="seePlayer(x.MOSTWINSUSERID)"><img ng-src="{{x.MOSTWINSIMAGEPATH}}" height="80" width="60"></img>{{x.MOSTWINSNAME}}</td>
+				<td id="lastColumn">{{x.MOSTWINS}}</td>
+		</tr>
+	</table>
+</div>
+<div style="display:none" id="l10">
+	<h2>Top 10 players with the highest win percentage</h2>
+	<table align="center">
+		<tr>
+			<th>Place</th>
+			<th>Player</th>
+			<th>Percentage</th>
+		</tr>
+		<tr ng-repeat="x in moreTop10">
+				<td>{{$index + 1}}.</td>
+				<td ng-click="seePlayer(x.HIGHESTWINPERCUSERID)"><img ng-src="{{x.HIGHESTWINPERCIMAGEPATH}}" height="80" width="60"> </img>{{x.HIGHESTWINPERCNAME}}</td>
+				<td id="lastColumn">{{x.HIGHESTWINPERC*100}}%</td>
+		</tr>
+	</table>
+</div>
+<div style="display:none" id="l11">
+	<h2>Top 10 players with the lowest win percentage</h2>
+	<table align="center">
+		<tr>
+			<th>Place</th>
+			<th>Player</th>
+			<th>Percentage</th>
+		</tr>
+		<tr ng-repeat="x in moreTop10">
+				<td>{{$index + 1}}.</td>
+				<td ng-click="seePlayer(x.LOWESTWINPERCUSERID)"><img ng-src="{{x.LOWESTWINPERCIMAGEPATH}}" height="80" width="60"> </img>{{x.LOWESTWINPERCNAME}}</td>
+				<td id="lastColumn">{{x.LOWESTWINPERC*100}}%</td>
+		</tr>
+	</table>
+</div>
+<div style="display:none" id="l12">
+	<h2>Top 10 players with most scored goals</h2>
+	<table align="center">
+		<tr>
+			<th>Place</th>
+			<th>Player</th>
+			<th>Goals Scored</th>
+		</tr>
+		<tr ng-repeat="x in moreTop10">
+				<td>{{$index + 1}}.</td>
+				<td ng-click="seePlayer(x.MOSTGOALSFORUSERID)"><img ng-src="{{x.MOSTGOALSFORIMAGEPATH}}" height="80" width="60"> </img>{{x.MOSTGOALSFORNAME}}</td>
+				<td id="lastColumn">{{x.MOSTGOALSFOR}}</td>
+		</tr>
+	</table>
+</div>
+</div>
+<div style="display:none" id="l13">
+	<h2>Top 10 players with most scored goals against them</h2>>
+<table align="center">
+		<tr>
+			<th>Place</th>
+			<th>Player</th>
+			<th>Goals Conceded</th>
+		</tr>
+		<tr ng-repeat="x in moreTop10">
+				<td>{{$index + 1}}.</td>
+				<td ng-click="seePlayer(x.MOSTGOALSAGAINSTUSERID)"><img ng-src="{{x.MOSTGOALSAGAINSTIMAGEPATH}}" height="80" width="60"> </img>{{x.MOSTGOALSAGAINSTNAME}}</td>
+				<td id="lastColumn">{{x.MOSTGOALSAGAINST}}</td>
+		</tr>
+	</table>
+</div>
+<div style="display:none" id="l14">
+	<h2>Top 10 players with most games played</h2>
+	<table align="center">
+		<tr>
+			<th>Place</th>
+			<th>Player</th>
+			<th>Games</th>
+		</tr>
+		<tr ng-repeat="x in moreTop10">
+				<td>{{$index + 1}}.</td>
+				<td ng-click="seePlayer(x.MOSTPLAYEDUSERID)"><img ng-src="{{x.MOSTPLAYEDIMAGEPATH}}" height="80" width="60"> </img>{{x.MOSTPLAYEDNAME}}</td>
+				<td id="lastColumn">{{x.MOSTPLAYEDGAMES}}</td>
+		</tr>
+	</table>
+</div>
 </div>
 </div>

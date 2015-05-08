@@ -1,6 +1,6 @@
 app.controller("StatisticsController", ["$scope", "$location", "SocketService", function($scope, $location, SocketService) {
 
-
+$scope.moreTop10 = [];
 $scope.systemStats = [];
 
 var headers = {
@@ -17,11 +17,22 @@ $.ajax({
     'headers':headers,
     'contentType': 'application/json; charset=utf-8',
     'success': function(response) {
-    console.log(response);
     response[0].TOTGAMETIME = parseInt(response[0].TOTGAMETIME/60);
     response[0].TOTGOALS = parseInt(response[0].BLUEGOALS) + parseInt(response[0].BLACKGOALS);
     $scope.systemStats = response;
 
+    }
+});
+$.ajax({
+    'url': 'http://apprekdbs01.ad.acme.is:8000/Fussball_Project/moreTop10.xsjs',
+    'type': 'GET',
+    'dataType': 'json',
+    'headers':headers,
+    'contentType': 'application/json; charset=utf-8',
+    'success': function(response) {
+    $scope.moreTop10 = response;
+    $scope.$digest();
+    console.log(response);
     }
 });
 
@@ -40,7 +51,6 @@ $.ajax({
     comeback(response);
     fastest(response);
     slowest(response);
-    console.log(response);
     }
 });
 $(document).ready(function(){
@@ -53,6 +63,13 @@ $(document).ready(function(){
         $("#l6").hide();
         $("#l7").hide();
         $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
+
     });
     $("#lis2").click(function(){
         $("#l1").hide();
@@ -63,6 +80,12 @@ $(document).ready(function(){
         $("#l6").hide();
         $("#l7").hide();
         $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
     });
     $("#lis3").click(function(){
         $("#l1").hide();
@@ -73,6 +96,12 @@ $(document).ready(function(){
         $("#l6").hide();
         $("#l7").hide();
         $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
     });
     $("#lis4").click(function(){
         $("#l1").hide();
@@ -83,6 +112,12 @@ $(document).ready(function(){
         $("#l6").hide();
         $("#l7").hide();
         $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
     });
     $("#lis5").click(function(){
         $("#l1").hide();
@@ -93,6 +128,12 @@ $(document).ready(function(){
         $("#l6").hide();
         $("#l7").hide();
         $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
     });
     $("#lis6").click(function(){
         $("#l1").hide();
@@ -103,6 +144,12 @@ $(document).ready(function(){
         $("#l6").show();
         $("#l7").hide();
         $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
     });
     $("#lis7").click(function(){
         $("#l1").hide();
@@ -113,6 +160,12 @@ $(document).ready(function(){
         $("#l6").hide();
         $("#l7").show();
         $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
     });
      $("#lis8").click(function(){
         $("#l1").hide();
@@ -123,6 +176,109 @@ $(document).ready(function(){
         $("#l6").hide();
         $("#l7").hide();
         $("#l8").show();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
+    });
+     $("#lis9").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
+        $("#l7").hide();
+        $("#l8").hide();
+        $("#l9").show();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
+    });
+       $("#lis10").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
+        $("#l7").hide();
+        $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").show();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
+
+    });
+       $("#lis11").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
+        $("#l7").hide();
+        $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").show();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").hide();
+    });
+       $("#lis12").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
+        $("#l7").hide();
+        $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").show();
+        $("#l13").hide();
+        $("#l14").hide();
+    });
+      $("#lis13").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
+        $("#l7").hide();
+        $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").show();
+        $("#l14").hide();
+    });
+       $("#lis14").click(function(){
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#l4").hide();
+        $("#l5").hide();
+        $("#l6").hide();
+        $("#l7").hide();
+        $("#l8").hide();
+        $("#l9").hide();
+        $("#l10").hide();
+        $("#l11").hide();
+        $("#l12").hide();
+        $("#l13").hide();
+        $("#l14").show();
     });
 
 });
