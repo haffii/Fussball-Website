@@ -14,6 +14,8 @@
 			<img class="homeProfile" src="{{player11.ImagePath}}" ng-click="clickplayer(11)" style="position: absolute; top: 0; right: 0;">
 			<img class="homeProfile" src="{{player12.ImagePath}}" ng-click="clickplayer(12)" style="position: absolute; bottom: 0; right: 0;">
 		</div>
+		<p class="gameClock">00:00</p>
+		<div class="goalHistory"></div>
 	</div>
 
 	<div class="topScoreContainer col-xs-12 col-md-5">
@@ -29,6 +31,12 @@
 		    <td>{{user.ELO | number:0}}</td>
 		  </tr>
 		</table>
+	</div>
+
+	<div ng-repeat="goal in goalHistory">
+		<p style="color:{{goal.team}}">
+			{{goal.team}} scored a goal at {{goal.date}} | {{goal.team2score}} : {{goal.team1score}} 
+		</p>
 	</div>
 </div>
 </div>

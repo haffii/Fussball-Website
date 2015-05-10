@@ -32,7 +32,6 @@ $.ajax({
     'success': function(response) {
     $scope.moreTop10 = response;
     $scope.$digest();
-    console.log(response);
     }
 });
 
@@ -51,6 +50,7 @@ $.ajax({
     comeback(response);
     fastest(response);
     slowest(response);
+    console.log(response);
     }
 });
 $(document).ready(function(){
@@ -560,10 +560,10 @@ function comeback(stats){
 		lis.user2 = stats[i].COMEBACKT1U2NAME;
 		lis.user3 = stats[i].COMEBACKT2U1NAME;
 		lis.user4 = stats[i].COMEBACKT2U2NAME;
-		lis.user1Id = stats[i].COMEBACKT1U1;
-		lis.user2Id = stats[i].COMEBACKT1U2;
-		lis.user3Id = stats[i].COMEBACKT2U1;
-		lis.user4Id = stats[i].COMEBACKT2U2;
+		lis.user1Id = stats[i].COMEBACKT1U1ID;
+		lis.user2Id = stats[i].COMEBACKT1U2ID;
+		lis.user3Id = stats[i].COMEBACKT2U1ID;
+		lis.user4Id = stats[i].COMEBACKT2U2ID;
 		lis.user1Img = stats[i].COMEBACKT1U1IMAGEPATH;
 		lis.user2Img = stats[i].COMEBACKT1U2IMAGEPATH;
 		lis.user3Img = stats[i].COMEBACKT2U1IMAGEPATH;
