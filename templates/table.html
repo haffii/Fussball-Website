@@ -4,7 +4,8 @@
 
 	<div class="countdown"></div>
 	<div class="Scoreboard">
-		<div style="height:100%; width:60%; margin-left:auto; margin-right:auto; border: 1px solid black;"></img>
+		<div style="height:100%; width:60%; margin-left:auto; margin-right:auto; border: 1px solid black;">
+
 		<div id="score">
 	      	<h1 id="team2" style="position:absolute; left:0;"/>
 	      	<h1 id="team1" style="position:absolute; right:0;"/>
@@ -12,10 +13,9 @@
 	    </div>
 	    <div class="gameRelatedButtons">
 	    	<!-- Button trigger modal -->
-			<button type="button" ng-show="gameOn == true" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+	    	<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal" id="modalButtonEndGame">
 			  END GAME
 			</button>
-
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
@@ -29,7 +29,7 @@
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Cancel</button>
-			        <button ng-click="endGame()" type="button" class="btn btn-danger btn-lg">END GAME</button>
+			        <button ng-click="endGame()" type="button" class="btn btn-danger btn-lg" data-dismiss="modal">END GAME</button>
 			      </div>
 			    </div>
 			  </div>

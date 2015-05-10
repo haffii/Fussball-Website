@@ -114,6 +114,14 @@ h3{
   text-align: center;
 }
 
+#modalButtonEndGame{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 44%;
+  margin-bottom: 20px;
+}
+
 #startGame, #Rematch, #newGame {
   display: none;
   color: white;

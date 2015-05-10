@@ -16,6 +16,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
                   
                   PlayersService.setPlayers(data);
                   $scope.gameOn = true;
+                  $('#modalButtonEndGame').show();
                   PlayersService.setGameOn(true);
                   $scope.$digest();
                 }
@@ -73,6 +74,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
     });*/
 
     socket.on('gameover', function(data){
+      $('#modalButtonEndGame').hide();
       $('#Rematch').show();
       $('#newGame').show();
     });
@@ -170,6 +172,8 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
             'success': function(response2) {
                 $scope.gameOn = true;
                 PlayersService.setGameOn(true);
+                $('#modalButtonEndGame').show();
+
                 //updateGame();
             }
         });
@@ -186,8 +190,23 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
       $("#newGame").show();
     };
 
+    $scope.endGame = function(){
+      console.log("called end game");
+      $.ajax({
+            'url': 'http://' + apiUrl + 'endGame',
+            'type': 'POST',
+            'success': function(response) {
+              console.log(response);
+                $scope.gameOn = false;
+                PlayersService.setGameOn(false);
+                $('#modalButtonEndGame').hide();
+            }
+        });
+    };
+
     $scope.newGame = function(){
       $scope.gameOn = false;
+      $('#modalButtonEndGame').hide();
       PlayersService.setGameOn(false);
       $('#team1').text(0);
       $('#team2').text(0);
