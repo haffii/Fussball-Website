@@ -13,6 +13,7 @@ body{
   background-size: 100% 100%;
   background-attachment: fixed;
   font: white;
+  margin-top: 100px;
 }
 h1{
   display: inline;
