@@ -177,13 +177,13 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
 
     $scope.rematch = function(){
       PlayersService.rematch();
-      $scope.createGame();
       $scope.player11 = PlayersService.getPlayer11();
       $scope.player12 = PlayersService.getPlayer12();
       $scope.player21 = PlayersService.getPlayer21();
       $scope.player22 = PlayersService.getPlayer22();
       $("#Rematch").hide();
-      $("#newGame").hide();
+      $("#startGame").show();
+      $("#newGame").show();
     };
 
     $scope.newGame = function(){
