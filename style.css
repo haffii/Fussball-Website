@@ -105,6 +105,14 @@ h3{
   text-align: center;
 }
 
+.modal-header{
+  color: red;
+}
+
+.modal-footer{
+  margin: 0 auto;
+  text-align: center;
+}
 
 #startGame, #Rematch, #newGame {
   display: none;

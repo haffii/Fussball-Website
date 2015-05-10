@@ -11,6 +11,29 @@
 	      	
 	    </div>
 	    <div class="gameRelatedButtons">
+	    	<!-- Button trigger modal -->
+			<button type="button" ng-show="gameOn == true" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+			  END GAME
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h3 class="modal-title" id="myModalLabel">ARE YOU SURE YOU WANT TO END THE GAME?</h3>
+			      </div>
+			      <div class="modal-body">
+			        Ending the game will discard the game and the goals and all possible ELO changes will be discarded
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Cancel</button>
+			        <button ng-click="endGame()" type="button" class="btn btn-danger btn-lg">END GAME</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 	    	<button class="btn btn-lg" id="startGame" ng-click="createGame()">Start game</button>
 			<button class="btn btn-lg" id="newGame" ng-click="newGame()">Select new players</button>
 			<button class="btn btn-lg" id="Rematch" ng-click="rematch()">Rematch</button>

@@ -2,7 +2,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
 
   var apiUrl = '10.42.104.61:3000/';
 	var socket = io.connect(apiUrl);
-  var gameOn = false;
+  $scope.gameOn = false;
   var countdown;
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
@@ -15,7 +15,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
                   $scope.player22 = data[3];
                   
                   PlayersService.setPlayers(data);
-                  gameOn = true;
+                  $scope.gameOn = true;
                   PlayersService.setGameOn(true);
                   $scope.$digest();
                 }
@@ -75,7 +75,6 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
     socket.on('gameover', function(data){
       $('#Rematch').show();
       $('#newGame').show();
-      console.log("gameover");
     });
 
     socket.on('updatePlayers', function(data){
@@ -97,7 +96,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
     };
 
     $scope.clickplayer = function(id) {
-      if(!gameOn){
+      if(!$scope.gameOn){
     PlayersService.setCurrent(id);
     $location.path("/pickuser");
     }
@@ -169,7 +168,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
             'type': 'POST',
             'data': body,
             'success': function(response2) {
-                gameOn = true;
+                $scope.gameOn = true;
                 PlayersService.setGameOn(true);
                 //updateGame();
             }
@@ -188,7 +187,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
     };
 
     $scope.newGame = function(){
-      gameOn = false;
+      $scope.gameOn = false;
       PlayersService.setGameOn(false);
       $('#team1').text(0);
       $('#team2').text(0);
