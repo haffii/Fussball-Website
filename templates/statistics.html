@@ -218,7 +218,7 @@
 		<tr ng-repeat="x in moreTop10">
 				<td>{{$index + 1}}.</td>
 				<td ng-click="seePlayer(x.HIGHESTWINPERCUSERID)"><img ng-src="{{x.HIGHESTWINPERCIMAGEPATH}}" height="80" width="60"> </img>{{x.HIGHESTWINPERCNAME}}</td>
-				<td id="lastColumn">{{x.HIGHESTWINPERC*100}}%</td>
+				<td id="lastColumn">{{(x.HIGHESTWINPERC*100) | number: 0}}%</td>
 		</tr>
 	</table>
 </div>
