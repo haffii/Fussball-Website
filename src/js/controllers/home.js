@@ -37,7 +37,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
         'type': 'GET',
         'success': function(data) {
         $('#team1').text(data[0]);
-        $('#team2').text(data[1]);
+        $('#team2').text(data[1]+'-');
       }
     });
    
