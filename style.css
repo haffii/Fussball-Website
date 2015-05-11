@@ -230,11 +230,15 @@ h3{
   margin-top: 100px;
   position: relative;
   height: 400px;
-  /*border: 2px solid black;*/
+  border: 1px solid gray;
+  padding: 3%;
 }
 
 #scoreHome{
-  width: 150px;
+  position: absolute;
+  top: 24%;
+  right: 5%;
+  width: 400px;
 
 }
 
@@ -600,4 +604,45 @@ Add user
 #lastColumn
 {
   text-align: center;
+}
+.score
+{
+  font-size: 130px;
+  width: 400px;
+  font-family:LCDMono;
+} 
+/*#team1
+{
+  right: -244%;
+  bottom: -40%;
+  position: absolute;
+}
+#team2
+{
+  position: absolute;
+  left: -34%;
+  bottom: -40%;
+}*/
+@font-face {
+  font-family: 'LCDMono';
+    src:  url('LCDMono2-Bold.ttf.woff') format('woff'),
+    url('LCDMono2-Bold.ttf.svg#LCDMono2-Bold') format('svg'),
+    url('LCDMono2-Bold.ttf.eot'),
+    url('LCDMono2-Bold.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+.gameClock
+{
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  font-family: LCDMono;
+  border-bottom: none;
+  padding: 1%;
+  font-size: 30px;
+}
+#tvipunktur
+{
+  top: 15%
 }

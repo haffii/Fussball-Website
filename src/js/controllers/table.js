@@ -4,6 +4,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
 	var socket = io.connect(apiUrl);
   $scope.gameOn = false;
   var countdown;
+  var endGameUsed = false;
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
             'type': 'GET',
@@ -84,8 +85,15 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
 
     socket.on('gameover', function(data){
       $('#modalButtonEndGame').hide();
-      $('#Rematch').show();
-      $('#newGame').show();
+      if(!endGameUsed){
+        $('#Rematch').show();
+        $('#newGame').show();
+      }
+      else{
+        $('#Rematch').hide();
+        $('#newGame').hide();
+      }
+      endGameUsed = false;
     });
 
     socket.on('updatePlayers', function(data){
@@ -136,6 +144,8 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
       $(this[0]).html("Game Over");
       $('#Rematch').show();
       $('#newGame').show();
+
+      
   }
 
 /*  function updateGame(){
@@ -200,7 +210,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
     };
 
     $scope.endGame = function(){
-      console.log("called end game");
+      endGameUsed = true;
       $.ajax({
             'url': 'http://' + apiUrl + 'endGame',
             'type': 'POST',
