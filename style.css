@@ -657,8 +657,20 @@ Add user
 /*
   Statlist in Statistics
 */
+#moreStats{
+  text-align: center;
+}
+#moreStats div h2{
+  font-size: 40px;
+}
+
+
 #systemStats{
-  display: inline-block;
+  display: inline;
+}
+
+#tableStats{
+  display: inline;
 }
 
 .highlight {
@@ -704,6 +716,7 @@ Add user
   width: 200px;
   margin-bottom: 15px;
   padding-top: 5px;
+  text-align: center;
 }
 #lastColumn
 {

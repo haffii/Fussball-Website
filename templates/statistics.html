@@ -1,16 +1,21 @@
 <div id="container main">
-<div>
+<div id = "moreStats" class="container">
+	<div class= "row" >
 	<h2 >Table Statistics</h2>
-	<h3>Total games played : {{systemStats[0].TOTGAMESPLAYED}}</h3>
-	<h3>Total time played: {{systemStats[0].TOTGAMETIME}}min</h3><br>
-
-	<div id="systemStats">
-		<h3>Black wins {{systemStats[0].BLACKWINS}} - {{systemStats[0].BLUEWINS}} Blue wins</h3>
-		<progress max="{{systemStats[0].TOTGAMESPLAYED}}" value="{{systemStats[0].BLACKWINS}}" ></progress>
-		<h3>Black goals {{systemStats[0].BLACKGOALS}} - {{systemStats[0].BLUEGOALS}} Blue goals</h3>
-	    	<progress max="{{systemStats[0].TOTGOALS}}" value="{{systemStats[0].BLACKGOALS}}" ></progress>
+	<div id="tableStats" class = "col-xs-6">
+		<h3>Black wins : {{systemStats[0].BLACKWINS}} </h3>
+		<h3>Black goals : {{systemStats[0].BLACKGOALS}} </h3>
+	<h3 >Total games played : {{systemStats[0].TOTGAMESPLAYED}}</h3>
+	
 	</div>
-
+	<div class = "col-xs-6" id="sysStatCol2">
+		
+		<h3>Blue wins : {{systemStats[0].BLUEWINS}} </h3>
+		
+		<h3>Blue goals : {{systemStats[0].BLUEGOALS}}</h3>
+		<h3 >Total time played : {{systemStats[0].TOTGAMETIME}}min</h3>
+	</div>
+	</div>
 </div>
 <div id="statMenu" >
 	<h2 id="statMenuTitle">Top 10</h2>
