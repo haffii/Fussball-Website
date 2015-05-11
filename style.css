@@ -697,7 +697,9 @@ Add user
   padding: 1%;
   font-size: 30px;
 }
-#tvipunktur
+#scoreTable
 {
-  top: 15%
+  position: absolute;
+  left: 41%;
+  top: 40%;
 }
