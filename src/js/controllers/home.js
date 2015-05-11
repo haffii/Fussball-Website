@@ -17,7 +17,6 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
   $scope.player12.ImagePath='images/emptySlot.png';
   $scope.player21.ImagePath='images/emptySlot.png';
   $scope.player22.ImagePath='images/emptySlot.png';
-  //console.log($scope.player11.ImagePath);
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
             'type': 'GET',

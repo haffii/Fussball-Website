@@ -9,6 +9,10 @@
 				<h3 class="userH4" ng-cloak ng-show="noGamesPlayedError == ''">Rank: {{user[0].ELORANKING}}</h3>
 				<h3>ELO : {{user[0].ELO | number:0}}</h3>
 				<h3>Games Played : {{user[0].NOGAMES}}</h3>
+				<h3 class="userH4" ng-cloak ng-show="avgPlayingTimeError != ''"> 
+					Average playing time: {{avgPlayingTimeError}}
+				</h3>
+				<h3 class="userH4" ng-cloak ng-show="avgPlayingTimeError == ''">Average playing time: {{user[0].AVGPLAYINGTIME | number:1}} minutes</h3>
 			</div>
 		</div>
 		<div class="profileImg col-md-3">
