@@ -76,7 +76,7 @@
 
 	<div class="usersTop">
 		<div class="col-md-3">
-			<p class="centeredT">Best Partner</p>
+			<h3 class="centeredT">Best Partner</h3>
 			<div class="easiest" ng-repeat="x in user">
 				<div class="UsersById bull" ng-click="goToPlayer(x.BESTPARTNERID)">
 					<img class ="profilePic" ng-src="{{x.BESTPARTNERIMAGEPATH}}"></img>
@@ -89,7 +89,7 @@
 		</div>
 
 		<div class="col-md-3">
-			<p class="centeredT">Worst partner</p>
+			<h3 class="centeredT">Worst partner</h3>
 			<div class="easiest" ng-repeat="x in user">
 				<div class="UsersById bull" ng-click="goToPlayer(x.WORSTPARTNERID);">
 					<img class ="profilePic" ng-src="{{x.WORSTPARTNERIMAGEPATH}}"></img>
@@ -102,7 +102,7 @@
 		</div>
 
 		<div class="col-md-3">
-			<p class="centeredT">Toughest opponent</p>
+			<h3 class="centeredT">Toughest opponent</h3>
 			<div class="easiest" ng-repeat="x in user">
 				<div class="UsersById bull" ng-click="goToPlayer(x.TOUGHESTOPPONENTID);">
 					<img class ="profilePic" ng-src="{{x.TOUGHESTOPPONENTIMAGEPATH}}"></img>
@@ -115,7 +115,7 @@
 		</div>
 
 		<div class="col-md-3">
-			<p class="centeredT">Easiest opponent</p>
+			<h3 class="centeredT">Easiest opponent</h3>
 			<div class="easiest" ng-repeat="x in user">
 				<div class="UsersById bull" ng-click="goToPlayer(x.EASIESTOPPONENTID);">
 					<img class ="profilePic" ng-src="{{x.EASIESTOPPONENTIMAGEPATH}}"></img>
@@ -127,8 +127,15 @@
 			</div>
 		</div>
 		<div>
-		
-		<table id='gameHistory'>
+		<h2 id="userGameHistory">Game History</h2>
+		<table class="gameHistory">
+			<tr>
+			    <th class="gameHistoryHeader">Player 1</th>
+			    <th class="gameHistoryHeader">Player 2</th>
+				<th class="gameHistoryHeader">Score</th>
+				<th class="gameHistoryHeader">Player 1</th>
+				<th class="gameHistoryHeader">Player 2</th>
+			</tr>
 			<tr ng-repeat="game in gameHistory" >
 				<td ng-click="goToPlayer(game.t1u1id)"> <img ng-src="{{game.t1u1image}}" height="60" width="40"/></td>
 				<td ng-click="goToPlayer(game.t1u2id)"><img ng-src="{{game.t1u2image}}" height="60" width="40"/></td>

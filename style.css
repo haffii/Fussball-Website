@@ -438,6 +438,18 @@ table tr:hover td {
   UserbyId
 */
 
+#userGameHistory{
+  text-align: center;
+}
+
+.gameHistory{
+  border: 2px solid #c9c9c9;
+}
+
+.gameHistoryHeader{
+  text-align: center;
+}
+
 .headerForScore{
   text-align: center;
 }
