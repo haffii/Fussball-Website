@@ -31,7 +31,6 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
                   PlayersService.setGameOn(true);
                   $scope.$digest();
                 }
-                //console.log(data);
               },
               'error' : function(res){
                 console.log('error: ');
@@ -50,7 +49,6 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
    
     socket.on('goal1', function(score, time){
     $('#team1').text(score);
-    //console.log(time);
       if(time){
         $scope.goalHistory.unshift(time);
         $scope.$digest();
@@ -67,7 +65,6 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
 
     socket.on('gameover', function(data){
       gameOn = false;
-      //console.log("gameover");
     });
 
     socket.on('gametime', function(data, goalHistory){
@@ -75,12 +72,14 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       if(goalHistory){
         $scope.goalHistory = goalHistory.reverse();
         $scope.$digest();
-        //console.log($scope.goalHistory);
       }
     });
 
+    socket.on('viewCount', function(data){
+      console.log(data);
+    });
+
     function countUp(){
-      //console.log(gameOn);
       if(gamestart !== 0 && gameOn){
         now = new Date();
         dif = new Date(now.getTime() - gamestart.getTime());
@@ -152,7 +151,6 @@ var headers = {
     'success': function(response) {
       $scope.topList = response;
       $scope.$digest();
-      //console.log(response);
     },
     'error' : function(response) {
       console.log("error : ");
