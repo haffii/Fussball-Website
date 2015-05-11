@@ -5,6 +5,11 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
   $scope.gameOn = false;
   var countdown;
   var endGameUsed = false;
+  $scope.team1 = 0;
+  $scope.team2 = 0;
+  var gamestart = 0;
+  setInterval(countUp, 1000);
+
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
             'type': 'GET',
@@ -56,6 +61,8 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
                   }
                  if(PlayersService.getPlayer11() && PlayersService.getPlayer12() && PlayersService.getPlayer21() && PlayersService.getPlayer22()){
                    $('#startGame').show();
+                   $('#Rematch').show();
+                   $("#newGame").show();
                   }
                   $scope.$digest();
               } 
@@ -66,17 +73,20 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
         'url': 'http://' + apiUrl + 'getScore',
         'type': 'GET',
         'success': function(data) {
-        $('#team1').text(data[0]);
-        $('#team2').text(data[1]);
+        $scope.team1 = data[0];
+        $scope.team2 = data[1];
+        $scope.$digest();
       }
     });
    
     socket.on('goal1', function(score){
-    $('#team1').text(score);
+      $scope.team1 = score;
+      $scope.$digest();
     });
 
     socket.on('goal2', function(score){
-    $('#team2').text(score);
+      $scope.team2 = score;
+      $scope.$digest();
     });
 
  /*   socket.on('startCountDown', function(){
@@ -94,7 +104,26 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
         $('#newGame').hide();
       }
       endGameUsed = false;
+      $scope.gameOn = false;
     });
+
+    socket.on('gametime', function(data, goalHistory){
+      gamestart = new Date(data);
+      console.log(gamestart);
+    });
+
+    function countUp(){
+      console.log($scope.gameOn);
+      if(gamestart !== 0 && $scope.gameOn){
+        now = new Date();
+        dif = new Date(now.getTime() - gamestart.getTime());
+        var min = dif.getMinutes() < 10 ? '0' + dif.getMinutes() : dif.getMinutes(); 
+        var sec = dif.getSeconds() < 10 ? '0' + dif.getSeconds() : dif.getSeconds();
+
+        $(".gameClockPlay").text(min + ":" + sec);
+      }
+
+    }
 
     socket.on('updatePlayers', function(data){
       PlayersService.setPlayers(data);
@@ -163,6 +192,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
   }*/
     $scope.createGame = function() {
       $("#startGame").hide();
+      $("#Rematch").hide();
         var body = {
             "team1user1UserId": PlayersService.getPlayer11().UserId,
             "team1user1Name" : PlayersService.getPlayer11().Name,
@@ -204,13 +234,14 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
       $scope.player12 = PlayersService.getPlayer12();
       $scope.player21 = PlayersService.getPlayer21();
       $scope.player22 = PlayersService.getPlayer22();
-      $("#Rematch").hide();
+      /*$("#Rematch").hide();*/
       $("#startGame").show();
       $("#newGame").show();
     };
 
     $scope.endGame = function(){
       endGameUsed = true;
+      $(".gameClockPlay").text("00:00");
       $.ajax({
             'url': 'http://' + apiUrl + 'endGame',
             'type': 'POST',

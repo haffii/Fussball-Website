@@ -2,17 +2,22 @@
 <div class="container main">
 <div id = "homeWindow">
 
-	<div class="countdown"></div>
-	<div class="Scoreboard">
-		<div style="height:100%; width:60%; margin-left:auto; margin-right:auto; border: 1px solid black;">
+	<p class="gameClockPlay" style="">00:00</p>
+	<div class="Scoreboard" style="border: 3px solid black;">
+		<div class"ScoreboardMiddle">
 
-		<div id="score">
-	      	<h1 id="team2" style="position:absolute; left:0;"/>
-	      	<h1 id="team1" style="position:absolute; right:0;"/>
-	      	
-	    </div>
+	<div>
+		<div id="scorePlay">
+	      	<p id="teamScore">{{team1}} - {{team2}}</p>
+		</div>
 	    <div class="gameRelatedButtons">
-	    	<!-- Button trigger modal -->
+	    	<button class="btn btn-lg" id="startGame" ng-click="createGame()">Start game</button>
+			<button class="btn btn-lg" id="newGame" ng-click="newGame()">Select new players</button>
+			<button class="btn btn-lg" id="Rematch" ng-click="rematch()">Rematch</button>
+	    </div>
+	</div>
+
+		<!-- Button trigger modal -->
 	    	<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal" id="modalButtonEndGame">
 			  END GAME
 			</button>
@@ -34,17 +39,13 @@
 			    </div>
 			  </div>
 			</div>
-	    	<button class="btn btn-lg" id="startGame" ng-click="createGame()">Start game</button>
-			<button class="btn btn-lg" id="newGame" ng-click="newGame()">Select new players</button>
-			<button class="btn btn-lg" id="Rematch" ng-click="rematch()">Rematch</button>
-	    </div>
 
 	    <div id="player21">
 	    	<img src="{{player21.ImagePath}}" ng-click="clickplayer(21)" id="tablePlayer">
 	    	<h3 id="playerName">{{player21.Name}}</h3>
 	    </div>
 
-		<img id="blueTeam" src="images/blueTeam.png" >	 	
+		<img id="blueTeam" src="images/blueTeam.png" >	
 
 	    <div id = "player22">
 	    	<h3 id="playerName">{{player22.Name}}</h3>
@@ -66,13 +67,7 @@
 			
 		</div>
 
-
-		
-		
-		
-			</div>
-
-	
-
+</div>
+</div>
 </div>
 </div>

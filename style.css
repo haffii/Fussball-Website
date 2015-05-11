@@ -144,7 +144,7 @@ h3{
 }
 
 .gameRelatedButtons{
-  margin-top: 60%;
+  margin-top: 60px;
   text-align: center;
 }
 
@@ -198,19 +198,34 @@ h3{
 .Scoreboard{
   position: relative;
   margin:0 auto;
-  /*border: 1px solid black;*/
-  margin-top: 20px;
-  height: 90vh;
+  border: 1px solid black;
+  height: 80vh;
+}
+
+.ScoreboardMiddle{
+  height:100%;
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 #score{
   position: relative;
+  text-align:center;
   width: 150px;
-  background-color: blue;
   margin-left: auto;
   margin-right: auto;
   margin-top: 35vh;
+}
 
+#scorePlay{
+  position: relative;
+  font-family:LCDMono;
+  font-size: 100px;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25vh;
 }
 
 #tablePlayer
@@ -223,8 +238,8 @@ h3{
 }
 #playerName
 {
-  width: 15%;
-  height: 1%;
+  width: 80px;
+  height: auto;
 }
 #player21{
   position: absolute;
@@ -651,7 +666,7 @@ Add user
 .score
 {
   font-size: 130px;
-  width: 400px;
+  width: 0;
   font-family:LCDMono;
 } 
 /*#team1
@@ -685,6 +700,15 @@ Add user
   padding: 1%;
   font-size: 30px;
 }
+
+.gameClockPlay
+{
+  text-align: center;
+  font-family: LCDMono;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
 #tvipunktur
 {
   top: 15%
