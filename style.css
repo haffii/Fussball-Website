@@ -104,8 +104,11 @@ h3{
 .goalHistoryContainer{
   margin-top: -100px;
   left: 8.4%;
+  text-align: center;
 }
-
+.goalHistoryContainer h3{
+  text-align: center;
+}
 .goalHistory{
   border: 2px solid #c9c9c9;
 }
@@ -267,6 +270,11 @@ h3{
 
 .TopScore{
   border: 2px solid gray;
+  text-align: center;
+}
+
+.topScoreContainer h2{
+   text-align: center;
 }
 
 .ScoreboardHome {
