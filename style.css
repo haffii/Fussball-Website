@@ -201,7 +201,10 @@ h3{
 }
 
 #scoreHome{
-  width: 150px;
+  position: absolute;
+  top: 24%;
+  right: 5%;
+  width: 400px;
 
 }
 
@@ -566,11 +569,11 @@ Add user
 }
 .score
 {
-  font-size: 150px;
+  font-size: 130px;
   width: 400px;
   font-family:LCDMono;
 } 
-#team1
+/*#team1
 {
   right: -244%;
   bottom: -40%;
@@ -581,7 +584,7 @@ Add user
   position: absolute;
   left: -34%;
   bottom: -40%;
-}
+}*/
 @font-face {
   font-family: 'LCDMono';
     src:  url('LCDMono2-Bold.ttf.woff') format('woff'),
@@ -590,4 +593,18 @@ Add user
     url('LCDMono2-Bold.eot?#iefix') format('embedded-opentype'); 
     font-weight: normal;
     font-style: normal;
+}
+.gameClock
+{
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  font-family: LCDMono;
+  border-bottom: none;
+  padding: 1%;
+  font-size: 30px;
+}
+#tvipunktur
+{
+  top: 15%
 }
