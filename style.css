@@ -405,6 +405,11 @@ table tr:hover td {
   border-radius: 10px;*/
   text-align: center;
 }
+
+.Users:hover{
+  background-color: #f0f0f0;
+}
+
 .Users h3{
   margin-right: auto;
   margin-left:auto;
