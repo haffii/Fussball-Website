@@ -15,7 +15,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
             'type': 'GET',
             'success': function(data) {
                 if(data.length){
-                  console.log(data[0]);
+                  //console.log(data[0]);
                   $scope.player11 = data[0];
                   $scope.player12 = data[1];
                   $scope.player21 = data[2];

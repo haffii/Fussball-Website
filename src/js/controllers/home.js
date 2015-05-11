@@ -9,7 +9,14 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
   var countdown;
   var gamestart = 0;
   setInterval(countUp, 1000);
-
+  $scope.player11=[];
+  $scope.player12=[];
+  $scope.player21=[];
+  $scope.player22=[];
+  $scope.player11.ImagePath='images/emptySlot.png';
+  $scope.player12.ImagePath='images/emptySlot.png';
+  $scope.player21.ImagePath='images/emptySlot.png';
+  $scope.player22.ImagePath='images/emptySlot.png';
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
             'type': 'GET',
@@ -27,7 +34,8 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
                 //console.log(data);
               },
               'error' : function(res){
-                  console.log(res);
+                console.log('error: ');
+                console.log(res);
               }
         });  
 
@@ -97,6 +105,14 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       }
       else{
         $(".gameClock").text("00:00");
+        $scope.player11=[];
+        $scope.player12=[];
+        $scope.player21=[];
+        $scope.player22=[];
+        $scope.player11.ImagePath='images/emptySlot.png';
+        $scope.player12.ImagePath='images/emptySlot.png';
+        $scope.player21.ImagePath='images/emptySlot.png';
+        $scope.player22.ImagePath='images/emptySlot.png';
       }
       if($scope.player11 && $scope.player12 && $scope.player21 && $scope.player22){
         $('#startGame').hide();
@@ -140,6 +156,7 @@ var headers = {
     },
     'error' : function(response) {
       console.log("error : ");
+      console.log(response);
 
     }
   });

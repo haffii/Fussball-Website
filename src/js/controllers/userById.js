@@ -10,6 +10,7 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
     $scope.errorMessagePassword = "";
     $scope.errorMessageName = "";
     $scope.noGamesPlayedError = "";
+    $scope.avgPlayingTimeError = "";
     $scope.gameHistory = [];
 
 
@@ -40,6 +41,7 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
             $scope.user = resp;
             $scope.user[0].NOGAMES = 0;
             $scope.noGamesPlayedError = "You have to play at least 1 game to get a ranking";
+            $scope.avgPlayingTimeError = "No games played";
             $scope.newName = $scope.user[0].NAME;
             $scope.newImagePath = $scope.user[0].IMAGEPATH;
             $scope.$digest();
@@ -55,6 +57,7 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
         $scope.newName = $scope.user[0].NAME;
         $scope.newImagePath = $scope.user[0].IMAGEPATH;
         $scope.newPassword = "";
+        $scope.user[0].AVGPLAYINGTIME = (parseInt($scope.user[0].AVGPLAYINGTIME)/60);
         $scope.$digest();
         $(".noGamesPlayed").show();
         historyArr = [];
@@ -127,7 +130,6 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
               historyObj.starttime = response[i].STARTTIME.split(" ")[0];
               historyArr.push(historyObj);
             }
-            //console.log(historyArr);
             $scope.gameHistory = historyArr;
             $scope.$digest();
           }
@@ -173,11 +175,9 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
         headers: headers,
         data: userInfoString
       };
-      //console.log(newUserInfo);
       $http(req).
         success(function(){
-          //console.log("successfully changed password");
-          $location.path("/users");
+          $location.path("/Users/"+$scope.user[0].USERID);
         }).
         error(function(data, status, headers, config){
           $scope.errorMessagePassword = "Wrong password";
@@ -234,15 +234,12 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
         headers: headers,
         data: userInfoString
       };
-      //console.log(newUserInfo);
       $http(req).
         success(function(){
-          //console.log("successfully updated user");
-          $location.path("/users");
+          $location.path("/Users/"+$scope.user[0].USERID);
         }).
         error(function(data, status, headers, config){
           $scope.errorMessagePassword = "Wrong password";
         });
     };
- 
 }]);

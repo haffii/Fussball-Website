@@ -20,6 +20,7 @@ $.ajax({
     response[0].TOTGAMETIME = parseInt(response[0].TOTGAMETIME/60);
     response[0].TOTGOALS = parseInt(response[0].BLUEGOALS) + parseInt(response[0].BLACKGOALS);
     $scope.systemStats = response;
+    //console.log(response);
 
     }
 });
@@ -50,7 +51,6 @@ $.ajax({
     comeback(response);
     fastest(response);
     slowest(response);
-    console.log(response);
     }
 });
 $(document).ready(function(){
@@ -553,39 +553,40 @@ function comeback(stats){
 	user3Img : '',
 	user4Img : ''
 	};
-	
-	if ((stats[i].COMEBACKWINNING_TEAM) ==1) 
-	{
-		lis.user1 = stats[i].COMEBACKT1U1NAME;
-		lis.user2 = stats[i].COMEBACKT1U2NAME;
-		lis.user3 = stats[i].COMEBACKT2U1NAME;
-		lis.user4 = stats[i].COMEBACKT2U2NAME;
-		lis.user1Id = stats[i].COMEBACKT1U1ID;
-		lis.user2Id = stats[i].COMEBACKT1U2ID;
-		lis.user3Id = stats[i].COMEBACKT2U1ID;
-		lis.user4Id = stats[i].COMEBACKT2U2ID;
-		lis.user1Img = stats[i].COMEBACKT1U1IMAGEPATH;
-		lis.user2Img = stats[i].COMEBACKT1U2IMAGEPATH;
-		lis.user3Img = stats[i].COMEBACKT2U1IMAGEPATH;
-		lis.user4Img = stats[i].COMEBACKT2U2IMAGEPATH;
-	}
-	else
-	{
-		lis.user1 = stats[i].COMEBACKT2U1NAME;
-		lis.user2 = stats[i].COMEBACKT2U2NAME;
-		lis.user3 = stats[i].COMEBACKT1U1NAME;
-		lis.user4 = stats[i].COMEBACKT1U2NAME;
-		lis.user1Id = stats[i].COMEBACKT2U1;
-		lis.user2Id = stats[i].COMEBACKT2U2;
-		lis.user3Id = stats[i].COMEBACKT1U1;
-		lis.user4Id = stats[i].COMEBACKT1U2;
-		lis.user1Img = stats[i].COMEBACKT2U1IMAGEPATH;
-		lis.user2Img = stats[i].COMEBACKT2U2IMAGEPATH;
-		lis.user3Img = stats[i].COMEBACKT1U1IMAGEPATH;
-		lis.user4Img = stats[i].COMEBACKT1U2IMAGEPATH;
-	}
-	lis.deficit = stats[i].COMEBACKMAX_DEFICIT;
-	list.push(lis);
+	if(stats[i].COMEBACKT1U1ID !== null){
+        if ((stats[i].COMEBACKWINNING_TEAM) ==1) 
+        {
+            lis.user1 = stats[i].COMEBACKT1U1NAME;
+            lis.user2 = stats[i].COMEBACKT1U2NAME;
+            lis.user3 = stats[i].COMEBACKT2U1NAME;
+            lis.user4 = stats[i].COMEBACKT2U2NAME;
+            lis.user1Id = stats[i].COMEBACKT1U1ID;
+            lis.user2Id = stats[i].COMEBACKT1U2ID;
+            lis.user3Id = stats[i].COMEBACKT2U1ID;
+            lis.user4Id = stats[i].COMEBACKT2U2ID;
+            lis.user1Img = stats[i].COMEBACKT1U1IMAGEPATH;
+            lis.user2Img = stats[i].COMEBACKT1U2IMAGEPATH;
+            lis.user3Img = stats[i].COMEBACKT2U1IMAGEPATH;
+            lis.user4Img = stats[i].COMEBACKT2U2IMAGEPATH;
+        }
+        else
+        {
+            lis.user1 = stats[i].COMEBACKT2U1NAME;
+            lis.user2 = stats[i].COMEBACKT2U2NAME;
+            lis.user3 = stats[i].COMEBACKT1U1NAME;
+            lis.user4 = stats[i].COMEBACKT1U2NAME;
+            lis.user1Id = stats[i].COMEBACKT2U1;
+            lis.user2Id = stats[i].COMEBACKT2U2;
+            lis.user3Id = stats[i].COMEBACKT1U1;
+            lis.user4Id = stats[i].COMEBACKT1U2;
+            lis.user1Img = stats[i].COMEBACKT2U1IMAGEPATH;
+            lis.user2Img = stats[i].COMEBACKT2U2IMAGEPATH;
+            lis.user3Img = stats[i].COMEBACKT1U1IMAGEPATH;
+            lis.user4Img = stats[i].COMEBACKT1U2IMAGEPATH;
+        }
+        lis.deficit = stats[i].COMEBACKMAX_DEFICIT;
+        list.push(lis);
+    }
   }
   $scope.comebackarr = list;
   $scope.$digest();

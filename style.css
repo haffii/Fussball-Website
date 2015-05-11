@@ -51,9 +51,14 @@ h3{
 
 #shameTable{
   border: none;
+  text-align: center;
 }
 #shameTable td{
   border:none;
+  text-align: center
+}
+#shameTable tr{
+  text-align: center
 }
 #shameTable tr td:hover{
   border: 1px solid gray;
@@ -69,12 +74,7 @@ h3{
 .navbar {
   margin-bottom: 0px;
 }
-#newestShame1{
-  border-top:10px solid gold;
-  border-bottom:4px solid gold;
-  border-left: 2px solid gold;
-  border-right: 2px solid gold;
-}
+
 #playLink{
   background: -webkit-linear-gradient(#00a8a3, #11bfb9); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#00a8a3, #11bfb9); /* For Opera 11.1 to 12.0 */
@@ -102,10 +102,13 @@ h3{
 */
 
 .goalHistoryContainer{
-  margin-top: -100px;
+  margin-top: -15%;
   left: 8.4%;
+  text-align: center;
 }
-
+.goalHistoryContainer h3{
+  text-align: center;
+}
 .goalHistory{
   border: 2px solid #c9c9c9;
 }
@@ -282,6 +285,11 @@ h3{
 
 .TopScore{
   border: 2px solid gray;
+  text-align: center;
+}
+
+.topScoreContainer h2{
+   text-align: center;
 }
 
 .ScoreboardHome {
@@ -412,6 +420,11 @@ table tr:hover td {
   border-radius: 10px;*/
   text-align: center;
 }
+
+.Users:hover{
+  background-color: #f0f0f0;
+}
+
 .Users h3{
   margin-right: auto;
   margin-left:auto;
@@ -452,6 +465,18 @@ table tr:hover td {
 /*
   UserbyId
 */
+
+#userGameHistory{
+  text-align: center;
+}
+
+.gameHistory{
+  border: 2px solid #c9c9c9;
+}
+
+.gameHistoryHeader{
+  text-align: center;
+}
 
 .headerForScore{
   text-align: center;
@@ -557,6 +582,12 @@ progress[value]::-webkit-progress-value {
 /*
 Add user
 */
+.addUserProfilePic{
+  margin: 0 auto;
+  width: 150px;
+  height: auto;
+}
+
 #imgPathLabel{
   padding-top: 20px;
 }
@@ -626,6 +657,10 @@ Add user
 /*
   Statlist in Statistics
 */
+#systemStats{
+  display: inline-block;
+}
+
 .highlight {
     background-color: #979BA1;
     font-weight: bold;
@@ -645,6 +680,17 @@ Add user
   z-index: 1;
 
 }
+
+.h2classInStats{
+  text-align: center;
+  margin-top: 70px;
+}
+
+.h2classInStatsBottom{
+  text-align: center;
+  margin-top: 7px;
+}
+
 #StatsTable h2
 {
   padding-top: 5%;
@@ -709,7 +755,9 @@ Add user
   margin-bottom: 0;
 }
 
-#tvipunktur
+#scoreTable
 {
-  top: 15%
+  position: absolute;
+  left: 41%;
+  top: 40%;
 }
