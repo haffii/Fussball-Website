@@ -9,7 +9,15 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
   var countdown;
   var gamestart = 0;
   setInterval(countUp, 1000);
-
+  $scope.player11=[];
+  $scope.player12=[];
+  $scope.player21=[];
+  $scope.player22=[];
+  $scope.player11.ImagePath='images/emptySlot.png';
+  $scope.player12.ImagePath='images/emptySlot.png';
+  $scope.player21.ImagePath='images/emptySlot.png';
+  $scope.player22.ImagePath='images/emptySlot.png';
+  console.log($scope.player11.ImagePath);
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
             'type': 'GET',
@@ -97,6 +105,14 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       }
       else{
         $(".gameClock").text("00:00");
+        $scope.player11=[];
+        $scope.player12=[];
+        $scope.player21=[];
+        $scope.player22=[];
+        $scope.player11.ImagePath='images/emptySlot.png';
+        $scope.player12.ImagePath='images/emptySlot.png';
+        $scope.player21.ImagePath='images/emptySlot.png';
+        $scope.player22.ImagePath='images/emptySlot.png';
       }
       if($scope.player11 && $scope.player12 && $scope.player21 && $scope.player22){
         $('#startGame').hide();
