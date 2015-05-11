@@ -648,6 +648,17 @@ Add user
   z-index: 1;
 
 }
+
+.h2classInStats{
+  text-align: center;
+  margin-top: 70px;
+}
+
+.h2classInStatsBottom{
+  text-align: center;
+  margin-top: 7px;
+}
+
 #StatsTable h2
 {
   padding-top: 5%;
