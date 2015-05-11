@@ -73,6 +73,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
     });
 
     function countUp(){
+      console.log(gameOn);
       if(gamestart !== 0 && gameOn){
         now = new Date();
         dif = new Date(now.getTime() - gamestart.getTime());
@@ -80,7 +81,8 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
         var sec = dif.getSeconds() < 10 ? '0' + dif.getSeconds() : dif.getSeconds();
 
         $(".gameClock").text(min + ":" + sec);
-    }
+      }
+
     }
 
     socket.on('updatePlayers', function(data){
@@ -91,7 +93,12 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       $scope.player22 = data[3];
       $scope.goalHistory = {};
       $scope.$digest();
-      gameOn = true;
+      if($scope.player11){
+        gameOn = true;
+      }
+      else{
+        $(".gameClock").text("00:00");
+      }
       if($scope.player11 && $scope.player12 && $scope.player21 && $scope.player22){
         $('#startGame').hide();
         $('#Rematch').hide();
