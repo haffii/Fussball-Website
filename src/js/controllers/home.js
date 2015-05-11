@@ -17,7 +17,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
   $scope.player12.ImagePath='images/emptySlot.png';
   $scope.player21.ImagePath='images/emptySlot.png';
   $scope.player22.ImagePath='images/emptySlot.png';
-  console.log($scope.player11.ImagePath);
+  //console.log($scope.player11.ImagePath);
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
             'type': 'GET',
@@ -35,7 +35,8 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
                 //console.log(data);
               },
               'error' : function(res){
-                  console.log(res);
+                console.log('error: ');
+                console.log(res);
               }
         });  
 
@@ -156,6 +157,7 @@ var headers = {
     },
     'error' : function(response) {
       console.log("error : ");
+      console.log(response);
 
     }
   });
