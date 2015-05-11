@@ -2,7 +2,7 @@
 	<div ng-repeat="x in arr" class="col-xs-6 col-md-3">
 		<div class="Users" ng-click="thisPlayer(x)">
 			<img class ="profilePic" ng-src="{{x.ImagePath}}"></img>
-			<p>{{x.Name}}</p>
+			<h3>{{x.Name}}</h3>
 			<p>ELO : {{x.ELO | number:0}}</p>
 		</div>
 	</div>

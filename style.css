@@ -172,22 +172,56 @@ h3{
 
 #tablePlayer
 {
-  position: absolute;
+  
   bottom: 10%;
-  width: 15%;
-  height: 24%;
-  border: 3px solid black;
-}
-#teamImg
-{
-  width: 15%;
-  height: 15%;
+  width: 80px;
+  height: auto;
+  
 }
 #playerName
 {
   width: 15%;
-  height: 15%;
+  height: 1%;
 }
+#player21{
+  position: absolute;
+  top:5%;
+  left: 5%;
+}
+#player22{
+  position: absolute;
+  bottom:5%;
+  left: 5%;
+}
+
+#player11{
+  position: absolute;
+  top:5%;
+  right: 5%;
+}
+#player12{
+  position: absolute;
+  bottom:5%;
+  right: 5%;
+}
+
+#blackTeam{
+  width: 12%;
+  height: auto;
+  position: absolute;
+  bottom: 38%;
+  right: 3%;
+}
+
+#blueTeam{
+  width: 12%;
+  height: auto;
+  position: absolute;
+  bottom: 38%; 
+  left: 2%;
+}
+
+
 .TopScore{
   border: 2px solid gray;
 }
@@ -306,15 +340,19 @@ table tr:hover td {
 
 .Users{
   margin: 0 auto;
-  border: 1px solid gray;
+  /*border: 1px solid gray;*/
   width: 200px;
   height: 220px;
   padding:10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  box-shadow: 5px 5px 5px #8f8f8f;
+  /*box-shadow: 5px 5px 5px #8f8f8f;
   border-radius: 10px;
-  text-align: center;
+  text-align: center;*/
+}
+.Users h3{
+  margin-right: auto;
+  margin-left:auto;
 }
 
 .UsersById{
