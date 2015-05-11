@@ -70,84 +70,16 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
         },
         data: userInfoString
       };
-      console.log(newUserInfo);
+      //console.log(newUserInfo);
       $http(req).
         success(function(){
-          console.log("successfully added user");
+          //console.log("successfully added user");
           $location.path("/users");
         }).
         error(function(data, status, headers, config){
           $scope.errorMessage = data;
-          console.log(data);
+          //console.log(data);
         });
     };
-    
-
-    
-    /*$('#imgPath').keyup(function() {
-      var allowedExtension = ['jpeg', 'jpg'];
-      var fileExtension = document.getElementById('imgPath').value.split('.').pop().toLowerCase();
-      var isValidFile = false;
-
-      for(var index in allowedExtension) {
-        if(fileExtension === allowedExtension[index]) {
-          isValidFile = true; 
-          break;
-        }
-      }
-
-      if(isValidFile) {
-        return true;
-        //$('#displayImage').attr('src', $("#imgPath").value);
-      }
-      return false;
-
-    });*/
-
-
-
-
-/*
-    $scope.addUser = function(newUsername, newImgPath){
-    
-      var newUserInfo = {
-          "Name":newUsername,
-          "ImagePath":newImgPath
-      };
-      var userInfoString = JSON.stringify(newUserInfo);
-
-      var headers = {
-          'Content-Type': 'application/json',
-          'dataType':'json',
-          'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA==',
-          'Content-Length': userInfoString.length
-      };
-      var options = {
-          host: 'apprekdbs01.ad.acme.is',
-          port: 8000,
-          path: '/Fussball_Project/tempUser.xsjs',
-          method: 'POST',
-          headers: headers
-      };
-      var req = $http.request(options, function(res) {
-          res.setEncoding('utf-8');
-
-          var responseString = '';
-
-          res.on('data', function(data) {
-            responseString += data;
-          });
-
-          res.on('end', function() {
-            var resultObject = JSON.parse(responseString);        
-          });
-      });
-
-      req.on('error', function(e) {
-           console.log("Error : "+e);
-      });
-      req.write(userInfoString);
-      req.end();
-    };*/
 
 }]);

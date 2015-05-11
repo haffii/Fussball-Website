@@ -53,7 +53,7 @@ function wall(shame){
 	}
 	$scope.ShameGame = shame;
 	$scope.$digest();
-	console.log(shame);
+	//console.log(shame);
 }
 
 $scope.seePlayer = function(playerid){

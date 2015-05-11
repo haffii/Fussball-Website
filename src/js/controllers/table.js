@@ -111,7 +111,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
     });
 
     $scope.clearCurrent = function(){
-      console.log("worked");
+      //console.log("worked");
     };
 
     $scope.clickplayer = function(id) {
@@ -215,7 +215,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
             'url': 'http://' + apiUrl + 'endGame',
             'type': 'POST',
             'success': function(response) {
-              console.log(response);
+              //console.log(response);
                 $scope.gameOn = false;
                 PlayersService.setGameOn(false);
                 $('#modalButtonEndGame').hide();
@@ -272,7 +272,7 @@ function name(obj){
   }
   $scope.names = obj;
   $scope.$digest();
-  console.log(obj);
+  //console.log(obj);
 }
 /*
 $.fn.countdown = function (callback, duration) {

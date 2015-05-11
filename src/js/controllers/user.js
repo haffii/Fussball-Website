@@ -14,7 +14,7 @@ var headers = {
     'contentType': 'application/json; charset=utf-8',
     'success': function(response) {
       showPlayers(response);
-    console.log(response);
+    //console.log(response);
     }
 });
 

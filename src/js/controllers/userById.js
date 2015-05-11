@@ -127,7 +127,7 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
               historyObj.starttime = response[i].STARTTIME.split(" ")[0];
               historyArr.push(historyObj);
             }
-            console.log(historyArr);
+            //console.log(historyArr);
             $scope.gameHistory = historyArr;
             $scope.$digest();
           }
@@ -173,10 +173,10 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
         headers: headers,
         data: userInfoString
       };
-      console.log(newUserInfo);
+      //console.log(newUserInfo);
       $http(req).
         success(function(){
-          console.log("successfully changed password");
+          //console.log("successfully changed password");
           $location.path("/users");
         }).
         error(function(data, status, headers, config){
@@ -234,10 +234,10 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
         headers: headers,
         data: userInfoString
       };
-      console.log(newUserInfo);
+      //console.log(newUserInfo);
       $http(req).
         success(function(){
-          console.log("successfully updated user");
+          //console.log("successfully updated user");
           $location.path("/users");
         }).
         error(function(data, status, headers, config){
