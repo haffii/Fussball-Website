@@ -20,6 +20,7 @@ $.ajax({
     response[0].TOTGAMETIME = parseInt(response[0].TOTGAMETIME/60);
     response[0].TOTGOALS = parseInt(response[0].BLUEGOALS) + parseInt(response[0].BLACKGOALS);
     $scope.systemStats = response;
+    console.log(response);
 
     }
 });

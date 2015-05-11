@@ -629,6 +629,10 @@ Add user
 /*
   Statlist in Statistics
 */
+#systemStats{
+  display: inline-block;
+}
+
 .highlight {
     background-color: #979BA1;
     font-weight: bold;
