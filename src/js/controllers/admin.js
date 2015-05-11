@@ -66,19 +66,15 @@ app.controller("adminController", ["$scope", "$http", "$location", "SocketServic
             'Content-Type': 'application/json;charset=utf-8',
             'dataType':'json',
             'Authorization':'Basic RlVTOlNhbGFzYW5hMTIzNA=='
-            //'Content-Length': userInfoString.length
         },
         data: userInfoString
       };
-      //console.log(newUserInfo);
       $http(req).
-        success(function(){
-          //console.log("successfully added user");
-          $location.path("/users");
+        success(function(newUserId){
+          $location.path("/Users/"+newUserId);
         }).
         error(function(data, status, headers, config){
           $scope.errorMessage = data;
-          //console.log(data);
         });
     };
 
