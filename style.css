@@ -554,6 +554,12 @@ progress[value]::-webkit-progress-value {
 /*
 Add user
 */
+.addUserProfilePic{
+  margin: 0 auto;
+  width: 150px;
+  height: auto;
+}
+
 #imgPathLabel{
   padding-top: 20px;
 }

@@ -1,5 +1,5 @@
 <div class="container main">
-
+	<h2>Add a new user</h2>
 	<div class="col-md-4"id="addUserContainer">
 		<div class="alert alert-danger" ng-cloak ng-show="errorMessageName != ''"> 
 			{{errorMessageName}}
@@ -20,6 +20,6 @@
 		<button class="addUserButton" ng-click="addUser(newName, newImagePath, newPassword)">Add user</button>
 	</div>
 	<div class="col-md-4" id="profilePicture">
-		<img class="profilePic" id="displayImage" src="{{newImagePath}}" onerror="this.src='images/empty.png'"/>
+		<img class="addUserProfilePic" id="displayImage" src="{{newImagePath}}" onerror="this.src='images/empty.png'"/>
 	</div>
 </div>
