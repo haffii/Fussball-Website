@@ -10,6 +10,7 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
             'type': 'GET',
             'success': function(data) {
                 if(data.length){
+                  console.log(data[0]);
                   $scope.player11 = data[0];
                   $scope.player12 = data[1];
                   $scope.player21 = data[2];
@@ -22,10 +23,18 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
                   $scope.$digest();
                 }
                 else{
-                  $scope.player11 = "Player 1";
-                  $scope.player12 = "Player 2";
-                  $scope.player21 = "Player 1";
-                  $scope.player22 = "Player 2";
+                  $scope.player11 = {
+                    ImagePath:'images/clicktoadd.png'
+                  };
+                  $scope.player12= {
+                    ImagePath:'images/clicktoadd.png'
+                  };
+                  $scope.player21 = {
+                    ImagePath:'images/clicktoadd.png'
+                  };
+                  $scope.player22 = {
+                    ImagePath:'images/clicktoadd.png'
+                  };
                   
                   PlayersService.setCurrent(null);
 

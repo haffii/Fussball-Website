@@ -218,7 +218,7 @@
 		<tr ng-repeat="x in moreTop10">
 				<td>{{$index + 1}}.</td>
 				<td ng-click="seePlayer(x.HIGHESTWINPERCUSERID)"><img ng-src="{{x.HIGHESTWINPERCIMAGEPATH}}" height="80" width="60"> </img>{{x.HIGHESTWINPERCNAME}}</td>
-				<td id="lastColumn">{{(x.HIGHESTWINPERC*100) | number: 0}}%</td>
+				<td id="lastColumn">{{x.HIGHESTWINPERC*100}}%</td>
 		</tr>
 	</table>
 </div>
@@ -278,7 +278,7 @@
 		</tr>
 		<tr ng-repeat="x in moreTop10">
 				<td>{{$index + 1}}.</td>
-				<td ng-click="seePlayer(x.MOSTPLAYEDUSERID)"><img ng-src="{{x.MOSTPLAYEDIMAGEPATH}}" height="80" width="60"> </img>{{x.MOSTPLAYEDNAME}}</td>
+				<td ng-click="seePlayer(x.MOSTPLAYEDUSERID)"><img ng-src="{{x.MOSTPLAYEDIMAGEPATH}}" height="80" width="60"> </img>{{x.MOSTPLAYENDAME}}</td>
 				<td id="lastColumn">{{x.MOSTPLAYEDGAMES}}</td>
 		</tr>
 	</table>

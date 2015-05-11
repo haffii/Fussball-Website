@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'LCDMono';
+    src:  url('LCDMono2-Bold.ttf.woff') format('woff'),
+    url('LCDMono2-Bold.ttf.svg#LCDMono2-Bold') format('svg'),
+    url('LCDMono2-Bold.ttf.eot'),
+    url('LCDMono2-Bold.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
