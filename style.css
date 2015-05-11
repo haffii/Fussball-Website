@@ -51,9 +51,14 @@ h3{
 
 #shameTable{
   border: none;
+  text-align: center;
 }
 #shameTable td{
   border:none;
+  text-align: center
+}
+#shameTable tr{
+  text-align: center
 }
 #shameTable tr td:hover{
   border: 1px solid gray;
@@ -69,12 +74,7 @@ h3{
 .navbar {
   margin-bottom: 0px;
 }
-#newestShame1{
-  border-top:10px solid gold;
-  border-bottom:4px solid gold;
-  border-left: 2px solid gold;
-  border-right: 2px solid gold;
-}
+
 #playLink{
   background: -webkit-linear-gradient(#00a8a3, #11bfb9); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#00a8a3, #11bfb9); /* For Opera 11.1 to 12.0 */
