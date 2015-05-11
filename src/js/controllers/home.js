@@ -10,7 +10,6 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
   var gamestart = 0;
   setInterval(countUp, 1000);
 
-
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
             'type': 'GET',

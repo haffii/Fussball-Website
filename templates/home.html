@@ -15,7 +15,7 @@
 			<img class="homeProfile" src="{{player12.ImagePath}}" ng-click="clickplayer(12)" style="position: absolute; bottom: 0; right: 0;">
 		</div>
 		<p class="gameClock">00:00</p>
-		<div class="goalHistory"></div>
+		<!--<div class="goalHistory"></div>-->
 	</div>
 
 	<div class="topScoreContainer col-xs-12 col-md-5">
@@ -33,10 +33,19 @@
 		</table>
 	</div>
 
-	<div ng-repeat="goal in goalHistory">
-		<p style="color:{{goal.team}}">
-			{{goal.team}} scored a goal at {{goal.date}} | {{goal.team2score}} : {{goal.team1score}} 
-		</p>
+	<div class="goalHistoryContainer col-xs-12 col-md-5">
+		<table class="goalHistory">
+		  <tr>
+		    <th>Blue team</th>
+		    <th>Score</th>
+		    <th>Black team</th>
+		  </tr>
+		  <tr ng-repeat="goal in goalHistory">
+		    <td><h2 class="scoreInHistoryh2" ng-show="goal.team == 'blue'">Goal!</h2></td>
+		    <td><h3 id="scoreInHistoryh3">{{goal.team2score}} : {{goal.team1score}}</h3><br><p id="timeInHistory">Scored at<br>{{goal.date}}</p></td>
+		    <td><h2 class="scoreInHistoryh2" ng-show="goal.team == 'black'">Goal!</h2></td>
+		  </tr>
+		</table>
 	</div>
 </div>
 </div>
