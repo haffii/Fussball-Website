@@ -78,7 +78,7 @@
 		<div class="col-md-3">
 			<p class="centeredT">Best Partner</p>
 			<div class="easiest" ng-repeat="x in user">
-				<div class="UsersById bull" ng-click="goToPlayer(x.BESTPARTNERID);">
+				<div class="UsersById bull" ng-click="goToPlayer(x.BESTPARTNERID)">
 					<img class ="profilePic" ng-src="{{x.BESTPARTNERIMAGEPATH}}"></img>
 					<p>{{x.BESTPARTNERNAME}}</p>
 					<p>Games with : {{x.BESTPARTNERGAMES}}</p>
@@ -130,11 +130,11 @@
 		
 		<table id='gameHistory'>
 			<tr ng-repeat="game in gameHistory" >
-				<td> <img ng-src="{{game.t1u1image}}" height="60" width="40"/></td>
-				<td><img ng-src="{{game.t1u2image}}" height="60" width="40"/></td>
-				<td><h2>{{game.scoreteam1}} - {{game.scoreteam2}}</h2><h5>{{game.starttime}}</h5></td>
-				<td><img ng-src="{{game.t2u1image}}" height="60" width="40"/><p></p></td> 
-		    	<td ><img ng-src="{{game.t2u2image}}" height="60" width="40"/><p></p></td> 
+				<td ng-click="goToPlayer(game.t1u1id)"> <img ng-src="{{game.t1u1image}}" height="60" width="40"/></td>
+				<td ng-click="goToPlayer(game.t1u2id)"><img ng-src="{{game.t1u2image}}" height="60" width="40"/></td>
+				<td ><h2>{{game.scoreteam1}} - {{game.scoreteam2}}</h2><h5>{{game.starttime}}</h5></td>
+				<td ng-click="goToPlayer(game.t2u1id)"><img ng-src="{{game.t2u1image}}" height="60" width="40"/><p></p></td> 
+		    	<td ng-click="goToPlayer(game.t1u2id)"><img ng-src="{{game.t2u2image}}" height="60" width="40"/><p></p></td> 
 			</tr>
 		</table>
 
