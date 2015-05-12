@@ -8,7 +8,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
   var gameOn = false;
   var countdown;
   var gamestart = 0;
-  setInterval(countUp, 1000);
+  var counter = setInterval(countUp, 1000);
   $scope.player11=[];
   $scope.player12=[];
   $scope.player21=[];
@@ -135,6 +135,10 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       }
     };
 
+    $scope.topListLink = function(id){
+      $location.path("/Users/"+id);
+    };
+
 var headers = {
     'Content-Type': 'application/json',
     'dataType':'json',
@@ -150,6 +154,7 @@ var headers = {
     'contentType': 'application/json; charset=utf-8',
     'success': function(response) {
       $scope.topList = response;
+      console.log(response);
       $scope.$digest();
     },
     'error' : function(response) {
@@ -158,5 +163,9 @@ var headers = {
 
     }
   });
+
+  $scope.$on("$destroy", function() {
+        clearInterval(counter);
+    });
 
 }]);
