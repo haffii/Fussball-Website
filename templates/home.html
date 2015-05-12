@@ -4,6 +4,7 @@
 <div id = "homeWindow">
 
 	<div class="scoreboardContainer col-xs-12 col-md-7" style="margin-top:10px;">
+		<p class="gameClock">00:00</p>
 		<div class="ScoreboardHome">
 		<div id='homeTable'style="height:100%; width:50%; margin-left:auto; margin-right:auto; "></div>
 			<div id="scoreHome">
@@ -16,8 +17,21 @@
 			<img class="homeProfile" src="{{player11.ImagePath}}" ng-click="clickplayer(11)" style="position: absolute; top: 8px; right: 8px;">
 			<img class="homeProfile" src="{{player12.ImagePath}}" ng-click="clickplayer(12)" style="position: absolute; bottom: 8px; right: 8px;">
 		</div>
-		<p class="gameClock">00:00</p>
-		<!--<div class="goalHistory"></div>-->
+		<div class="goalHistoryContainer">
+		<h3>Goal History</h3>
+		<table class="goalHistory">
+		  <tr>
+		    <th>Blue team</th>
+		    <th>Score</th>
+		    <th>Black team</th>
+		  </tr>
+		  <tr ng-repeat="goal in goalHistory">
+		    <td><h2 class="scoreInHistoryh2" ng-show="goal.team == 'blue'">Goal!</h2></td>
+		    <td><h3 id="scoreInHistoryh3">{{goal.team2score}} : {{goal.team1score}}</h3><br><p id="timeInHistory">Scored at<br>{{goal.date}}</p></td>
+		    <td><h2 class="scoreInHistoryh2" ng-show="goal.team == 'black'">Goal!</h2></td>
+		  </tr>
+		</table>
+	</div>
 	</div>
 
 	<div class="topScoreContainer col-xs-12 col-md-5">
@@ -32,22 +46,6 @@
 		    <td>{{$index + 1}}</td>
 		    <td>{{user.Name}}</td>
 		    <td>{{user.ELO | number:0}}</td>
-		  </tr>
-		</table>
-	</div>
-
-	<div class="goalHistoryContainer col-xs-12 col-md-5">
-		<h3>Goal History</h3>
-		<table class="goalHistory">
-		  <tr>
-		    <th>Blue team</th>
-		    <th>Score</th>
-		    <th>Black team</th>
-		  </tr>
-		  <tr ng-repeat="goal in goalHistory">
-		    <td><h2 class="scoreInHistoryh2" ng-show="goal.team == 'blue'">Goal!</h2></td>
-		    <td><h3 id="scoreInHistoryh3">{{goal.team2score}} : {{goal.team1score}}</h3><br><p id="timeInHistory">Scored at<br>{{goal.date}}</p></td>
-		    <td><h2 class="scoreInHistoryh2" ng-show="goal.team == 'black'">Goal!</h2></td>
 		  </tr>
 		</table>
 	</div>
