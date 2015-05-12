@@ -58,8 +58,8 @@ app.controller("UserIDController", ["$scope", "$http", "$location", '$routeParam
         $scope.newImagePath = $scope.user[0].IMAGEPATH;
         $scope.newPassword = "";
         $scope.user[0].AVGPLAYINGTIME = (parseInt($scope.user[0].AVGPLAYINGTIME)/60);
-        $scope.$digest();
         $(".noGamesPlayed").show();
+        $scope.$digest();
         historyArr = [];
 
         $.ajax({
