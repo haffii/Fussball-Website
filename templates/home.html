@@ -6,11 +6,12 @@
 	<div class="scoreboardContainer col-xs-12 col-md-7" style="margin-top:10px;">
 		<p class="gameClock">00:00</p>
 		<div class="ScoreboardHome">
-		<div id='homeTable'style="height:100%; width:50%; margin-left:auto; margin-right:auto; "></div>
+		<div id='homeTable'style="height:100%; width:50%; margin-left:auto; margin-right:auto; ">
 			<div id="scoreHome">
 		      	<span class="score"id="team2"/>
 		      	<span class="score">-</span>
 		      	<span class="score"id="team1"/>
+		    </div>
 		    </div>
 			<img class="homeProfile" src="{{player21.ImagePath}}" ng-click="clickplayer(21)" style="position: absolute; top: 8px; left: 8px;">
 			<img id="blueTeamHome" src="images/blueTeam.png" >
@@ -19,6 +20,9 @@
 			<img id="blackTeamHome" src="images/blackTeam.png" >
 			<img class="homeProfile" src="{{player12.ImagePath}}" ng-click="clickplayer(12)" style="position: absolute; bottom: 8px; right: 8px;">
 		</div>
+		
+
+
 		<div class="goalHistoryContainer">
 		<h3>Goal History</h3>
 		<table class="goalHistory">

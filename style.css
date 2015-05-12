@@ -299,10 +299,9 @@ h3{
 }
 
 #scoreHome{
-  position: absolute;
-  top: 24%;
-  right: 5%;
-  width: 400px;
+  text-align: center;
+  margin-top: 25%;
+  width: 100%;
 
 }
 
