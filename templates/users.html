@@ -1,5 +1,6 @@
+<label>Search: <input autofocus ng-model="search.$"></label> <br>
 <div class="container main">
-	<div ng-repeat="x in arr" class="col-xs-6 col-md-3">
+	<div ng-repeat="x in arr | filter:search:strict" class="col-xs-6 col-md-3">
 		<div class="Users" ng-click="thisPlayer(x)">
 			<img class ="profilePic" ng-src="{{x.ImagePath}}"></img>
 			<h3>{{x.Name}}</h3>
