@@ -55,18 +55,18 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       }
     });
    
-    socket.on('goal1', function(score, time){
+    socket.on('goal1', function(score, goalHistory){
     $('#team1').text(score);
       if(time){
-        $scope.goalHistory.unshift(time);
+        $scope.goalHistory = goalHistory;
         $scope.$digest();
       }
     });
 
-    socket.on('goal2', function(score, time){
+    socket.on('goal2', function(score, goalHistory){
     $('#team2').text(score);
       if(time){
-        $scope.goalHistory.unshift(time);
+        $scope.goalHistory = goalHistory;
         $scope.$digest();
       }
     });
@@ -103,7 +103,7 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
     socket.on('gametime', function(data, goalHistory){
       gamestart = new Date(data);
       if(goalHistory){
-        $scope.goalHistory = goalHistory.reverse();
+        $scope.goalHistory = goalHistory;
         $scope.$digest();
       }
     });
