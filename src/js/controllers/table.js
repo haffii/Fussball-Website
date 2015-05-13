@@ -261,10 +261,18 @@ app.controller("TableController", ["$scope", "$location", "SocketService","Playe
       $('#team1').text(0);
       $('#team2').text(0);
       PlayersService.clearPlayers();
-      $scope.player11 = null;
-      $scope.player12 = null;
-      $scope.player21 = null;
-      $scope.player22 = null;
+      $scope.player11 = {
+        ImagePath:'images/clicktoadd.png'
+      };
+      $scope.player12= {
+        ImagePath:'images/clicktoadd.png'
+      };
+      $scope.player21 = {
+        ImagePath:'images/clicktoadd.png'
+      };
+      $scope.player22 = {
+        ImagePath:'images/clicktoadd.png'
+      };
     };
 function name(obj){
   for(var i = 0; i<obj.length; i++){
