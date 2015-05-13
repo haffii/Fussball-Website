@@ -1,6 +1,6 @@
 
 <div class="container main">
-<div id = "homeWindow">
+<div id = "PlayWindow">
 
 	<p class="gameClockPlay" style="">00:00</p>
 	<div class="Scoreboard" style="border: 3px solid black;">
@@ -41,33 +41,41 @@
 			</div>
 
 	    <div id="player21">
-	    	<img src="{{player21.ImagePath}}" ng-click="clickplayer(21)" id="tablePlayer">
 	    	<h3 id="playerName">{{player21.Name}}</h3>
+	    	<img src="{{player21.ImagePath}}" ng-click="clickplayer(21)" id="tablePlayer">
 	    </div>
 
 		<img id="blueTeam" src="images/blueTeam.png" >	
 
 	    <div id = "player22">
-	    	<h3 id="playerName">{{player22.Name}}</h3>
 	    	<img src="{{player22.ImagePath}}" ng-click="clickplayer(22)" id="tablePlayer">
+	    	<h3 id="playerName">{{player22.Name}}</h3>
 	    	
 	    </div>
 		
 		<div id = "player11">
-			<img src="{{player11.ImagePath}}" ng-click="clickplayer(11)" id="tablePlayer">
 			<h3 id="playerName">{{player11.Name}}</h3>
+			<div>
+			<img src="{{player11.ImagePath}}" ng-click="clickplayer(11)" id="tablePlayer" style="float:right;">
+			</div>
 		</div>
 
 		
 		<img id="blackTeam" src="images/blackTeam.png" >
 
 		<div id = "player12">
+			<div style="height:119px; width:100%">
+			<img src="{{player12.ImagePath}}" ng-click="clickplayer(12)" id="tablePlayer" style="float:right;">
+			</div>
 			<h3 id="playerName">{{player12.Name}}</h3>
-			<img src="{{player12.ImagePath}}" ng-click="clickplayer(12)" id="tablePlayer">
-			
 		</div>
+</div>
+</div>
+</div>
+</div>
 
-</div>
-</div>
-</div>
-</div>
+<style>
+.ng-scope{
+  height: 100%;
+}
+</style>

@@ -5,6 +5,7 @@
 
 html{
   /*background-color: #6090F0;*/
+  height: 100%
 }
 
 body{
@@ -13,7 +14,8 @@ body{
   background-size: 100% 100%;
   background-attachment: fixed;
   font: white;
-  margin-top: 100px;
+  margin-top: 60px;
+  height: 100%
 }
 h1{
   display: inline;
@@ -197,11 +199,20 @@ h3{
 
 }
 
+#PlayWindow{
+  height: 100%;
+}
+
+.ng-scope{
+  /*height: 100%;*/
+}
+
 .Scoreboard{
   position: relative;
   margin:0 auto;
   border: 1px solid black;
-  height: 80vh;
+  height: auto;
+  height: 80%;
 }
 
 .ScoreboardMiddle{
@@ -221,13 +232,15 @@ h3{
 }
 
 #scorePlay{
-  position: relative;
+  position: absolute;
   font-family:LCDMono;
   font-size: 100px;
+  width: 100%;
+  left:0px;
   text-align:center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 25vh;
+
+  margin-top: -100px;
+  top:50%;
 }
 
 #tablePlayer
@@ -235,12 +248,11 @@ h3{
   
   bottom: 10%;
   width: 80px;
-  height: auto;
+  height: 119px;
   
 }
 #playerName
 {
-  width: 80px;
   height: auto;
 }
 #player21{
@@ -266,19 +278,21 @@ h3{
 }
 
 #blackTeam{
-  width: 12%;
-  height: auto;
   position: absolute;
-  bottom: 38%;
-  right: 3%;
+   top: 50%;
+   width: 100px;
+   height: 100px;
+   margin-top: -50px;
+   right: 37px;
 }
 
 #blueTeam{
-  width: 12%;
-  height: auto;
   position: absolute;
-  bottom: 38%; 
-  left: 2%;
+   top: 50%;
+   width: 100px;
+   height: 100px;
+   margin-top: -50px;
+   margin-left: 36px;
 }
 
 
