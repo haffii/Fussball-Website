@@ -17,6 +17,10 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
   $scope.player12.ImagePath='images/emptySlot.png';
   $scope.player21.ImagePath='images/emptySlot.png';
   $scope.player22.ImagePath='images/emptySlot.png';
+  if(!gameOn){
+     $(".topScoreContainer").show();
+     $(".goalHistoryContainer").hide();
+  }
     $.ajax({
             'url': 'http://' + apiUrl + 'players',
             'type': 'GET',
@@ -29,6 +33,8 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
                   gameOn = true;
                   PlayersService.setPlayers(data);
                   PlayersService.setGameOn(true);
+                  $(".topScoreContainer").hide();
+                  $(".goalHistoryContainer").show();
                   $scope.$digest();
                 }
               },
@@ -65,6 +71,8 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
 
     socket.on('gameover', function(data){
       gameOn = false;
+      $(".topScoreContainer").show();
+      $(".goalHistoryContainer").hide();
     });
 
     socket.on('gametime', function(data, goalHistory){
