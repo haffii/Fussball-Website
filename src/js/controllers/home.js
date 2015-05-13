@@ -134,6 +134,8 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
       $scope.$digest();
       if($scope.player11){
         gameOn = true;
+        $(".topScoreContainer").hide();
+        $(".goalHistoryContainer").show();
       }
       else{
         $(".gameClock").text("00:00");
@@ -145,11 +147,6 @@ app.controller("HomeController", ["$scope", "$location", "SocketService","Player
         $scope.player12.ImagePath='images/emptySlot.png';
         $scope.player21.ImagePath='images/emptySlot.png';
         $scope.player22.ImagePath='images/emptySlot.png';
-      }
-      if($scope.player11 && $scope.player12 && $scope.player21 && $scope.player22){
-        $('#startGame').hide();
-        $('#Rematch').hide();
-        $('#newGame').hide();
       }
     });
 
